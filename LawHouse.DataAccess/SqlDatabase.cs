@@ -34,16 +34,16 @@ namespace LawHouse.DataAccess
                 using (SqlCommand com = new SqlCommand(sqlString, conn))
                 {
                     conn.Open();
-                    com.Parameters.Add(new SqlParameter("Arbejdstitel", @case.Arbejdstitel));
-                    com.Parameters.Add(new SqlParameter("Startdato", @case.StartDato));
+                    com.Parameters.Add(new SqlParameter("Arbejdstitel", @case.WorkTitle));
+                    com.Parameters.Add(new SqlParameter("Startdato", @case.StartDate));
                     com.Parameters.Add(new SqlParameter("SlutDato", @case.EndDate));
-                    com.Parameters.Add(new SqlParameter("Kørselstimer", @case.Kørselstimer));
+                    com.Parameters.Add(new SqlParameter("Kørselstimer", @case.Kilometers));
                     com.Parameters.Add(new SqlParameter("TimeEstimat", @case.TimeEstimat));
-                    com.Parameters.Add(new SqlParameter("SagsBeskrivelse", @case.SagsBeskrivelse));
-                    com.Parameters.Add(new SqlParameter("InterneNoter", @case.InterneNoter));
-                    com.Parameters.Add(new SqlParameter("KlientNr", @case.KlientNr));
-                    com.Parameters.Add(new SqlParameter("AdvokatId", @case.AdvokatId));
-                    com.Parameters.Add(new SqlParameter("YdelsesTypeNr", @case.YdelsesTypeNr));
+                    com.Parameters.Add(new SqlParameter("SagsBeskrivelse", @case.CaseDescription));
+                    com.Parameters.Add(new SqlParameter("InterneNoter", @case.internal_Notes));
+                    com.Parameters.Add(new SqlParameter("KlientNr", @case.ClientName));
+                    com.Parameters.Add(new SqlParameter("AdvokatId", @case.EmployeeID));
+                    com.Parameters.Add(new SqlParameter("YdelsesTypeNr", @case.CategoryID));
                     return (int)com.ExecuteScalar();
                 }
             }
@@ -53,18 +53,18 @@ namespace LawHouse.DataAccess
         {
             string sqlString =
                 $"UPDATE Sag SET Arbejdstitel = @Arbejdstitel, StartDato = @StartDato , SlutDato = @SlutDato , Kørselstimer = @Kørselstimer , TimeEstimat = @TimeEstimat , SagsBeskrivelse = @SagsBeskrivelse , InterneNoter = @InterneNoter , KlientNr = @KlientNr , AdvokatId = @AdvokatId , YdelsesTypeNr = @YdelsesTypeNr " +
-                $"WHERE SagsNr = {@case.SagsNr}";
+                $"WHERE SagsNr = {@case.ID}";
             SqlCommand com = new SqlCommand();
-            com.Parameters.Add(new SqlParameter("Arbejdstitel", @case.Arbejdstitel));
-            com.Parameters.Add(new SqlParameter("Startdato", @case.StartDato));
+            com.Parameters.Add(new SqlParameter("Arbejdstitel", @case.WorkTitle));
+            com.Parameters.Add(new SqlParameter("Startdato", @case.StartDate));
             com.Parameters.Add(new SqlParameter("SlutDato", @case.EndDate));
-            com.Parameters.Add(new SqlParameter("Kørselstimer", @case.Kørselstimer));
+            com.Parameters.Add(new SqlParameter("Kørselstimer", @case.Kilometers));
             com.Parameters.Add(new SqlParameter("TimeEstimat", @case.TimeEstimat));
-            com.Parameters.Add(new SqlParameter("SagsBeskrivelse", @case.SagsBeskrivelse));
-            com.Parameters.Add(new SqlParameter("InterneNoter", @case.InterneNoter));
-            com.Parameters.Add(new SqlParameter("KlientNr", @case.KlientNr));
-            com.Parameters.Add(new SqlParameter("AdvokatId", @case.AdvokatId));
-            com.Parameters.Add(new SqlParameter("YdelsesTypeNr", @case.YdelsesTypeNr));
+            com.Parameters.Add(new SqlParameter("SagsBeskrivelse", @case.CaseDescription));
+            com.Parameters.Add(new SqlParameter("InterneNoter", @case.internal_Notes));
+            com.Parameters.Add(new SqlParameter("KlientNr", @case.ClientName));
+            com.Parameters.Add(new SqlParameter("AdvokatId", @case.EmployeeID));
+            com.Parameters.Add(new SqlParameter("YdelsesTypeNr", @case.CategoryID));
             SqlDatabaseUtilities.RunSqlCommand(sqlString, com);
         }
         public List<Case> GetAllCase()// By Daniella //By Julius
@@ -79,17 +79,17 @@ namespace LawHouse.DataAccess
             foreach (List<string> x in rawReadValue)
             {
                 Case @sag = new Case();
-                @sag.SagsNr = Convert.ToInt32(x[0]);
-                @sag.Arbejdstitel = x[1];
-                @sag.StartDato = x[2];
+                @sag.ID = Convert.ToInt32(x[0]);
+                @sag.WorkTitle = x[1];
+                @sag.StartDate = x[2];
                 @sag.EndDate = x[3];
-                @sag.Kørselstimer = x[4];
+                @sag.Kilometers = x[4];
                 @sag.TimeEstimat = x[5];
-                @sag.SagsBeskrivelse = x[6];
-                @sag.InterneNoter = x[7];
-                @sag.KlientNr = Convert.ToInt32(x[8]);
-                @sag.AdvokatId = Convert.ToInt32(x[9]);
-                @sag.YdelsesTypeNr = Convert.ToInt32(x[10]);
+                @sag.CaseDescription = x[6];
+                @sag.internal_Notes = x[7];
+                @sag.ClientName = Convert.ToInt32(x[8]);
+                @sag.EmployeeID = Convert.ToInt32(x[9]);
+                @sag.CategoryID = Convert.ToInt32(x[10]);
                 listOfSag.Add(@sag);
             }
             return listOfSag;
@@ -124,9 +124,9 @@ namespace LawHouse.DataAccess
             {
                 Client @klient = new Client();
                 @klient.ID = Convert.ToInt32(x[0]);
-                @klient.Navn = x[1];
-                @klient.Adresse = x[2];
-                @klient.TelefonNr = x[3];
+                @klient.Name = x[1];
+                @klient.Address = x[2];
+                @klient.PhoneNo = x[3];
                 listOfKlient.Add(@klient);
             }
             return listOfKlient;
@@ -142,7 +142,7 @@ namespace LawHouse.DataAccess
             {
                 using (SqlCommand com = new SqlCommand(sqlString, conn))
                 {
-                    com.Parameters.Add(new SqlParameter("Navn", advokat.Navn));
+                    com.Parameters.Add(new SqlParameter("Navn", advokat.Name));
                     return (int)com.ExecuteScalar();
                 }
             }
@@ -171,7 +171,7 @@ namespace LawHouse.DataAccess
             {
                 Employee @advokat = new Employee();
                 @advokat.ID = Convert.ToInt32(x[0]);
-                @advokat.Navn = x[1];
+                @advokat.Name = x[1];
                 listOfAdvokat.Add(@advokat);
             }
             return listOfAdvokat;
@@ -190,7 +190,7 @@ namespace LawHouse.DataAccess
             {
                 Employee @advokat = new Employee();
                 @advokat.ID = Convert.ToInt32(x[0]);
-                @advokat.Navn = x[1];
+                @advokat.Name = x[1];
                 listOfAdvokat.Add(@advokat);
             }
             return listOfAdvokat;
@@ -206,8 +206,8 @@ namespace LawHouse.DataAccess
             foreach (List<string> x in rawReadValue)
             {
                 EmployeeService @tjenesteydelse = new EmployeeService();
-                @tjenesteydelse.AdvokatId = Convert.ToInt32(x[0]);
-                @tjenesteydelse.YdelsesTypeNr = Convert.ToInt32(x[1]);
+                @tjenesteydelse.ID = Convert.ToInt32(x[0]);
+                @tjenesteydelse.Services_descriptionID = Convert.ToInt32(x[1]);
                 listOfTjenesteydelse.Add(@tjenesteydelse);
             }
             return listOfTjenesteydelse;
@@ -215,16 +215,16 @@ namespace LawHouse.DataAccess
         #endregion
 
         #region ServiceType
-        public List<ServiceType> GetAllServiceType()// By Daniella //By Julius
+        public List<Category> GetAllServiceType()// By Daniella //By Julius
         {
             string sqlString = "SELECT * FROM YdelseType";
-            List<ServiceType> listOfYdelsetype = new List<ServiceType>();
+            List<Category> listOfYdelsetype = new List<Category>();
 
             List<List<string>> rawReadValue = SqlDatabaseUtilities.GenericSqlStringDataReader(sqlString);
 
             foreach (List<string> x in rawReadValue)
             {
-                ServiceType @ydelseType = new ServiceType();
+                Category @ydelseType = new Category();
                 @ydelseType.ID = Convert.ToInt32(x[0]);
                 @ydelseType.Name = x[1];
                 listOfYdelsetype.Add(@ydelseType);
@@ -261,12 +261,12 @@ namespace LawHouse.DataAccess
             {
                 Service @ydelse = new Service();
                 @ydelse.ID = Convert.ToInt32(x[0]);
-                @ydelse.StartDato = x[1];
-                @ydelse.YdelsesBeskrivelse = x[2];
-                @ydelse.Pris = x[3];
+                @ydelse.StartDate = x[1];
+                @ydelse.Services_description = x[2];
+                @ydelse.Price = x[3];
                 @ydelse.Timer = x[4];
-                @ydelse.SagsNr = Convert.ToInt32(x[5]);
-                @ydelse.AdvokatId = Convert.ToInt32(x[6]);
+                @ydelse.CaseID = Convert.ToInt32(x[5]);
+                @ydelse.employeeID = Convert.ToInt32(x[6]);
                 listOfYdelse.Add(@ydelse);
             }
             return listOfYdelse;
@@ -284,7 +284,7 @@ namespace LawHouse.DataAccess
             foreach (List<string> x in rawReadValue)
             {
                 Education @Efteruddannelse = new Education();
-                @Efteruddannelse.AdvokatId = Convert.ToInt32(x[0]);
+                @Efteruddannelse.EmployeeID = Convert.ToInt32(x[0]);
                 @Efteruddannelse.Name = x[1];
                 listOfEfteruddannelse.Add(@Efteruddannelse);
             }

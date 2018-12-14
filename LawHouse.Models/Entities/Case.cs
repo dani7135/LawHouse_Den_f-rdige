@@ -4,31 +4,31 @@
     //Daniella
 
     {
-        public int SagsNr { get; set; }
-        public string Arbejdstitel { get; set; }
-        public string StartDato { get; set; }
+        public int ID { get; set; }
+        public string WorkTitle { get; set; }
+        public string StartDate { get; set; }
         public string EndDate { get; set; }
-        public string Kørselstimer { get; set; }
+        public string Kilometers { get; set; }
         public string TimeEstimat { get; set; }     
-        public string SagsBeskrivelse { get; set; } 
-        public string InterneNoter { get; set; }
-        public int KlientNr { get; set; }
-        public int AdvokatId { get; set; }
-        public int YdelsesTypeNr { get; set; }
+        public string CaseDescription { get; set; } 
+        public string internal_Notes { get; set; }
+        public int ClientName { get; set; }
+        public int EmployeeID { get; set; }
+        public int CategoryID { get; set; }
 
         public Case() { }
         public Case(string arbejdstitel, string startDato, string slutDato, string kørselstimer, string timeEstimat, string sagsBeskrivelse , string interneNoter, int klientNr, int advokatId, int ydelsesTypeNr)
         {//Daniella
-            Arbejdstitel = arbejdstitel;
-            StartDato = startDato;
+            WorkTitle = arbejdstitel;
+            StartDate = startDato;
             EndDate = slutDato;
-            Kørselstimer = kørselstimer;
+            Kilometers = kørselstimer;
             TimeEstimat = timeEstimat;
-            SagsBeskrivelse = sagsBeskrivelse;
-            InterneNoter = interneNoter;
-            KlientNr = klientNr;
-            AdvokatId = advokatId;
-            YdelsesTypeNr = ydelsesTypeNr;
+            CaseDescription = sagsBeskrivelse;
+            internal_Notes = interneNoter;
+            ClientName = klientNr;
+            EmployeeID = advokatId;
+            CategoryID = ydelsesTypeNr;
         }
     }
 }

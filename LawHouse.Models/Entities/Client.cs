@@ -3,15 +3,15 @@
     public class Client
     {
         public int ID { get; set; }
-        public string Navn { get; set; }
-        public string Adresse { get; set; }
-        public string TelefonNr { get; set; }
+        public string Name { get; set; }
+        public string Address { get; set; }
+        public string PhoneNo { get; set; }
         public Client() { }
-        public Client(string navn, string adresse, string telefonNr)
+        public Client(string name, string address, string phoneNr)
         {
-            Navn = navn;
-            Adresse = adresse;
-            TelefonNr = telefonNr;
+            Name = name;
+            Address = address;
+            PhoneNo = phoneNr;
         }
 
     }

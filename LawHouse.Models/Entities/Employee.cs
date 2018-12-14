@@ -3,24 +3,24 @@
     public class Employee //Dennie
     {
         public int ID { get; set; }
-        public string Navn { get; set; }
+        public string Name { get; set; }
         public Employee() { }
         public Employee(string navn)
         {
-            Navn = navn;
+            Name = navn;
         }
 
-        public string Efteruddannelse { get; set; }
-        public Employee(int advokatId, string navn)
+        public string Training { get; set; }
+        public Employee(int employeeID, string name)
         {
-            ID = advokatId;
-            Navn = navn;
+            ID = employeeID;
+            this.Name = name;
         }
-        public Employee(int advokatId, string navn, string efteruddannelse)
+        public Employee(int advokatId, string navn, string training)
         {
             ID = advokatId;
-            Navn = navn;
-            Efteruddannelse = efteruddannelse;
+            Name = navn;
+            Training = training;
         }
     }
 }

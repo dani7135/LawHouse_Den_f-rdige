@@ -5,24 +5,24 @@
 
     {
         public int ID { get; set; }
-        public string StartDato { get; set; }
-        public string YdelsesBeskrivelse { get; set; }
-        public string Pris { get; set; }
+        public string StartDate { get; set; }
+        public string Services_description { get; set; }
+        public string Price { get; set; }
         public string Timer { get; set; }
-        public int SagsNr { get; set; }
-        public int AdvokatId { get; set; }
+        public int CaseID { get; set; }
+        public int employeeID { get; set; }
 
         public Service() { }
 
-        public Service( string startDato, string ydelsesBeskrivelse, string pris, string timer, int sagsNr, int advokatId)
+        public Service( string startDato, string services_description, string price, string timer, int caseID, int advokatId)
         {
            
-            StartDato = startDato;
-            YdelsesBeskrivelse = ydelsesBeskrivelse;
-            Pris = pris;
+            StartDate = startDato;
+            Services_description = services_description;
+            Price = price;
             Timer = timer;
-            SagsNr = sagsNr;
-            AdvokatId = advokatId;
+            CaseID = caseID;
+            employeeID = employeeID;
         }
     }
 }

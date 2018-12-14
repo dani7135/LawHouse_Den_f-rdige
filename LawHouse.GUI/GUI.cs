@@ -121,8 +121,8 @@ namespace LawHouse.GUI
                     textbox_CaseStartDate.Text = DateTime.Now.ToString("dd-MM-yyyy");
                     SetComboBox_ServiceType_CreateCase();
                      
-                    comboBox_Employee_CreateCase.DataSource = Controller.GetEmployeesFromCategory(selectedCategory.);
-                    //herfra slap jeg sidst
+                    comboBox_Employee_CreateCase.DataSource = Controller.GetEmployeesFromCategory(selectedCategory.Length);
+ 
 
                     toSwitchTo = tabPage_CreateCase;
                     break;

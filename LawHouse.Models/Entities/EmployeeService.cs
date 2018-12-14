@@ -4,14 +4,14 @@
     //Daniella
 
     {
-        public int AdvokatId { get; set; }
-        public int YdelsesTypeNr { get; set; }
+        public int ID { get; set; }
+        public int Services_descriptionID { get; set; }
 
         public EmployeeService() { }
-        public EmployeeService(int advokatId, int ydelsesTypeNr)
+        public EmployeeService(int advokatId, int services_description)
         {
-            AdvokatId = advokatId;
-            YdelsesTypeNr = ydelsesTypeNr;
+            ID = advokatId;
+            Services_descriptionID = services_description;
         }
     }
 }

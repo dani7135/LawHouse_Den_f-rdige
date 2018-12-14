@@ -8,7 +8,7 @@ namespace LawHouse.Shared.Entities
 {
     public class Education // Julius
     {
-        public int AdvokatId { get; set; }
+        public int EmployeeID { get; set; }
         public string Name { get; set; }
         public Education()
         {

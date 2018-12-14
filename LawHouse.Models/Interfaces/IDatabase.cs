@@ -37,7 +37,7 @@ namespace LawHouse.Shared.Interfaces
         #endregion
 
         #region ServiceType
-        List<ServiceType> GetAllServiceType();
+        List<Category> GetAllServiceType();
         #endregion
 
         //List<ListItems> GetAllList();

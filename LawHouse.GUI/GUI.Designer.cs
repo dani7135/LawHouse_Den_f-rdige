@@ -292,30 +292,30 @@
             // 
             // olvColumn_CaseID
             // 
-            this.olvColumn_CaseID.AspectName = "SagsNr";
+            this.olvColumn_CaseID.AspectName = "ID";
             this.olvColumn_CaseID.IsEditable = false;
             this.olvColumn_CaseID.Text = "SagsNr";
             // 
             // olvColumn_CaseTitle
             // 
-            this.olvColumn_CaseTitle.AspectName = "Arbejdstitel";
+            this.olvColumn_CaseTitle.AspectName = "WorkTitle";
             this.olvColumn_CaseTitle.IsEditable = false;
             this.olvColumn_CaseTitle.Text = "Arbejdstitel";
             // 
             // olvColumn_CaseStartDate
             // 
-            this.olvColumn_CaseStartDate.AspectName = "StartDato";
+            this.olvColumn_CaseStartDate.AspectName = "StartDate";
             this.olvColumn_CaseStartDate.IsEditable = false;
             this.olvColumn_CaseStartDate.Text = "StartDato";
             // 
             // olvColumn_CaseEndDate
             // 
-            this.olvColumn_CaseEndDate.AspectName = "SlutDato";
+            this.olvColumn_CaseEndDate.AspectName = "EndDate";
             this.olvColumn_CaseEndDate.Text = "SlutDato";
             // 
             // olvColumn_CaseKilometers
             // 
-            this.olvColumn_CaseKilometers.AspectName = "Kørselstimer";
+            this.olvColumn_CaseKilometers.AspectName = "Kiloemeters";
             this.olvColumn_CaseKilometers.Text = "Kørselstimer";
             // 
             // olvColumn_CaseEstimatedHours
@@ -325,7 +325,7 @@
             // 
             // olvColumn_CaseDescription
             // 
-            this.olvColumn_CaseDescription.AspectName = "SagsBeskrivelse";
+            this.olvColumn_CaseDescription.AspectName = "CaseDescription";
             this.olvColumn_CaseDescription.Text = "SagsBeskrivelse";
             this.olvColumn_CaseDescription.Width = 90;
             // 
@@ -336,13 +336,13 @@
             // 
             // olvColumn_ClientID
             // 
-            this.olvColumn_ClientID.AspectName = "KlientNr";
+            this.olvColumn_ClientID.AspectName = "ClientI";
             this.olvColumn_ClientID.IsEditable = false;
             this.olvColumn_ClientID.Text = "KlientNr";
             // 
             // olvColumn_CaseEmployeeID
             // 
-            this.olvColumn_CaseEmployeeID.AspectName = "AdvokatId";
+            this.olvColumn_CaseEmployeeID.AspectName = "EmployeeID";
             this.olvColumn_CaseEmployeeID.Text = "AdvokatNr";
             // 
             // olvColumn_ServiceTypeID
@@ -352,43 +352,43 @@
             // 
             // olvColumn_ClientName
             // 
-            this.olvColumn_ClientName.AspectName = "Navn";
+            this.olvColumn_ClientName.AspectName = "ID";
             this.olvColumn_ClientName.Text = "Klient Navn";
             // 
             // olvColumn_ClientAdress
             // 
-            this.olvColumn_ClientAdress.AspectName = "Adresse";
+            this.olvColumn_ClientAdress.AspectName = "Address";
             this.olvColumn_ClientAdress.Text = "Adresse";
             // 
             // olvColumn_ClientPhoneNumber
             // 
-            this.olvColumn_ClientPhoneNumber.AspectName = "TelefonNr";
+            this.olvColumn_ClientPhoneNumber.AspectName = "PhoneNo";
             this.olvColumn_ClientPhoneNumber.Text = "TelefonNr";
             // 
             // olvColumn_EmployeeID
             // 
-            this.olvColumn_EmployeeID.AspectName = "AdvokatId";
+            this.olvColumn_EmployeeID.AspectName = "ID";
             this.olvColumn_EmployeeID.Text = "AdvokatId";
             this.olvColumn_EmployeeID.Width = 107;
             // 
             // olvColumn_EmployeeName
             // 
-            this.olvColumn_EmployeeName.AspectName = "Navn";
+            this.olvColumn_EmployeeName.AspectName = "Name";
             this.olvColumn_EmployeeName.Text = "Advokat Navn";
             // 
             // olvColumn_ServiceID
             // 
-            this.olvColumn_ServiceID.AspectName = "YdelsesNr";
+            this.olvColumn_ServiceID.AspectName = "ID";
             this.olvColumn_ServiceID.Text = "Ydelses Nr";
             // 
             // olvColumn_ServiceDescription
             // 
-            this.olvColumn_ServiceDescription.AspectName = "YdelsesBeskrivelse";
+            this.olvColumn_ServiceDescription.AspectName = "Services_description";
             this.olvColumn_ServiceDescription.Text = "Ydelse Beskrivelse";
             // 
             // olvColumn_ServicePrice
             // 
-            this.olvColumn_ServicePrice.AspectName = "Pris";
+            this.olvColumn_ServicePrice.AspectName = "Price";
             this.olvColumn_ServicePrice.Text = "Pris";
             // 
             // olvColumn_ServiceHours
@@ -398,12 +398,12 @@
             // 
             // olvColumn_ServiceStartDate
             // 
-            this.olvColumn_ServiceStartDate.AspectName = "StartDato";
+            this.olvColumn_ServiceStartDate.AspectName = "StartDate";
             this.olvColumn_ServiceStartDate.Text = "Start dato";
             // 
             // olvColumn_ServiceEmployeeID
             // 
-            this.olvColumn_ServiceEmployeeID.AspectName = "AdvokatId";
+            this.olvColumn_ServiceEmployeeID.AspectName = "EmployeeID";
             this.olvColumn_ServiceEmployeeID.Text = "AdvokatNr";
             // 
             // tabPage_CreateCase
@@ -461,6 +461,7 @@
             // 
             // comboBox_Client
             // 
+            this.comboBox_Client.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_Client.FormattingEnabled = true;
             this.comboBox_Client.Location = new System.Drawing.Point(137, 272);
             this.comboBox_Client.Name = "comboBox_Client";
@@ -511,6 +512,7 @@
             // 
             // comboBox_Employee_CreateCase
             // 
+            this.comboBox_Employee_CreateCase.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_Employee_CreateCase.Location = new System.Drawing.Point(137, 230);
             this.comboBox_Employee_CreateCase.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox_Employee_CreateCase.Name = "comboBox_Employee_CreateCase";
@@ -761,7 +763,7 @@
             // 
             this.button_CreateEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button_CreateEmployee.AutoSize = true;
-            this.button_CreateEmployee.Location = new System.Drawing.Point(314, 10);
+            this.button_CreateEmployee.Location = new System.Drawing.Point(314, 12);
             this.button_CreateEmployee.Name = "button_CreateEmployee";
             this.button_CreateEmployee.Size = new System.Drawing.Size(108, 27);
             this.button_CreateEmployee.TabIndex = 0;

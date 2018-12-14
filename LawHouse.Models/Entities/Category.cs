@@ -1,16 +1,17 @@
 ﻿namespace LawHouse.Shared.Entities
 {
-    public class ServiceType
+    public class Category
         //Daniella
+        //YdelsesType
     {
         public int ID { get; set; }
         public string Name { get; set; }
 
-        public ServiceType() { }
-        public ServiceType(int ydelsesTypeNr, string ydelsesNavn)
+        public Category() { }
+        public Category(int id, string name)
         {
-            Name = ydelsesNavn;
-            ID = ydelsesTypeNr;
+            Name = name;
+            this.ID = id;
 
         }
     }
