@@ -205,14 +205,14 @@ namespace LawHouse.GUI
         {
             //create case...
             Client selectedClient = (Client)comboBox_Client_CreateCase.SelectedItem;
-            Employee selectedEmployee = (Employee)comboBox_Employee.SelectedItem;
-            Service selectedService = (Service)comboBox_Category_CreateCase.SelectedItem;
+            Employee selectedEmployee = (Employee)comboBox_Employee_CreateCase.SelectedItem;
+            Category selectedService = (Category)comboBox_Category_CreateCase.SelectedItem;
             Controller.CreateCase(textBox_CaseTitle.Text, textbox_CaseStartDate.Text, null, textbox_CaseKilometers.Text, textBox_CaseEstimatedHours.Text,
                 richTextBox_CaseDescription.Text, richTextBox_CaseNotes.Text, selectedClient.ID, selectedEmployee.ID, selectedService.ID);
             SetObjectListView_Overview();
             tabControl_Overview.TabPages.Remove(tabPage_CreateCase);
         }
-        private void button_CreateClient_Click(object sender, EventArgs e)//Thomas
+        private void button_CreateClient_Click(object sender, EventArgs e)//Daniella
         {
             try
             {
@@ -246,5 +246,11 @@ namespace LawHouse.GUI
             Set_ComboBox_Employee_CreateCase(selectedCategory.ID);
         }
         #endregion
+
+        private void button_Cancel_CreateCase_Click(object sender, EventArgs e)
+        {
+            tabControl_Overview.TabPages.Remove(tabControl_Overview.SelectedTab);
+            tabControl_Overview.TabPages.Clear();
+         }
     }
 }

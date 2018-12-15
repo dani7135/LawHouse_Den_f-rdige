@@ -106,7 +106,7 @@
             this.tabPage_CreateService = new System.Windows.Forms.TabPage();
             this.button_Cancel_CreateService = new System.Windows.Forms.Button();
             this.button_Help_CreateService = new System.Windows.Forms.Button();
-            this.comboBox_Employee = new System.Windows.Forms.ComboBox();
+            this.comboBox_Employee_CreateService = new System.Windows.Forms.ComboBox();
             this.comboBox_Case = new System.Windows.Forms.ComboBox();
             this.button_AddService = new System.Windows.Forms.Button();
             this.label_EmployID = new System.Windows.Forms.Label();
@@ -446,6 +446,7 @@
             this.button_Cancel_CreateCase.TabIndex = 86;
             this.button_Cancel_CreateCase.Text = "Annuller";
             this.button_Cancel_CreateCase.UseVisualStyleBackColor = true;
+            this.button_Cancel_CreateCase.Click += new System.EventHandler(this.button_Cancel_CreateCase_Click);
             // 
             // button_Help_CreateCase
             // 
@@ -882,7 +883,7 @@
             // 
             this.tabPage_CreateService.Controls.Add(this.button_Cancel_CreateService);
             this.tabPage_CreateService.Controls.Add(this.button_Help_CreateService);
-            this.tabPage_CreateService.Controls.Add(this.comboBox_Employee);
+            this.tabPage_CreateService.Controls.Add(this.comboBox_Employee_CreateService);
             this.tabPage_CreateService.Controls.Add(this.comboBox_Case);
             this.tabPage_CreateService.Controls.Add(this.button_AddService);
             this.tabPage_CreateService.Controls.Add(this.label_EmployID);
@@ -927,13 +928,13 @@
             this.button_Help_CreateService.Text = "?";
             this.button_Help_CreateService.UseVisualStyleBackColor = true;
             // 
-            // comboBox_Employee
+            // comboBox_Employee_CreateService
             // 
-            this.comboBox_Employee.FormattingEnabled = true;
-            this.comboBox_Employee.Location = new System.Drawing.Point(106, 281);
-            this.comboBox_Employee.Name = "comboBox_Employee";
-            this.comboBox_Employee.Size = new System.Drawing.Size(121, 24);
-            this.comboBox_Employee.TabIndex = 46;
+            this.comboBox_Employee_CreateService.FormattingEnabled = true;
+            this.comboBox_Employee_CreateService.Location = new System.Drawing.Point(106, 281);
+            this.comboBox_Employee_CreateService.Name = "comboBox_Employee_CreateService";
+            this.comboBox_Employee_CreateService.Size = new System.Drawing.Size(121, 24);
+            this.comboBox_Employee_CreateService.TabIndex = 46;
             // 
             // comboBox_Case
             // 
@@ -1158,7 +1159,7 @@
         private System.Windows.Forms.Button button_Help_CreateClient;
         private System.Windows.Forms.TabPage tabPage_CreateService;
         private System.Windows.Forms.Button button_Help_CreateService;
-        private System.Windows.Forms.ComboBox comboBox_Employee;
+        private System.Windows.Forms.ComboBox comboBox_Employee_CreateService;
         private System.Windows.Forms.ComboBox comboBox_Case;
         private System.Windows.Forms.Button button_AddService;
         private System.Windows.Forms.Label label_EmployID;

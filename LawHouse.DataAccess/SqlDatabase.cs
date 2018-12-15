@@ -36,8 +36,7 @@ namespace LawHouse.DataAccess
                     conn.Open();
                     com.Parameters.Add(new SqlParameter("Arbejdstitel", @case.WorkTitle));
                     com.Parameters.Add(new SqlParameter("Startdato", @case.StartDate));
-                    com.Parameters.Add(new SqlParameter("SlutDato", @case.EndDate));
-                    com.Parameters.Add(new SqlParameter("Kørselstimer", @case.Kilometers));
+                     com.Parameters.Add(new SqlParameter("Kørselstimer", @case.Kilometers));
                     com.Parameters.Add(new SqlParameter("TimeEstimat", @case.TimeEstimat));
                     com.Parameters.Add(new SqlParameter("SagsBeskrivelse", @case.CaseDescription));
                     com.Parameters.Add(new SqlParameter("InterneNoter", @case.internal_Notes));
