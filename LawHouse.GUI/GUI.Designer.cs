@@ -283,7 +283,6 @@
             this.objectListView_Overview.UseCompatibleStateImageBehavior = false;
             this.objectListView_Overview.UseFiltering = true;
             this.objectListView_Overview.View = System.Windows.Forms.View.Details;
-            this.objectListView_Overview.DoubleClick += new System.EventHandler(this.objectListView_Overview_DoubleClick);
             // 
             // olvColumn_Primary
             // 
@@ -403,7 +402,7 @@
             // 
             // olvColumn_ServiceEmployeeID
             // 
-            this.olvColumn_ServiceEmployeeID.AspectName = "EmployeeID";
+            this.olvColumn_ServiceEmployeeID.AspectName = "ID";
             this.olvColumn_ServiceEmployeeID.Text = "AdvokatNr";
             // 
             // tabPage_CreateCase
