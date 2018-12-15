@@ -41,7 +41,7 @@ namespace LawHouse.DataAccess
                     com.Parameters.Add(new SqlParameter("TimeEstimat", @case.TimeEstimat));
                     com.Parameters.Add(new SqlParameter("SagsBeskrivelse", @case.CaseDescription));
                     com.Parameters.Add(new SqlParameter("InterneNoter", @case.internal_Notes));
-                    com.Parameters.Add(new SqlParameter("KlientNr", @case.ClientName));
+                    com.Parameters.Add(new SqlParameter("KlientNr", @case.ClientNr));
                     com.Parameters.Add(new SqlParameter("AdvokatId", @case.EmployeeID));
                     com.Parameters.Add(new SqlParameter("YdelsesTypeNr", @case.CategoryID));
                     return (int)com.ExecuteScalar();
@@ -62,7 +62,7 @@ namespace LawHouse.DataAccess
             com.Parameters.Add(new SqlParameter("TimeEstimat", @case.TimeEstimat));
             com.Parameters.Add(new SqlParameter("SagsBeskrivelse", @case.CaseDescription));
             com.Parameters.Add(new SqlParameter("InterneNoter", @case.internal_Notes));
-            com.Parameters.Add(new SqlParameter("KlientNr", @case.ClientName));
+            com.Parameters.Add(new SqlParameter("KlientNr", @case.ClientNr));
             com.Parameters.Add(new SqlParameter("AdvokatId", @case.EmployeeID));
             com.Parameters.Add(new SqlParameter("YdelsesTypeNr", @case.CategoryID));
             SqlDatabaseUtilities.RunSqlCommand(sqlString, com);
@@ -87,7 +87,7 @@ namespace LawHouse.DataAccess
                 @sag.TimeEstimat = x[5];
                 @sag.CaseDescription = x[6];
                 @sag.internal_Notes = x[7];
-                @sag.ClientName = Convert.ToInt32(x[8]);
+                @sag.ClientNr = Convert.ToInt32(x[8]);
                 @sag.EmployeeID = Convert.ToInt32(x[9]);
                 @sag.CategoryID = Convert.ToInt32(x[10]);
                 listOfSag.Add(@sag);

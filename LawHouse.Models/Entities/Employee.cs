@@ -14,7 +14,7 @@
         public Employee(int employeeID, string name)
         {
             ID = employeeID;
-            this.Name = name;
+           Name = name;
         }
         public Employee(int advokatId, string navn, string training)
         {

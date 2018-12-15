@@ -12,7 +12,7 @@
         public string TimeEstimat { get; set; }     
         public string CaseDescription { get; set; } 
         public string internal_Notes { get; set; }
-        public int ClientName { get; set; }
+        public int ClientNr { get; set; }
         public int EmployeeID { get; set; }
         public int CategoryID { get; set; }
 
@@ -26,7 +26,7 @@
             TimeEstimat = timeEstimat;
             CaseDescription = sagsBeskrivelse;
             internal_Notes = interneNoter;
-            ClientName = klientNr;
+            ClientNr = klientNr;
             EmployeeID = advokatId;
             CategoryID = ydelsesTypeNr;
         }

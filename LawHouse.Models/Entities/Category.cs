@@ -11,7 +11,7 @@
         public Category(int id, string name)
         {
             Name = name;
-            this.ID = id;
+            ID = id;
 
         }
     }

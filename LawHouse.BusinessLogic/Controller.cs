@@ -107,7 +107,7 @@ namespace LawHouse.BusinessLogic
         #endregion
 
         #region ServiceType
-        public static List<Category> GetAllServiceType()
+        public static List<Category> GetAllCategory()
         {
             return currentDatabaseInstance.GetAllServiceType();
         }
