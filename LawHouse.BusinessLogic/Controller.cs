@@ -50,6 +50,7 @@ namespace LawHouse.BusinessLogic
         #endregion
 
         #region Client
+    
         public static void CreateClient(string navn, string adresse, string telefonNr)
         {
             Client kl = new Client(navn, adresse, telefonNr);

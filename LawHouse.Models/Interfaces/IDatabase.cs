@@ -22,6 +22,7 @@ namespace LawHouse.Shared.Interfaces
         void CreateClient(Client klient);
         void UpdateClient(Client klient);
         List<Client> GetAllClient();
+ 
         #endregion
 
         #region Service

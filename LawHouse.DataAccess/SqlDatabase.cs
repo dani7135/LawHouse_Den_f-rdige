@@ -195,6 +195,7 @@ namespace LawHouse.DataAccess
             }
             return listOfAdvokat;
         }
+        
 
         public List<EmployeeService> GetAllEmployeeService()// By Daniella //By Julius
         {

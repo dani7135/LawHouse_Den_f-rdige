@@ -62,7 +62,7 @@
             this.tabPage_CreateCase = new System.Windows.Forms.TabPage();
             this.button_Cancel_CreateCase = new System.Windows.Forms.Button();
             this.button_Help_CreateCase = new System.Windows.Forms.Button();
-            this.comboBox_Client = new System.Windows.Forms.ComboBox();
+            this.comboBox_Client_CreateCase = new System.Windows.Forms.ComboBox();
             this.richTextBox_CaseNotes = new System.Windows.Forms.RichTextBox();
             this.richTextBox_CaseDescription = new System.Windows.Forms.RichTextBox();
             this.button_CreateCase = new System.Windows.Forms.Button();
@@ -409,7 +409,7 @@
             // 
             this.tabPage_CreateCase.Controls.Add(this.button_Cancel_CreateCase);
             this.tabPage_CreateCase.Controls.Add(this.button_Help_CreateCase);
-            this.tabPage_CreateCase.Controls.Add(this.comboBox_Client);
+            this.tabPage_CreateCase.Controls.Add(this.comboBox_Client_CreateCase);
             this.tabPage_CreateCase.Controls.Add(this.richTextBox_CaseNotes);
             this.tabPage_CreateCase.Controls.Add(this.richTextBox_CaseDescription);
             this.tabPage_CreateCase.Controls.Add(this.button_CreateCase);
@@ -458,14 +458,14 @@
             this.button_Help_CreateCase.Text = "?";
             this.button_Help_CreateCase.UseVisualStyleBackColor = true;
             // 
-            // comboBox_Client
+            // comboBox_Client_CreateCase
             // 
-            this.comboBox_Client.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_Client.FormattingEnabled = true;
-            this.comboBox_Client.Location = new System.Drawing.Point(137, 272);
-            this.comboBox_Client.Name = "comboBox_Client";
-            this.comboBox_Client.Size = new System.Drawing.Size(169, 24);
-            this.comboBox_Client.TabIndex = 84;
+            this.comboBox_Client_CreateCase.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Client_CreateCase.FormattingEnabled = true;
+            this.comboBox_Client_CreateCase.Location = new System.Drawing.Point(137, 272);
+            this.comboBox_Client_CreateCase.Name = "comboBox_Client_CreateCase";
+            this.comboBox_Client_CreateCase.Size = new System.Drawing.Size(169, 24);
+            this.comboBox_Client_CreateCase.TabIndex = 84;
             // 
             // richTextBox_CaseNotes
             // 
@@ -1117,7 +1117,7 @@
         private BrightIdeasSoftware.OLVColumn olvColumn_CaseEmployeeID;
         private BrightIdeasSoftware.OLVColumn olvColumn_ServiceStartDate;
         private BrightIdeasSoftware.OLVColumn olvColumn_ServiceEmployeeID;
-        private System.Windows.Forms.ComboBox comboBox_Client;
+        private System.Windows.Forms.ComboBox comboBox_Client_CreateCase;
         private System.Windows.Forms.RichTextBox richTextBox_CaseNotes;
         private System.Windows.Forms.RichTextBox richTextBox_CaseDescription;
         private System.Windows.Forms.Button button_CreateCase;

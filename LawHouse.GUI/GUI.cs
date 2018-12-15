@@ -17,11 +17,12 @@ namespace LawHouse.GUI
             Set_ComboBox_Overview();
             Set_ComboBox_Category_CreateCase();
             Set_TabControl_Overview_Pages();
+            Set_ComboBox_Client_CreateCase();
             SetObjectListView_Overview();
         }
 
         #region Set Controls
-        private void SetObjectListView_Overview()
+        private void SetObjectListView_Overview()//Daniella
         {
             string selectedCategory = (string)comboBox_Overview.SelectedItem;
             ObjectListView_Overview_HideAllColums();
@@ -83,20 +84,29 @@ namespace LawHouse.GUI
             comboBox_Overview.Items.AddRange(entities);
             comboBox_Overview.SelectedIndex = 0;
         }
-         private void Set_ComboBox_Employee_CreateCase(int categoryID)//Daniella
-        {
-            comboBox_Employee_CreateCase.DataSource = Controller.GetEmployeesFromCategory(categoryID);
-            comboBox_Employee_CreateCase.DisplayMember = "Name";
-            comboBox_Employee_CreateCase.ValueMember = "ID";
-            comboBox_Employee_CreateCase.SelectedIndex = -1;
-        }
-
         private void Set_ComboBox_Category_CreateCase()//Daniella
         {
             comboBox_Category_CreateCase.DataSource = Controller.GetAllCategory();
             comboBox_Category_CreateCase.DisplayMember = "Name";
             comboBox_Category_CreateCase.ValueMember = "ID";
         }
+        private void Set_ComboBox_Employee_CreateCase(int categoryID)//Daniella
+        {
+            comboBox_Employee_CreateCase.DataSource = Controller.GetEmployeesFromCategory(categoryID);
+            comboBox_Employee_CreateCase.DisplayMember = "Name";
+            comboBox_Employee_CreateCase.ValueMember = "ID";
+            comboBox_Employee_CreateCase.SelectedIndex = -1;
+        }
+        private void Set_ComboBox_Client_CreateCase( )//Daniella
+        {
+            comboBox_Client_CreateCase.DataSource = Controller.GetAllClients();
+            comboBox_Client_CreateCase.DisplayMember = "Name";
+            comboBox_Client_CreateCase.ValueMember = "ID";
+            comboBox_Client_CreateCase.SelectedIndex = -1;
+        }
+
+
+
         private void Set_TabControl_Overview_Pages()//Julius
         {
             List<string> tabsToHideAtStartup = new List<string>();
@@ -194,7 +204,7 @@ namespace LawHouse.GUI
         private void button_CreateCase_Click(object sender, EventArgs e)//Daniella
         {
             //create case...
-            Client selectedClient = (Client)comboBox_Client.SelectedItem;
+            Client selectedClient = (Client)comboBox_Client_CreateCase.SelectedItem;
             Employee selectedEmployee = (Employee)comboBox_Employee.SelectedItem;
             Service selectedService = (Service)comboBox_Category_CreateCase.SelectedItem;
             Controller.CreateCase(textBox_CaseTitle.Text, textbox_CaseStartDate.Text, null, textbox_CaseKilometers.Text, textBox_CaseEstimatedHours.Text,
