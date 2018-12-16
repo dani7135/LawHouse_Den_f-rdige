@@ -249,10 +249,13 @@ namespace LawHouse.DataAccess
         {
             {
                 SqlCommand com = new SqlCommand();
-                string sqlString = $"INSERT INTO Ydelse( StartDato, YdelsesBeskrivelse, Pris, Timer, SagsNr, AdvokatId )" + $"values( @StartDato , @YdelsesBeskrivelse ,@ydelse.Pris  ,@Timer , @SagsNr , @AdvokatId )";
-
-                //            com.Parameters.Add(new SqlParameter("Arbejdstitel", @case.WorkTitle));
-
+                string sqlString = $"INSERT INTO Ydelse( StartDato, YdelsesBeskrivelse, Pris, Timer, SagsNr, AdvokatId )" + $"values( @StartDato , @YdelsesBeskrivelse ,@Pris  ,@Timer , @SagsNr , @AdvokatId )";
+                com.Parameters.Add(new SqlParameter("StartDato", ydelse.StartDate));
+                com.Parameters.Add(new SqlParameter("YdelsesBeskrivelse", ydelse.Services_description));
+                com.Parameters.Add(new SqlParameter("Pris", ydelse.Price));
+                com.Parameters.Add(new SqlParameter("Timer", ydelse.Timer));
+                com.Parameters.Add(new SqlParameter("SagsNr", ydelse.CaseID));
+                com.Parameters.Add(new SqlParameter("AdvokatId", ydelse.EmployeeID));
                 SqlDatabaseUtilities.RunSqlCommand(sqlString, com);
             }
             /*
