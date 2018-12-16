@@ -10,11 +10,11 @@
         public string Price { get; set; }
         public string Timer { get; set; }
         public int CaseID { get; set; }
-        public int employeeID { get; set; }
+        public int EmployeeID { get; set; }
 
         public Service() { }
 
-        public Service( string startDato, string services_description, string price, string timer, int caseID, int advokatId)
+        public Service( string startDato, string services_description, string price, string timer, int caseID, int employeeID)
         {
            
             StartDate = startDato;
@@ -22,7 +22,7 @@
             Price = price;
             Timer = timer;
             CaseID = caseID;
-            employeeID = employeeID;
+            EmployeeID = employeeID;
         }
     }
 }

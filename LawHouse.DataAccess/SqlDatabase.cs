@@ -250,8 +250,20 @@ namespace LawHouse.DataAccess
             {
                 SqlCommand com = new SqlCommand();
                 string sqlString = $"INSERT INTO Ydelse( StartDato, YdelsesBeskrivelse, Pris, Timer, SagsNr, AdvokatId )" + $"values( @StartDato , @YdelsesBeskrivelse ,@ydelse.Pris  ,@Timer , @SagsNr , @AdvokatId )";
+
+                //            com.Parameters.Add(new SqlParameter("Arbejdstitel", @case.WorkTitle));
+
                 SqlDatabaseUtilities.RunSqlCommand(sqlString, com);
             }
+            /*
+                    public void CreateClient(Client klient)//By Thomas
+        {
+            SqlCommand com = new SqlCommand();
+            string sqlString = $"INSERT INTO KLient(Navn, Adresse, TelefonNr) VALUES (@Navn , @Adresse , @TelefonNr)";
+            SqlDatabaseUtilities.RunSqlCommand(sqlString, com);
+
+        }
+             */
         }
         public void UpdateService(Service ydelse)
         {
@@ -277,7 +289,7 @@ namespace LawHouse.DataAccess
                 @ydelse.Price = x[3];
                 @ydelse.Timer = x[4];
                 @ydelse.CaseID = Convert.ToInt32(x[5]);
-                @ydelse.employeeID = Convert.ToInt32(x[6]);
+                @ydelse.EmployeeID = Convert.ToInt32(x[6]);
                 listOfYdelse.Add(@ydelse);
             }
             return listOfYdelse;
@@ -304,18 +316,21 @@ namespace LawHouse.DataAccess
 
         public List<Education> GetEducationsFromEmployee(int employeeID)//Dniella
         {
-            string sqlString = "SELECT * FROM Efteruddannelse" +
-                 $"WHERE AdvokatId = {employeeID}";
-            List<Education> listOfEfteruddannelse = new List<Education>();
+            string sqlString = "SELECT * FROM Efteruddannelse " +
+                 "JOIN Advokat ON Efteruddannelse.AdvokatId = Advokat.AdvokatId " +
+                 $"WHERE Efteruddannelse.AdvokatId = {employeeID}";
+     
+
+           List <Education> listOfEducation = new List<Education>();
             List<List<string>> rawReadValue = SqlDatabaseUtilities.GenericSqlStringDataReader(sqlString);
             foreach (List<string> x in rawReadValue)
             {
                 Education @Efteruddannelse = new Education();
                 @Efteruddannelse.Name = x[0];
                 @Efteruddannelse.EmployeeID = Convert.ToInt32(x[1]);
-                listOfEfteruddannelse.Add(@Efteruddannelse);
+                listOfEducation.Add(@Efteruddannelse);
             }
-            return listOfEfteruddannelse;
+            return listOfEducation;
 
         }
         public void AddEducationToEmployee(string efteruddannelse, int advokatId)// By Daniella

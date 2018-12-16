@@ -106,8 +106,8 @@
             this.tabPage_CreateService = new System.Windows.Forms.TabPage();
             this.button_Cancel_CreateService = new System.Windows.Forms.Button();
             this.button_Help_CreateService = new System.Windows.Forms.Button();
-            this.comboBox_Employee_CreateService = new System.Windows.Forms.ComboBox();
-            this.comboBox_Case = new System.Windows.Forms.ComboBox();
+            this.comboBox_Employee_Create_Service = new System.Windows.Forms.ComboBox();
+            this.comboBox_Case_Create_Service = new System.Windows.Forms.ComboBox();
             this.button_AddService = new System.Windows.Forms.Button();
             this.label_EmployID = new System.Windows.Forms.Label();
             this.label_Case = new System.Windows.Forms.Label();
@@ -710,7 +710,7 @@
             this.button_AddEducation_CreateEmployee.Name = "button_AddEducation_CreateEmployee";
             this.button_AddEducation_CreateEmployee.Size = new System.Drawing.Size(155, 27);
             this.button_AddEducation_CreateEmployee.TabIndex = 78;
-            this.button_AddEducation_CreateEmployee.Text = "Tilføj efteruddannelse";
+            this.button_AddEducation_CreateEmployee.Text = "Tilføj tjensteydelse";
             this.button_AddEducation_CreateEmployee.UseVisualStyleBackColor = true;
             this.button_AddEducation_CreateEmployee.Click += new System.EventHandler(this.button_AddSpeciality_CreateEmployee_Click);
             // 
@@ -730,9 +730,9 @@
             this.label_EmployeeEducation.AutoSize = true;
             this.label_EmployeeEducation.Location = new System.Drawing.Point(7, 48);
             this.label_EmployeeEducation.Name = "label_EmployeeEducation";
-            this.label_EmployeeEducation.Size = new System.Drawing.Size(112, 17);
+            this.label_EmployeeEducation.Size = new System.Drawing.Size(104, 17);
             this.label_EmployeeEducation.TabIndex = 76;
-            this.label_EmployeeEducation.Text = "Efteruddannelse";
+            this.label_EmployeeEducation.Text = "Tjenesteydelse";
             // 
             // textBox_EmployeeName
             // 
@@ -885,8 +885,8 @@
             // 
             this.tabPage_CreateService.Controls.Add(this.button_Cancel_CreateService);
             this.tabPage_CreateService.Controls.Add(this.button_Help_CreateService);
-            this.tabPage_CreateService.Controls.Add(this.comboBox_Employee_CreateService);
-            this.tabPage_CreateService.Controls.Add(this.comboBox_Case);
+            this.tabPage_CreateService.Controls.Add(this.comboBox_Employee_Create_Service);
+            this.tabPage_CreateService.Controls.Add(this.comboBox_Case_Create_Service);
             this.tabPage_CreateService.Controls.Add(this.button_AddService);
             this.tabPage_CreateService.Controls.Add(this.label_EmployID);
             this.tabPage_CreateService.Controls.Add(this.label_Case);
@@ -931,21 +931,21 @@
             this.button_Help_CreateService.Text = "?";
             this.button_Help_CreateService.UseVisualStyleBackColor = true;
             // 
-            // comboBox_Employee_CreateService
+            // comboBox_Employee_Create_Service
             // 
-            this.comboBox_Employee_CreateService.FormattingEnabled = true;
-            this.comboBox_Employee_CreateService.Location = new System.Drawing.Point(106, 281);
-            this.comboBox_Employee_CreateService.Name = "comboBox_Employee_CreateService";
-            this.comboBox_Employee_CreateService.Size = new System.Drawing.Size(121, 24);
-            this.comboBox_Employee_CreateService.TabIndex = 46;
+            this.comboBox_Employee_Create_Service.FormattingEnabled = true;
+            this.comboBox_Employee_Create_Service.Location = new System.Drawing.Point(106, 281);
+            this.comboBox_Employee_Create_Service.Name = "comboBox_Employee_Create_Service";
+            this.comboBox_Employee_Create_Service.Size = new System.Drawing.Size(121, 24);
+            this.comboBox_Employee_Create_Service.TabIndex = 46;
             // 
-            // comboBox_Case
+            // comboBox_Case_Create_Service
             // 
-            this.comboBox_Case.FormattingEnabled = true;
-            this.comboBox_Case.Location = new System.Drawing.Point(106, 238);
-            this.comboBox_Case.Name = "comboBox_Case";
-            this.comboBox_Case.Size = new System.Drawing.Size(121, 24);
-            this.comboBox_Case.TabIndex = 45;
+            this.comboBox_Case_Create_Service.FormattingEnabled = true;
+            this.comboBox_Case_Create_Service.Location = new System.Drawing.Point(106, 238);
+            this.comboBox_Case_Create_Service.Name = "comboBox_Case_Create_Service";
+            this.comboBox_Case_Create_Service.Size = new System.Drawing.Size(121, 24);
+            this.comboBox_Case_Create_Service.TabIndex = 45;
             // 
             // button_AddService
             // 
@@ -958,6 +958,7 @@
             this.button_AddService.TabIndex = 44;
             this.button_AddService.Text = "Tilføj ydelse";
             this.button_AddService.UseVisualStyleBackColor = true;
+            this.button_AddService.Click += new System.EventHandler(this.button_AddService_Click);
             // 
             // label_EmployID
             // 
@@ -1048,6 +1049,7 @@
             // 
             // textbox_ServiceStartDate
             // 
+            this.textbox_ServiceStartDate.Enabled = false;
             this.textbox_ServiceStartDate.Location = new System.Drawing.Point(106, 53);
             this.textbox_ServiceStartDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textbox_ServiceStartDate.Name = "textbox_ServiceStartDate";
@@ -1162,8 +1164,8 @@
         private System.Windows.Forms.Button button_Help_CreateClient;
         private System.Windows.Forms.TabPage tabPage_CreateService;
         private System.Windows.Forms.Button button_Help_CreateService;
-        private System.Windows.Forms.ComboBox comboBox_Employee_CreateService;
-        private System.Windows.Forms.ComboBox comboBox_Case;
+        private System.Windows.Forms.ComboBox comboBox_Employee_Create_Service;
+        private System.Windows.Forms.ComboBox comboBox_Case_Create_Service;
         private System.Windows.Forms.Button button_AddService;
         private System.Windows.Forms.Label label_EmployID;
         private System.Windows.Forms.Label label_Case;
