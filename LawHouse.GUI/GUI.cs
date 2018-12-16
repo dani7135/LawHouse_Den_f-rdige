@@ -18,6 +18,7 @@ namespace LawHouse.GUI
             Set_ComboBox_Category_CreateCase();
             Set_TabControl_Overview_Pages();
             Set_ComboBox_Client_CreateCase();
+            Set_ComboBox_Education_CreateEmployee();
             SetObjectListView_Overview();
         }
 
@@ -38,7 +39,7 @@ namespace LawHouse.GUI
                 case "Sag":
                     objectListView_Overview.SetObjects(Controller.GetAllSag());
                     List<Case> cases = objectListView_Overview.Objects.Cast<Case>().ToList();
-                    List<Case> doneCases = cases.Where(c => c.EndDate != " ").ToList();
+                    List<Case> doneCases = cases.Where(c =>  c.EndDate != default(DateTime)).ToList();
                     objectListView_Overview.DisableObjects(doneCases);
                     olvColumn_CaseID.IsVisible = true;
                     olvColumn_CaseTitle.IsVisible = true;
@@ -105,7 +106,12 @@ namespace LawHouse.GUI
             comboBox_Client_CreateCase.SelectedIndex = -1;
         }
 
-
+        private void Set_ComboBox_Education_CreateEmployee()
+        {
+            comboBox_Education_CreateEmployee.DataSource = Controller.GetAllEducations();
+            comboBox_Education_CreateEmployee.DisplayMember = "Name";
+            comboBox_Education_CreateEmployee.ValueMember ="EmployeeID";
+        }
 
         private void Set_TabControl_Overview_Pages()//Julius
         {
@@ -182,9 +188,10 @@ namespace LawHouse.GUI
         private void button_CreateEmployee_Click(object sender, EventArgs e)
         {
             currentEmployeeID = Controller.CreateAdvokat(textBox_EmployeeName.Text);
-            comboBox_Category_CreateCase.Enabled = true;
+            comboBox_Education_CreateEmployee.Enabled = true;
             listBox_EmployeeEducations_CreateEmployee.Enabled = true;
             button_AddEducation_CreateEmployee.Enabled = true;
+            
         }
 
         private void button_AddSpeciality_CreateEmployee_Click(object sender, EventArgs e)
@@ -207,7 +214,7 @@ namespace LawHouse.GUI
             Client selectedClient = (Client)comboBox_Client_CreateCase.SelectedItem;
             Employee selectedEmployee = (Employee)comboBox_Employee_CreateCase.SelectedItem;
             Category selectedService = (Category)comboBox_Category_CreateCase.SelectedItem;
-            Controller.CreateCase(textBox_CaseTitle.Text, textbox_CaseStartDate.Text, null, textbox_CaseKilometers.Text, textBox_CaseEstimatedHours.Text,
+            Controller.CreateCase(textBox_CaseTitle.Text, textbox_CaseStartDate.Text, default(DateTime), textbox_CaseKilometers.Text, textBox_CaseEstimatedHours.Text,
                 richTextBox_CaseDescription.Text, richTextBox_CaseNotes.Text, selectedClient.ID, selectedEmployee.ID, selectedService.ID);
             SetObjectListView_Overview();
             tabControl_Overview.TabPages.Remove(tabPage_CreateCase);
@@ -245,12 +252,26 @@ namespace LawHouse.GUI
             Category selectedCategory = (Category)comboBox_Category_CreateCase.SelectedItem;
             Set_ComboBox_Employee_CreateCase(selectedCategory.ID);
         }
-        #endregion
-
         private void button_Cancel_CreateCase_Click(object sender, EventArgs e)
         {
             tabControl_Overview.TabPages.Remove(tabControl_Overview.SelectedTab);
-            tabControl_Overview.TabPages.Clear();
-         }
+        }
+        private void button_Cancel_CreateEmployee_Click(object sender, EventArgs e)
+        {
+            tabControl_Overview.TabPages.Remove(tabControl_Overview.SelectedTab);
+        }
+        private void button_Cancel_CreateClient_Click(object sender, EventArgs e)
+        {
+            tabControl_Overview.TabPages.Remove(tabControl_Overview.SelectedTab);
+        }
+        private void button_Cancel_CreateService_Click(object sender, EventArgs e)
+        {
+            tabControl_Overview.TabPages.Remove(tabControl_Overview.SelectedTab);
+        }
+        #endregion
+
+
+
+
     }
 }

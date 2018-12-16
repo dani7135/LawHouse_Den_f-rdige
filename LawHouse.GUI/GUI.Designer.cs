@@ -667,6 +667,7 @@
             this.button_Cancel_CreateEmployee.TabIndex = 87;
             this.button_Cancel_CreateEmployee.Text = "Annuller";
             this.button_Cancel_CreateEmployee.UseVisualStyleBackColor = true;
+            this.button_Cancel_CreateEmployee.Click += new System.EventHandler(this.button_Cancel_CreateEmployee_Click);
             // 
             // button_Finished
             // 
@@ -764,7 +765,7 @@
             // 
             this.button_CreateEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button_CreateEmployee.AutoSize = true;
-            this.button_CreateEmployee.Location = new System.Drawing.Point(314, 12);
+            this.button_CreateEmployee.Location = new System.Drawing.Point(325, 16);
             this.button_CreateEmployee.Name = "button_CreateEmployee";
             this.button_CreateEmployee.Size = new System.Drawing.Size(108, 27);
             this.button_CreateEmployee.TabIndex = 0;
@@ -801,6 +802,7 @@
             this.button_Cancel_CreateClient.TabIndex = 88;
             this.button_Cancel_CreateClient.Text = "Annuller";
             this.button_Cancel_CreateClient.UseVisualStyleBackColor = true;
+            this.button_Cancel_CreateClient.Click += new System.EventHandler(this.button_Cancel_CreateClient_Click);
             // 
             // button_Help_CreateClient
             // 
@@ -916,6 +918,7 @@
             this.button_Cancel_CreateService.TabIndex = 88;
             this.button_Cancel_CreateService.Text = "Annuller";
             this.button_Cancel_CreateService.UseVisualStyleBackColor = true;
+            this.button_Cancel_CreateService.Click += new System.EventHandler(this.button_Cancel_CreateService_Click);
             // 
             // button_Help_CreateService
             // 

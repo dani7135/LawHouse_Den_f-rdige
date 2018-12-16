@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using LawHouse.DataAccess;
 using LawHouse.Shared.Entities;
 using LawHouse.Shared.Interfaces;
@@ -35,7 +36,7 @@ namespace LawHouse.BusinessLogic
         #endregion
 
         #region Case
-        public static int CreateCase(string arbejdstitel, string startDato, string slutDato, string kørselstimer,
+        public static int CreateCase(string arbejdstitel, string startDato, DateTime slutDato, string kørselstimer,
         string timeEstimat, string sagsBeskrivelse, string interneNoter, int klientNr, int advokatId, int ydelsesTypeNr)
         {
             Case @case = new Case(arbejdstitel, startDato, slutDato, kørselstimer, timeEstimat, sagsBeskrivelse, interneNoter, klientNr, advokatId, ydelsesTypeNr);
@@ -95,7 +96,10 @@ namespace LawHouse.BusinessLogic
         #endregion
 
         #region Education
-
+        public static List<Education> GetAllEducations()
+        {
+            return currentDatabaseInstance.GetAllEducation();
+        }
         public static List<Education> GetEducationsFromEmployee(int employeeID)
         {
             return currentDatabaseInstance.GetEducationsFromEmployee(employeeID);

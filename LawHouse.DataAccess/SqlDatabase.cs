@@ -28,7 +28,7 @@ namespace LawHouse.DataAccess
         public int CreateCase(Case @case)// By Daniella
         {//Grunden til at der den her er fordi den tager en case og opretter det ud for properties
             string sqlString = $"INSERT INTO Sag(Arbejdstitel, StartDato, SlutDato, Kørselstimer, TimeEstimat, SagsBeskrivelse, InterneNoter , KlientNr, AdvokatId, YdelsesTypeNr )" + $"values(@Arbejdstitel , @Startdato , @SlutDato , @Kørselstimer , @TimeEstimat ,  @SagsBeskrivelse,   @InterneNoter ,  @KlientNr,  @AdvokatId,  @YdelsesTypeNr) " +
-                               $"SELECT SCOPE_IDENTITY()";
+                               $"SELECT CAST(SCOPE_IDENTITY() AS int)";
             using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString))
             {
                 using (SqlCommand com = new SqlCommand(sqlString, conn))
@@ -36,7 +36,16 @@ namespace LawHouse.DataAccess
                     conn.Open();
                     com.Parameters.Add(new SqlParameter("Arbejdstitel", @case.WorkTitle));
                     com.Parameters.Add(new SqlParameter("Startdato", @case.StartDate));
-                     com.Parameters.Add(new SqlParameter("Kørselstimer", @case.Kilometers));
+                    if (@case.EndDate == null)
+                    {
+                        com.Parameters.Add(new SqlParameter("SlutDato", DBNull.Value));
+                    }
+                    else
+                    {
+                        com.Parameters.Add(new SqlParameter("SlutDato", @case.EndDate));
+
+                    }
+                    com.Parameters.Add(new SqlParameter("Kørselstimer", @case.Kilometers));
                     com.Parameters.Add(new SqlParameter("TimeEstimat", @case.TimeEstimat));
                     com.Parameters.Add(new SqlParameter("SagsBeskrivelse", @case.CaseDescription));
                     com.Parameters.Add(new SqlParameter("InterneNoter", @case.internal_Notes));
@@ -81,7 +90,8 @@ namespace LawHouse.DataAccess
                 @sag.ID = Convert.ToInt32(x[0]);
                 @sag.WorkTitle = x[1];
                 @sag.StartDate = x[2];
-                @sag.EndDate = x[3];
+                @sag.EndDate = DateTime.TryParse(x[3], out DateTime dateTime) ? dateTime : default(DateTime);
+
                 @sag.Kilometers = x[4];
                 @sag.TimeEstimat = x[5];
                 @sag.CaseDescription = x[6];
@@ -136,11 +146,12 @@ namespace LawHouse.DataAccess
         public int CreateEmployee(Employee advokat)// By Dennie
         {
             string sqlString = @"INSERT INTO Advokat(Navn) VALUES (@Navn)
-                                SELECT SCOPE_IDENTITY()";
+                                SELECT CAST(SCOPE_IDENTITY() AS int)";
             using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString))
             {
                 using (SqlCommand com = new SqlCommand(sqlString, conn))
                 {
+                    conn.Open();
                     com.Parameters.Add(new SqlParameter("Navn", advokat.Name));
                     return (int)com.ExecuteScalar();
                 }
@@ -194,7 +205,7 @@ namespace LawHouse.DataAccess
             }
             return listOfAdvokat;
         }
-        
+
 
         public List<EmployeeService> GetAllEmployeeService()// By Daniella //By Julius
         {
@@ -284,22 +295,37 @@ namespace LawHouse.DataAccess
             foreach (List<string> x in rawReadValue)
             {
                 Education @Efteruddannelse = new Education();
-                @Efteruddannelse.EmployeeID = Convert.ToInt32(x[0]);
-                @Efteruddannelse.Name = x[1];
+                @Efteruddannelse.Name = x[0];
+                @Efteruddannelse.EmployeeID = Convert.ToInt32(x[1]);
                 listOfEfteruddannelse.Add(@Efteruddannelse);
             }
             return listOfEfteruddannelse;
         }
 
-        public List<Education> GetEducationsFromEmployee(int employeeID)
+        public List<Education> GetEducationsFromEmployee(int employeeID)//Dniella
         {
-            throw new NotImplementedException();
+            string sqlString = "SELECT * FROM Efteruddannelse" +
+                 $"WHERE AdvokatId = {employeeID}";
+            List<Education> listOfEfteruddannelse = new List<Education>();
+            List<List<string>> rawReadValue = SqlDatabaseUtilities.GenericSqlStringDataReader(sqlString);
+            foreach (List<string> x in rawReadValue)
+            {
+                Education @Efteruddannelse = new Education();
+                @Efteruddannelse.Name = x[0];
+                @Efteruddannelse.EmployeeID = Convert.ToInt32(x[1]);
+                listOfEfteruddannelse.Add(@Efteruddannelse);
+            }
+            return listOfEfteruddannelse;
+
         }
-        public void AddEducationToEmployee(string efteruddannelse, int advokatId)// By DAniella
+        public void AddEducationToEmployee(string efteruddannelse, int advokatId)// By Daniella
         {
             SqlCommand com = new SqlCommand();
             string sqlString = $"INSERT INTO Efteruddannelse(Navn, AdvokatId) VALUES (@efteruddannelse, @advokatId)";
+            com.Parameters.Add(new SqlParameter("efteruddannelse", efteruddannelse));
+            com.Parameters.Add(new SqlParameter("advokatId", advokatId));
             SqlDatabaseUtilities.RunSqlCommand(sqlString, com);
+          
         }
         #endregion
 
