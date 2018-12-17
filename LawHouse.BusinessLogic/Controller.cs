@@ -29,8 +29,9 @@ namespace LawHouse.BusinessLogic
             return currentDatabaseInstance.GetEmployeesFromCategory(categoryID);
         }
 
-        public static void UpdateAdvokat(Employee employee)
+        public static void UpdateAdvokat(object objectToUpdate)
         {
+            Employee employee = (Employee)objectToUpdate;
             currentDatabaseInstance.UpdateEmployee(employee);
         }
         #endregion
@@ -48,18 +49,25 @@ namespace LawHouse.BusinessLogic
             List<Case> listToReturn = currentDatabaseInstance.GetAllCase();
             return listToReturn;
         }
+        public static void UpdateCase(object objectToUpdate)
+        {
+            Case @case = (Case)objectToUpdate;
+            currentDatabaseInstance.UpdateCase(@case);
+        }
         #endregion
 
         #region Client
-    
+
         public static void CreateClient(string navn, string adresse, string telefonNr)
         {
             Client kl = new Client(navn, adresse, telefonNr);
             currentDatabaseInstance.CreateClient(kl);
         }
 
-        public static void UpdateClient(Client client)
+        public static void UpdateClient(object objectToUpdate)
+        
         {
+            Client client = (Client)objectToUpdate;
             currentDatabaseInstance.UpdateClient(client);
         }
 
@@ -82,8 +90,10 @@ namespace LawHouse.BusinessLogic
             return currentDatabaseInstance.GetAllServices();
         }
 
-        public static void UpdateYdelse(Service service)
+        public static void UpdateYdelse(object objectToUpdate)
         {
+
+            Service service = (Service)objectToUpdate;
             currentDatabaseInstance.UpdateService(service);
         }
         #endregion

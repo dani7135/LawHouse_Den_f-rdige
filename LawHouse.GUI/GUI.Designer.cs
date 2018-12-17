@@ -214,6 +214,7 @@
             this.button_Overview_SaveChanges.TabIndex = 1;
             this.button_Overview_SaveChanges.Text = "Gem ændringer";
             this.button_Overview_SaveChanges.UseVisualStyleBackColor = true;
+            this.button_Overview_SaveChanges.Click += new System.EventHandler(this.button_Overview_SaveChanges_Click);
             // 
             // objectListView_Overview
             // 

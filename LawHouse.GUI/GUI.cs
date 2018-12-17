@@ -154,6 +154,36 @@ namespace LawHouse.GUI
 
         #endregion
 
+        #region Button_employee
+        private void button_CreateEmployee_Click(object sender, EventArgs e)
+        {
+            currentEmployeeID = Controller.CreateAdvokat(textBox_EmployeeName.Text);
+            comboBox_Education_CreateEmployee.Enabled = true;
+            listBox_EmployeeEducations_CreateEmployee.Enabled = true;
+            button_AddEducation_CreateEmployee.Enabled = true;
+
+        }
+        //DER ER FEJL HER, DEN SKAL LAVES OM TIL TJENSTE YDELSER
+        private void button_AddSpeciality_CreateEmployee_Click(object sender, EventArgs e)
+        {
+            Education selectedEducation = (Education)comboBox_Education_CreateEmployee.SelectedItem;
+            if (listBox_EmployeeEducations_CreateEmployee.Items.Count > 0)
+            {
+                List<Education> educationsInListBox = listBox_EmployeeEducations_CreateEmployee.Items.Cast<Education>().ToList();
+                if (!educationsInListBox.Any(education => education.Name == selectedEducation.Name))
+                    Controller.AddEducationToEmployee(selectedEducation.Name, currentEmployeeID);
+            }
+            else
+                Controller.AddEducationToEmployee(selectedEducation.Name, currentEmployeeID);
+            listBox_EmployeeEducations_CreateEmployee.DataSource = Controller.GetEducationsFromEmployee(currentEmployeeID);
+            listBox_EmployeeEducations_CreateEmployee.DisplayMember = "Name";
+        }
+        private void button_Cancel_CreateEmployee_Click(object sender, EventArgs e)
+        {
+            tabControl_Overview.TabPages.Remove(tabControl_Overview.SelectedTab);
+        }
+        #endregion
+
         #region Events
         private void comboBox_Overview_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -196,37 +226,12 @@ namespace LawHouse.GUI
                     break;
             }
             tabControl_Overview.SelectedTab = toSwitchTo;
-        }
+        }      
 
-     
+ 
+
 
        
-
-        private void button_CreateEmployee_Click(object sender, EventArgs e)
-        {
-            currentEmployeeID = Controller.CreateAdvokat(textBox_EmployeeName.Text);
-            comboBox_Education_CreateEmployee.Enabled = true;
-            listBox_EmployeeEducations_CreateEmployee.Enabled = true;
-            button_AddEducation_CreateEmployee.Enabled = true;
-            
-        }
-
-
-        //DER ER FEJL HER, DEN SKAL LAVES OM TIL TJENSTE YDELSER
-        private void button_AddSpeciality_CreateEmployee_Click(object sender, EventArgs e)
-        {
-            Education selectedEducation = (Education)comboBox_Education_CreateEmployee.SelectedItem;
-            if (listBox_EmployeeEducations_CreateEmployee.Items.Count > 0)
-            {
-                List<Education> educationsInListBox = listBox_EmployeeEducations_CreateEmployee.Items.Cast<Education>().ToList();
-                if (!educationsInListBox.Any(education => education.Name == selectedEducation.Name))
-                    Controller.AddEducationToEmployee(selectedEducation.Name, currentEmployeeID);
-            }
-            else
-                Controller.AddEducationToEmployee(selectedEducation.Name, currentEmployeeID);
-            listBox_EmployeeEducations_CreateEmployee.DataSource = Controller.GetEducationsFromEmployee(currentEmployeeID);
-            listBox_EmployeeEducations_CreateEmployee.DisplayMember = "Name";
-        }
         private void button_CreateCase_Click(object sender, EventArgs e)//Daniella
         {
             //create case...
@@ -273,10 +278,7 @@ namespace LawHouse.GUI
         {
             tabControl_Overview.TabPages.Remove(tabControl_Overview.SelectedTab);
         }
-        private void button_Cancel_CreateEmployee_Click(object sender, EventArgs e)
-        {
-            tabControl_Overview.TabPages.Remove(tabControl_Overview.SelectedTab);
-        }
+     
         private void button_Cancel_CreateClient_Click(object sender, EventArgs e)
         {
             tabControl_Overview.TabPages.Remove(tabControl_Overview.SelectedTab);
@@ -295,6 +297,24 @@ namespace LawHouse.GUI
                 selectedCase.ID, selectedEmployee.ID );
             SetObjectListView_Overview();
             tabControl_Overview.TabPages.Remove(tabPage_CreateService);
+        }
+
+        private void button_Overview_SaveChanges_Click(object sender, EventArgs e)//Daniella & Thomas
+        {
+         /*   foreach (object item in objectListView_Overview.Objects)
+            {
+                if (item is Case)
+                {
+                    Controller.UpdateCase(item);
+                }
+                else if (item is Employee)
+                {
+                    Controller.UpdateAdvokat(item);
+                }
+            }
+           */ 
+
+            
         }
     }
 }
