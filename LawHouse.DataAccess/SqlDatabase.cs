@@ -42,7 +42,8 @@ namespace LawHouse.DataAccess
                     }
                     else
                     {
-                        com.Parameters.Add(new SqlParameter("SlutDato", @case.EndDate));
+                        com.Parameters.Add(new SqlParameter("Slutdato",@case.EndDate.ToString()));
+                        //com.Parameters.AddWithValue("SlutDato", @case.EndDate).SqlDbType = SqlDbType.DateTime2;
 
                     }
                     com.Parameters.Add(new SqlParameter("Kørselstimer", @case.Kilometers));
