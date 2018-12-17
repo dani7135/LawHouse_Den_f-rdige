@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using LawHouse.Shared.Entities;
 using LawHouse.Shared.Interfaces;
 
+
 namespace LawHouse.DataAccess
 {
     //Singletone er blevet brugt nedenunder og i kontrolleren
@@ -36,15 +37,15 @@ namespace LawHouse.DataAccess
                     conn.Open();
                     com.Parameters.Add(new SqlParameter("Arbejdstitel", @case.WorkTitle));
                     com.Parameters.Add(new SqlParameter("Startdato", @case.StartDate));
-                    if (@case.EndDate == null)
+                /*    if (@case.EndDate == null)
                     {
                         com.Parameters.Add(new SqlParameter("SlutDato", DBNull.Value));
                     }
                     else
-                    {
+                    {*/
                         com.Parameters.Add(new SqlParameter("SlutDato", @case.EndDate));
 
-                    }
+                  //  }
                     com.Parameters.Add(new SqlParameter("Kørselstimer", @case.Kilometers));
                     com.Parameters.Add(new SqlParameter("TimeEstimat", @case.TimeEstimat));
                     com.Parameters.Add(new SqlParameter("SagsBeskrivelse", @case.CaseDescription));
@@ -90,8 +91,8 @@ namespace LawHouse.DataAccess
                 @sag.ID = Convert.ToInt32(x[0]);
                 @sag.WorkTitle = x[1];
                 @sag.StartDate = x[2];
-                @sag.EndDate = DateTime.TryParse(x[3], out DateTime dateTime) ? dateTime : default(DateTime);
-
+                //  @sag.EndDate = DateTime.TryParse(x[3], out DateTime dateTime) ? dateTime : default(DateTime);
+                sag.EndDate = x[3];
                 @sag.Kilometers = x[4];
                 @sag.TimeEstimat = x[5];
                 @sag.CaseDescription = x[6];
