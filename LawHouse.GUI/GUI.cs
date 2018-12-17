@@ -41,10 +41,10 @@ namespace LawHouse.GUI
                     break;
                 case "Sag":
                     objectListView_Overview.SetObjects(Controller.GetAllSag());
-                    //   List<Case> cases = objectListView_Overview.Objects.Cast<Case>().ToList();
-                    // List<Case> doneCases = cases.Where(c => c.EndDate != Nullable<DateTime> ;
+                    List<Case> cases = objectListView_Overview.Objects.Cast<Case>().ToList();
+                    List<Case> doneCases = cases.Where(c => c.EndDate != default(DateTime)).ToList() ;
                     olvColumn_CaseEndDate.IsVisible = true;
-                  //  objectListView_Overview.DisableObjects(doneCases);
+                    objectListView_Overview.DisableObjects(doneCases);
                     olvColumn_CaseID.IsVisible = true;
                     olvColumn_CaseTitle.IsVisible = true;
                     olvColumn_CaseStartDate.IsVisible = true;
@@ -202,7 +202,7 @@ namespace LawHouse.GUI
             Client selectedClient = (Client)comboBox_Client_CreateCase.SelectedItem;
             Employee selectedEmployee = (Employee)comboBox_Employee_CreateCase.SelectedItem;
             Category selectedService = (Category)comboBox_Category_CreateCase.SelectedItem;
-            Controller.CreateCase(textBox_CaseTitle.Text, textbox_CaseStartDate.Text, textBox1.Text /*default(DateTime)*/, textbox_CaseKilometers.Text, textBox_CaseEstimatedHours.Text,
+            Controller.CreateCase(textBox_CaseTitle.Text, textbox_CaseStartDate.Text, default(DateTime), textbox_CaseKilometers.Text, textBox_CaseEstimatedHours.Text,
                 richTextBox_CaseDescription.Text, richTextBox_CaseNotes.Text, selectedClient.ID, selectedEmployee.ID, selectedService.ID);
             SetObjectListView_Overview();
             Side.TabPages.Remove(tabPage_CreateCase);

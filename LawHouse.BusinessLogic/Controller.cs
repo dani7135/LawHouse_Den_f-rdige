@@ -37,7 +37,7 @@ namespace LawHouse.BusinessLogic
         #endregion
 
         #region Case
-        public static int CreateCase(string arbejdstitel, string startDato, string slutDato, string kørselstimer,
+        public static int CreateCase(string arbejdstitel, string startDato, DateTime slutDato, string kørselstimer,
         string timeEstimat, string sagsBeskrivelse, string interneNoter, int klientNr, int advokatId, int ydelsesTypeNr)
         {
             Case @case = new Case(arbejdstitel, startDato, slutDato, kørselstimer, timeEstimat, sagsBeskrivelse, interneNoter, klientNr, advokatId, ydelsesTypeNr);

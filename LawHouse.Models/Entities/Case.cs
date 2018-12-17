@@ -10,7 +10,7 @@ namespace LawHouse.Shared.Entities
         public string WorkTitle { get; set; }
         public string StartDate { get; set; }
 
-        public string EndDate { get; set; }
+        public DateTime EndDate { get; set; }
         public string Kilometers { get; set; }
         public string TimeEstimat { get; set; }
         public string CaseDescription { get; set; }
@@ -20,7 +20,7 @@ namespace LawHouse.Shared.Entities
         public int CategoryID { get; set; }
 
         public Case() { }
-        public Case(string arbejdstitel, string startDato, string slutDato, string kørselstimer, string timeEstimat, string sagsBeskrivelse, string interneNoter, int klientNr, int advokatId, int ydelsesTypeNr)
+        public Case(string arbejdstitel, string startDato, DateTime slutDato, string kørselstimer, string timeEstimat, string sagsBeskrivelse, string interneNoter, int klientNr, int advokatId, int ydelsesTypeNr)
         {//Daniella
             WorkTitle = arbejdstitel;
             StartDate = startDato;
