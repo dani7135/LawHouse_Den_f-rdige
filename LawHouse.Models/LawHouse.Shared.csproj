@@ -52,7 +52,7 @@
     <Compile Include="Entities\Case.cs" />
     <Compile Include="Entities\EmployeeService.cs" />
     <Compile Include="Entities\Service.cs" />
-    <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\ServiceType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

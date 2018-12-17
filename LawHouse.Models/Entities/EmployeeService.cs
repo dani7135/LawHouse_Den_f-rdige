@@ -4,14 +4,14 @@
     //Daniella
 
     {
-        public int ID { get; set; }
-        public int Services_descriptionID { get; set; }
+        public int EmployeeID { get; set; }
+        public int ServiceID { get; set; }
 
         public EmployeeService() { }
         public EmployeeService(int advokatId, int services_description)
         {
-            ID = advokatId;
-            Services_descriptionID = services_description;
+            EmployeeID = advokatId;
+            ServiceID = services_description;
         }
     }
 }

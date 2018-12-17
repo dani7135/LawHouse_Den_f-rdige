@@ -51,7 +51,7 @@ namespace LawHouse.DataAccess
                     com.Parameters.Add(new SqlParameter("InterneNoter", @case.internal_Notes));
                     com.Parameters.Add(new SqlParameter("KlientNr", @case.ClientNr));
                     com.Parameters.Add(new SqlParameter("AdvokatId", @case.EmployeeID));
-                    com.Parameters.Add(new SqlParameter("YdelsesTypeNr", @case.CategoryID));
+                    com.Parameters.Add(new SqlParameter("YdelsesTypeNr", @case.ServiceTypeID));
                     return (int)com.ExecuteScalar();
                 }
             }
@@ -72,7 +72,7 @@ namespace LawHouse.DataAccess
             com.Parameters.Add(new SqlParameter("InterneNoter", @case.internal_Notes));
             com.Parameters.Add(new SqlParameter("KlientNr", @case.ClientNr));
             com.Parameters.Add(new SqlParameter("AdvokatId", @case.EmployeeID));
-            com.Parameters.Add(new SqlParameter("YdelsesTypeNr", @case.CategoryID));
+            com.Parameters.Add(new SqlParameter("YdelsesTypeNr", @case.ServiceTypeID));
             SqlDatabaseUtilities.RunSqlCommand(sqlString, com);
         }
         public List<Case> GetAllCase()// By Daniella //By Julius
@@ -98,7 +98,7 @@ namespace LawHouse.DataAccess
                 @sag.internal_Notes = x[7];
                 @sag.ClientNr = Convert.ToInt32(x[8]);
                 @sag.EmployeeID = Convert.ToInt32(x[9]);
-                @sag.CategoryID = Convert.ToInt32(x[10]);
+                @sag.ServiceTypeID = Convert.ToInt32(x[10]);
                 listOfSag.Add(@sag);
             }
             return listOfSag;
@@ -187,7 +187,7 @@ namespace LawHouse.DataAccess
             return listOfAdvokat;
         }
 
-        public List<Employee> GetEmployeesFromCategory(int ydelsesTypeNr)// By Daniella //By Julius
+        public List<Employee> GetEmployeesFromServiceType(int ydelsesTypeNr)// By Daniella //By Julius
         {
             string sqlString = @"SELECT * FROM ADVOKAT
                                 JOIN Tjenesteydelse ON Tjenesteydelse.AdvokatId = Advokat.AdvokatId
@@ -217,8 +217,8 @@ namespace LawHouse.DataAccess
             foreach (List<string> x in rawReadValue)
             {
                 EmployeeService tjenesteydelse = new EmployeeService();
-                tjenesteydelse.ID = Convert.ToInt32(x[0]);
-                tjenesteydelse.Services_descriptionID = Convert.ToInt32(x[1]);
+                tjenesteydelse.EmployeeID = Convert.ToInt32(x[0]);
+                tjenesteydelse.ServiceID = Convert.ToInt32(x[1]);
                 listOfTjenesteydelse.Add(tjenesteydelse);
             }
             return listOfTjenesteydelse;
@@ -227,16 +227,16 @@ namespace LawHouse.DataAccess
 
         #region ServiceType
         //Den har med kategory med i stedet for employeeservis, så den skal nok laves om
-        public List<Category> GetAllServiceType()// By Daniella //By Julius
+        public List<ServiceType> GetAllServiceType()// By Daniella //By Julius
         {
             string sqlString = "SELECT * FROM YdelseType";
-            List<Category> listOfYdelsetype = new List<Category>();
+            List<ServiceType> listOfYdelsetype = new List<ServiceType>();
 
             List<List<string>> rawReadValue = SqlDatabaseUtilities.GenericSqlStringDataReader(sqlString);
 
             foreach (List<string> x in rawReadValue)
             {
-                Category @ydelseType = new Category();
+                ServiceType @ydelseType = new ServiceType();
                 @ydelseType.ID = Convert.ToInt32(x[0]);
                 @ydelseType.Name = x[1];
                 listOfYdelsetype.Add(@ydelseType);
@@ -349,24 +349,25 @@ namespace LawHouse.DataAccess
         #endregion
 
         #region EmployeeService
-        public void AddEmployeeServiceToEmployee(int id, int services_descriptionID)//By Julius
+        public void AddEmployeeServiceToEmployee(int id, int serviceTypeID)//By Julius
         {
             SqlCommand com = new SqlCommand();
             string sqlString = $"INSERT INTO Tjenesteydelse(AdvokatId, YdelsesTypeNr) VALUES (@advokatId, @ydelsesTypeNr)";
             com.Parameters.Add(new SqlParameter("advokatId", id));
-            com.Parameters.Add(new SqlParameter("ydelsesTypeNr", services_descriptionID));
+            com.Parameters.Add(new SqlParameter("ydelsesTypeNr", serviceTypeID));
             SqlDatabaseUtilities.RunSqlCommand(sqlString, com);
         }
-        public List<EmployeeService> GetEmployeeServices()//Daniella
+        public List<EmployeeService> GetEmployeeServices(int employeeID)//Daniella
         {
-            string sqlString = "SELECT * FROM Tjenesteydelse";
+            string sqlString = "SELECT * FROM Tjenesteydelse " +
+                                "Where AdvokatId = " + employeeID;
             List<EmployeeService> listofEmployeeService = new List<EmployeeService>();
             List<List<string>> rawReadValue = SqlDatabaseUtilities.GenericSqlStringDataReader(sqlString);
             foreach (List<string> x in rawReadValue)
             {
                 EmployeeService employeeService = new EmployeeService();
-                employeeService.ID = Convert.ToInt32(x[0]);
-                employeeService.Services_descriptionID = Convert.ToInt32(x[1]);
+                employeeService.EmployeeID = Convert.ToInt32(x[0]);
+                employeeService.ServiceID = Convert.ToInt32(x[1]);
                 listofEmployeeService.Add(employeeService);
             }
             return listofEmployeeService;

@@ -1,5 +1,4 @@
-﻿
-using LawHouse.BusinessLogic;
+﻿using LawHouse.BusinessLogic;
 using LawHouse.Shared.Entities;
 using System;
 using System.Collections.Generic;
@@ -16,11 +15,12 @@ namespace LawHouse.GUI
         {
             InitializeComponent();
             Set_ComboBox_Overview();
-            Set_ComboBox_Category_CreateCase();
+            Set_ComboBox_ServiceType_CreateCase();
             Set_TabControl_Overview_Pages();
             Set_ComboBox_Client_CreateCase();
             Set_ComboBox_Case_Service();
             Set_ComboBox_Employee_CreateService();
+            Set_ComboBox_ServiceType_CreateEmployee();
             SetObjectListView_Overview();
 
         }
@@ -28,9 +28,9 @@ namespace LawHouse.GUI
         #region Set Controls
         private void SetObjectListView_Overview()//Daniella
         {
-            string selectedCategory = (string)comboBox_Overview.SelectedItem;
+            string selectedServiceType = (string)comboBox_Overview.SelectedItem;
             ObjectListView_Overview_HideAllColums();
-            switch (selectedCategory)
+            switch (selectedServiceType)
             {
                 case "Klient":
                     objectListView_Overview.SetObjects(Controller.GetAllClients());
@@ -89,15 +89,15 @@ namespace LawHouse.GUI
             comboBox_Overview.Items.AddRange(entities);
             comboBox_Overview.SelectedIndex = 0;
         }
-        private void Set_ComboBox_Category_CreateCase()//Daniella
+        private void Set_ComboBox_ServiceType_CreateCase()//Daniella
         {
-            comboBox_Category_CreateCase.DataSource = Controller.GetAllCategory();
-            comboBox_Category_CreateCase.DisplayMember = "Name";
-            comboBox_Category_CreateCase.ValueMember = "ID";
+            comboBox_ServiceType_CreateCase.DataSource = Controller.GetAllServiceType();
+            comboBox_ServiceType_CreateCase.DisplayMember = "Name";
+            comboBox_ServiceType_CreateCase.ValueMember = "ID";
         }
-        private void Set_ComboBox_Employee_CreateCase(int categoryID)//Daniella
+        private void Set_ComboBox_Employee_CreateCase(int serviceTypeID)//Daniella
         {
-            comboBox_Employee_CreateCase.DataSource = Controller.GetEmployeesFromCategory(categoryID);
+            comboBox_Employee_CreateCase.DataSource = Controller.GetEmployeesFromServiceType(serviceTypeID);
             comboBox_Employee_CreateCase.DisplayMember = "Name";
             comboBox_Employee_CreateCase.ValueMember = "ID";
             comboBox_Employee_CreateCase.SelectedIndex = -1;
@@ -110,11 +110,11 @@ namespace LawHouse.GUI
             comboBox_Client_CreateCase.SelectedIndex = -1;
         }
 
-        private void Set_ComboBox_Education_CreateEmployee(int id)
+        private void Set_ComboBox_ServiceType_CreateEmployee()
         {
-            comboBox_Education_CreateEmployee.DataSource = Controller.GetEmployeeServices(id);
-            comboBox_Education_CreateEmployee.DisplayMember = "Services_descriptionID";
-            comboBox_Education_CreateEmployee.ValueMember = "ID";
+            comboBox_ServiceType_CreateEmployee.DataSource = Controller.GetAllServiceType();
+            comboBox_ServiceType_CreateEmployee.DisplayMember = "Name";
+            comboBox_ServiceType_CreateEmployee.ValueMember = "ID";
         }
         private void Set_ComboBox_Case_Service()
         {
@@ -130,9 +130,9 @@ namespace LawHouse.GUI
         }
         private void SetComboBox_ServiceType_CreateCase()//Daniella
         {
-            comboBox_Category_CreateCase.DataSource = Controller.GetAllCategory();
-            comboBox_Category_CreateCase.DisplayMember = "Name";
-            comboBox_Category_CreateCase.ValueMember = "ID";
+            comboBox_ServiceType_CreateCase.DataSource = Controller.GetAllServiceType();
+            comboBox_ServiceType_CreateCase.DisplayMember = "Name";
+            comboBox_ServiceType_CreateCase.ValueMember = "ID";
         }
 
         private void Set_TabControl_Overview_Pages()//Julius
@@ -159,9 +159,8 @@ namespace LawHouse.GUI
         #region Button_employee
         private void button_CreateEmployee_Click(object sender, EventArgs e)
         {
-             currentEmployeeID = Controller.CreateAdvokat(textBox_EmployeeName.Text);
-            Set_ComboBox_Education_CreateEmployee(currentEmployeeID);
-            comboBox_Education_CreateEmployee.Enabled = true;
+            currentEmployeeID = Controller.CreateAdvokat(textBox_EmployeeName.Text);
+            comboBox_ServiceType_CreateEmployee.Enabled = true;
             listBox_EmployeeService_CreateEmployee.Enabled = true;
             button_AddEducation_CreateEmployee.Enabled = true;
 
@@ -169,33 +168,24 @@ namespace LawHouse.GUI
         //DER ER FEJL HER, DEN SKAL LAVES OM TIL TJENSTE YDELSER
         private void button_AddSpeciality_CreateEmployee_Click(object sender, EventArgs e)
         {
-            EmployeeService selectedemployeeService = (EmployeeService)comboBox_Education_CreateEmployee.SelectedItem;
+            ServiceType selectedServiceType = comboBox_ServiceType_CreateEmployee.SelectedItem as ServiceType;
             if (listBox_EmployeeService_CreateEmployee.Items.Count > 0)
             {
-                List<EmployeeService> employeeService_InListBox = listBox_EmployeeService_CreateEmployee.Items.Cast<EmployeeService>().ToList();
-                if (!employeeService_InListBox.Any(employeeServise => employeeServise.Services_descriptionID == selectedemployeeService.ID)) 
-                Controller.AddEmployeeServiceToEmployee(selectedemployeeService.ID, currentEmployeeID);
+                List<EmployeeService> employeeService_InListBox = listBox_EmployeeService_CreateEmployee.Items.Cast<EmployeeService>().ToList(); //linq
+                if (!employeeService_InListBox.Any(employeeService => employeeService.ServiceID == selectedServiceType.ID))
+                    Controller.AddEmployeeServiceToEmployee(currentEmployeeID, selectedServiceType.ID);
             }
             else
-                Controller.AddEmployeeServiceToEmployee(selectedemployeeService.ID, currentEmployeeID);
-            listBox_EmployeeService_CreateEmployee.DataSource = Controller.GetEmployeeServices(currentEmployeeID);
-            listBox_EmployeeService_CreateEmployee.DisplayMember = "Navn";
-
-
-            /* Education selectedEducation = (Education)comboBox_Education_CreateEmployee.SelectedItem;
-
-
-              if (listBox_EmployeeEducations_CreateEmployee.Items.Count > 0)
-              {
-                  List<Education> educationsInListBox = listBox_EmployeeEducations_CreateEmployee.Items.Cast<Education>().ToList();
-                  if (!educationsInListBox.Any(education => education.Name == selectedEducation.Name))
-                      Controller.AddEducationToEmployee(selectedEducation.Name, currentEmployeeID);
-              }
-              else
-                  Controller.AddEducationToEmployee(selectedEducation.Name, currentEmployeeID);
-              listBox_EmployeeEducations_CreateEmployee.DataSource = Controller.GetEducationsFromEmployee(currentEmployeeID);
-              listBox_EmployeeEducations_CreateEmployee.DisplayMember = "Name";*/
+                Controller.AddEmployeeServiceToEmployee(currentEmployeeID, selectedServiceType.ID);
+            Set_ListBox_EmployeeService_CreateEmployee();
         }
+
+        private void Set_ListBox_EmployeeService_CreateEmployee()
+        {
+            listBox_EmployeeService_CreateEmployee.DataSource = Controller.GetEmployeeServices(currentEmployeeID);
+            listBox_EmployeeService_CreateEmployee.DisplayMember = "ServiceID";
+        }
+
         private void button_Cancel_CreateEmployee_Click(object sender, EventArgs e)
         {
             Side.TabPages.Remove(Side.SelectedTab);
@@ -209,7 +199,7 @@ namespace LawHouse.GUI
             //create case...
             Client selectedClient = (Client)comboBox_Client_CreateCase.SelectedItem;
             Employee selectedEmployee = (Employee)comboBox_Employee_CreateCase.SelectedItem;
-            Category selectedService = (Category)comboBox_Category_CreateCase.SelectedItem;
+            ServiceType selectedService = (ServiceType)comboBox_ServiceType_CreateCase.SelectedItem;
             Controller.CreateCase(textBox_CaseTitle.Text, textbox_CaseStartDate.Text, default(DateTime), textbox_CaseKilometers.Text, textBox_CaseEstimatedHours.Text,
                 richTextBox_CaseDescription.Text, richTextBox_CaseNotes.Text, selectedClient.ID, selectedEmployee.ID, selectedService.ID);
             SetObjectListView_Overview();
@@ -279,8 +269,8 @@ namespace LawHouse.GUI
         private void button_AddNew_Click(object sender, EventArgs e)//Julius
         {
             TabPage toSwitchTo = null;
-            string selectedCategory = (string)comboBox_Overview.SelectedItem;
-            switch (selectedCategory)
+            string selectedServiceType = (string)comboBox_Overview.SelectedItem;
+            switch (selectedServiceType)
             {
                 case "Sag":
                     if (!Side.TabPages.Contains(tabPage_CreateCase))
@@ -288,7 +278,7 @@ namespace LawHouse.GUI
                     textbox_CaseStartDate.Text = DateTime.Now.ToString("dd-MM-yyyy");
                     SetComboBox_ServiceType_CreateCase();
 
-                    comboBox_Employee_CreateCase.DataSource = Controller.GetEmployeesFromCategory(selectedCategory.Length);
+                    comboBox_Employee_CreateCase.DataSource = Controller.GetEmployeesFromServiceType(selectedServiceType.Length);
 
 
                     toSwitchTo = tabPage_CreateCase;
@@ -315,10 +305,10 @@ namespace LawHouse.GUI
         }
 
 
-        private void comboBox_Category_CreateCase_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox_ServiceType_CreateCase_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Category selectedCategory = (Category)comboBox_Category_CreateCase.SelectedItem;
-            Set_ComboBox_Employee_CreateCase(selectedCategory.ID);
+            ServiceType selectedServiceType = (ServiceType)comboBox_ServiceType_CreateCase.SelectedItem;
+            Set_ComboBox_Employee_CreateCase(selectedServiceType.ID);
         }
         #endregion
 
@@ -351,6 +341,6 @@ namespace LawHouse.GUI
 
         }
 
- 
+
     }
 }

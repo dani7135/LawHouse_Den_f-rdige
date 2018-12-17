@@ -17,7 +17,7 @@ namespace LawHouse.Shared.Entities
         public string internal_Notes { get; set; }
         public int ClientNr { get; set; }
         public int EmployeeID { get; set; }
-        public int CategoryID { get; set; }
+        public int ServiceTypeID { get; set; }
 
         public Case() { }
         public Case(string arbejdstitel, string startDato, DateTime slutDato, string kørselstimer, string timeEstimat, string sagsBeskrivelse, string interneNoter, int klientNr, int advokatId, int ydelsesTypeNr)
@@ -31,7 +31,7 @@ namespace LawHouse.Shared.Entities
             internal_Notes = interneNoter;
             ClientNr = klientNr;
             EmployeeID = advokatId;
-            CategoryID = ydelsesTypeNr;
+            ServiceTypeID = ydelsesTypeNr;
         }
     }
 }

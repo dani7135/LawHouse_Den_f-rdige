@@ -65,7 +65,7 @@
             this.button_Help_CreateEmployee = new System.Windows.Forms.Button();
             this.label_EmployeeEducation = new System.Windows.Forms.Label();
             this.textBox_EmployeeName = new System.Windows.Forms.TextBox();
-            this.comboBox_Education_CreateEmployee = new System.Windows.Forms.ComboBox();
+            this.comboBox_ServiceType_CreateEmployee = new System.Windows.Forms.ComboBox();
             this.label_EmployeeName = new System.Windows.Forms.Label();
             this.button_CreateEmployee = new System.Windows.Forms.Button();
             this.tabPage_CreateCase = new System.Windows.Forms.TabPage();
@@ -83,7 +83,7 @@
             this.comboBox_Employee_CreateCase = new System.Windows.Forms.ComboBox();
             this.label_Employee = new System.Windows.Forms.Label();
             this.label_Client = new System.Windows.Forms.Label();
-            this.comboBox_Category_CreateCase = new System.Windows.Forms.ComboBox();
+            this.comboBox_ServiceType_CreateCase = new System.Windows.Forms.ComboBox();
             this.label_Service = new System.Windows.Forms.Label();
             this.label_CaseTitle = new System.Windows.Forms.Label();
             this.label_CaseStartDate = new System.Windows.Forms.Label();
@@ -433,7 +433,7 @@
             this.tabPage_CreateEmployee.Controls.Add(this.button_Help_CreateEmployee);
             this.tabPage_CreateEmployee.Controls.Add(this.label_EmployeeEducation);
             this.tabPage_CreateEmployee.Controls.Add(this.textBox_EmployeeName);
-            this.tabPage_CreateEmployee.Controls.Add(this.comboBox_Education_CreateEmployee);
+            this.tabPage_CreateEmployee.Controls.Add(this.comboBox_ServiceType_CreateEmployee);
             this.tabPage_CreateEmployee.Controls.Add(this.label_EmployeeName);
             this.tabPage_CreateEmployee.Controls.Add(this.button_CreateEmployee);
             this.tabPage_CreateEmployee.Location = new System.Drawing.Point(4, 25);
@@ -530,13 +530,13 @@
             // 
             // comboBox_Education_CreateEmployee
             // 
-            this.comboBox_Education_CreateEmployee.Enabled = false;
-            this.comboBox_Education_CreateEmployee.FormattingEnabled = true;
-            this.comboBox_Education_CreateEmployee.Location = new System.Drawing.Point(139, 49);
-            this.comboBox_Education_CreateEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox_Education_CreateEmployee.Name = "comboBox_Education_CreateEmployee";
-            this.comboBox_Education_CreateEmployee.Size = new System.Drawing.Size(169, 24);
-            this.comboBox_Education_CreateEmployee.TabIndex = 74;
+            this.comboBox_ServiceType_CreateEmployee.Enabled = false;
+            this.comboBox_ServiceType_CreateEmployee.FormattingEnabled = true;
+            this.comboBox_ServiceType_CreateEmployee.Location = new System.Drawing.Point(139, 49);
+            this.comboBox_ServiceType_CreateEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox_ServiceType_CreateEmployee.Name = "comboBox_Education_CreateEmployee";
+            this.comboBox_ServiceType_CreateEmployee.Size = new System.Drawing.Size(169, 24);
+            this.comboBox_ServiceType_CreateEmployee.TabIndex = 74;
              // 
             // label_EmployeeName
             // 
@@ -576,7 +576,7 @@
             this.tabPage_CreateCase.Controls.Add(this.comboBox_Employee_CreateCase);
             this.tabPage_CreateCase.Controls.Add(this.label_Employee);
             this.tabPage_CreateCase.Controls.Add(this.label_Client);
-            this.tabPage_CreateCase.Controls.Add(this.comboBox_Category_CreateCase);
+            this.tabPage_CreateCase.Controls.Add(this.comboBox_ServiceType_CreateCase);
             this.tabPage_CreateCase.Controls.Add(this.label_Service);
             this.tabPage_CreateCase.Controls.Add(this.label_CaseTitle);
             this.tabPage_CreateCase.Controls.Add(this.label_CaseStartDate);
@@ -725,16 +725,16 @@
             this.label_Client.TabIndex = 78;
             this.label_Client.Text = "Klient*";
             // 
-            // comboBox_Category_CreateCase
+            // comboBox_ServiceType_CreateCase
             // 
-            this.comboBox_Category_CreateCase.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_Category_CreateCase.FormattingEnabled = true;
-            this.comboBox_Category_CreateCase.Location = new System.Drawing.Point(137, 16);
-            this.comboBox_Category_CreateCase.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox_Category_CreateCase.Name = "comboBox_Category_CreateCase";
-            this.comboBox_Category_CreateCase.Size = new System.Drawing.Size(169, 24);
-            this.comboBox_Category_CreateCase.TabIndex = 59;
-            this.comboBox_Category_CreateCase.SelectedIndexChanged += new System.EventHandler(this.comboBox_Category_CreateCase_SelectedIndexChanged);
+            this.comboBox_ServiceType_CreateCase.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_ServiceType_CreateCase.FormattingEnabled = true;
+            this.comboBox_ServiceType_CreateCase.Location = new System.Drawing.Point(137, 16);
+            this.comboBox_ServiceType_CreateCase.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox_ServiceType_CreateCase.Name = "comboBox_ServiceType_CreateCase";
+            this.comboBox_ServiceType_CreateCase.Size = new System.Drawing.Size(169, 24);
+            this.comboBox_ServiceType_CreateCase.TabIndex = 59;
+            this.comboBox_ServiceType_CreateCase.SelectedIndexChanged += new System.EventHandler(this.comboBox_ServiceType_CreateCase_SelectedIndexChanged);
             // 
             // label_Service
             // 
@@ -998,7 +998,7 @@
             // 
             // olvColumn_ServiceTypeID
             // 
-            this.olvColumn_ServiceTypeID.AspectName = "CategoryID";
+            this.olvColumn_ServiceTypeID.AspectName = "ServiceTypeID";
             this.olvColumn_ServiceTypeID.Text = "YdelsesTypeNr";
             // 
             // olvColumn_ClientName
@@ -1139,7 +1139,7 @@
         private System.Windows.Forms.Button button_Help_CreateEmployee;
         private System.Windows.Forms.Label label_EmployeeEducation;
         private System.Windows.Forms.TextBox textBox_EmployeeName;
-        private System.Windows.Forms.ComboBox comboBox_Education_CreateEmployee;
+        private System.Windows.Forms.ComboBox comboBox_ServiceType_CreateEmployee;
         private System.Windows.Forms.Label label_EmployeeName;
         private System.Windows.Forms.Button button_CreateEmployee;
         private System.Windows.Forms.TabPage tabPage_CreateCase;
@@ -1157,7 +1157,7 @@
         private System.Windows.Forms.ComboBox comboBox_Employee_CreateCase;
         private System.Windows.Forms.Label label_Employee;
         private System.Windows.Forms.Label label_Client;
-        private System.Windows.Forms.ComboBox comboBox_Category_CreateCase;
+        private System.Windows.Forms.ComboBox comboBox_ServiceType_CreateCase;
         private System.Windows.Forms.Label label_Service;
         private System.Windows.Forms.Label label_CaseTitle;
         private System.Windows.Forms.Label label_CaseStartDate;

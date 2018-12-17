@@ -8,7 +8,7 @@ namespace LawHouse.Shared.Interfaces
         #region Employee
         int CreateEmployee(Employee employee);
         List<Employee> GetAllEmployee();
-        List<Employee> GetEmployeesFromCategory(int serviceTypeID);
+        List<Employee> GetEmployeesFromServiceType(int serviceTypeID);
         void UpdateEmployee(Employee advokat);
         #endregion
 
@@ -38,7 +38,7 @@ namespace LawHouse.Shared.Interfaces
         #endregion
 
         #region ServiceType
-        List<Category> GetAllServiceType();
+        List<ServiceType> GetAllServiceType();
         #endregion
 
         //List<ListItems> GetAllList();
@@ -51,7 +51,7 @@ namespace LawHouse.Shared.Interfaces
 
         #region EmployeeService
         void AddEmployeeServiceToEmployee(int id, int services_descriptionID);
-        List<EmployeeService> GetEmployeeServices();
+        List<EmployeeService> GetEmployeeServices(int employeeID);
         #endregion
     }
 }

@@ -24,9 +24,9 @@ namespace LawHouse.BusinessLogic
         {
             return currentDatabaseInstance.GetAllEmployee();
         }
-        public static List<Employee> GetEmployeesFromCategory(int categoryID)
+        public static List<Employee> GetEmployeesFromServiceType(int serviceTypeID)
         {
-            return currentDatabaseInstance.GetEmployeesFromCategory(categoryID);
+            return currentDatabaseInstance.GetEmployeesFromServiceType(serviceTypeID);
         }
 
         public static void UpdateAdvokat(object objectToUpdate)
@@ -123,14 +123,14 @@ namespace LawHouse.BusinessLogic
         #endregion
 
         #region ServiceType
-        public static List<Category> GetAllCategory()
+        public static List<ServiceType> GetAllServiceType()
         {
             return currentDatabaseInstance.GetAllServiceType();
         }
 
-        public static List<EmployeeService>GetAllServise()
+        public static List<Service>GetAllServise()
         {
-            return currentDatabaseInstance.GetEmployeeServices();
+            return currentDatabaseInstance.GetAllServices();
         }
 
         #endregion
@@ -140,9 +140,9 @@ namespace LawHouse.BusinessLogic
            currentDatabaseInstance.AddEmployeeServiceToEmployee(id, services_descriptionID);
         }
 
-        public static List<EmployeeService> GetEmployeeServices( int id)
+        public static List<EmployeeService> GetEmployeeServices(int serviceTypeID)
         {
-            return currentDatabaseInstance.GetEmployeeServices();
+            return currentDatabaseInstance.GetEmployeeServices(serviceTypeID);
         }
         #endregion
 
