@@ -130,7 +130,7 @@ namespace LawHouse.BusinessLogic
 
         public static List<EmployeeService>GetAllServise()
         {
-            return currentDatabaseInstance.GetAllEmployeeService();
+            return currentDatabaseInstance.GetEmployeeServices();
         }
 
         #endregion
@@ -142,7 +142,7 @@ namespace LawHouse.BusinessLogic
 
         public static List<EmployeeService> GetEmployeeServices( int id)
         {
-            return currentDatabaseInstance.GetAllEmployeeService();
+            return currentDatabaseInstance.GetEmployeeServices();
         }
         #endregion
 

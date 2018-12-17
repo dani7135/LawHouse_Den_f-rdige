@@ -353,11 +353,13 @@ namespace LawHouse.DataAccess
         {
             SqlCommand com = new SqlCommand();
             string sqlString = $"INSERT INTO Tjenesteydelse(AdvokatId, YdelsesTypeNr) VALUES (@advokatId, @ydelsesTypeNr)";
+            com.Parameters.Add(new SqlParameter("advokatId", id));
+            com.Parameters.Add(new SqlParameter("ydelsesTypeNr", services_descriptionID));
             SqlDatabaseUtilities.RunSqlCommand(sqlString, com);
         }
-        public List<EmployeeService> GetEmployeeServices()
+        public List<EmployeeService> GetEmployeeServices()//Daniella
         {
-            string sqlString = "SELECT * FROMTjenesteydelse";
+            string sqlString = "SELECT * FROM Tjenesteydelse";
             List<EmployeeService> listofEmployeeService = new List<EmployeeService>();
             List<List<string>> rawReadValue = SqlDatabaseUtilities.GenericSqlStringDataReader(sqlString);
             foreach (List<string> x in rawReadValue)

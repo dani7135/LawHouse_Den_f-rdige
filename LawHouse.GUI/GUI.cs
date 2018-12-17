@@ -11,7 +11,7 @@ namespace LawHouse.GUI
     public partial class GUI : Form
     {
         // int currentEmployeeID;
-        int NewEmployeeID;
+        int currentEmployeeID;
         public GUI()
         {
             InitializeComponent();
@@ -19,7 +19,6 @@ namespace LawHouse.GUI
             Set_ComboBox_Category_CreateCase();
             Set_TabControl_Overview_Pages();
             Set_ComboBox_Client_CreateCase();
-            Set_ComboBox_Education_CreateEmployee();
             Set_ComboBox_Case_Service();
             Set_ComboBox_Employee_CreateService();
             SetObjectListView_Overview();
@@ -111,11 +110,11 @@ namespace LawHouse.GUI
             comboBox_Client_CreateCase.SelectedIndex = -1;
         }
 
-        private void Set_ComboBox_Education_CreateEmployee()
+        private void Set_ComboBox_Education_CreateEmployee(int id)
         {
-            comboBox_Education_CreateEmployee.DataSource = Controller.GetAllEducations();
-            comboBox_Education_CreateEmployee.DisplayMember = "Name";
-            comboBox_Education_CreateEmployee.ValueMember = "EmployeeID";
+            comboBox_Education_CreateEmployee.DataSource = Controller.GetEmployeeServices(id);
+            comboBox_Education_CreateEmployee.DisplayMember = "Services_descriptionID";
+            comboBox_Education_CreateEmployee.ValueMember = "ID";
         }
         private void Set_ComboBox_Case_Service()
         {
@@ -160,11 +159,10 @@ namespace LawHouse.GUI
         #region Button_employee
         private void button_CreateEmployee_Click(object sender, EventArgs e)
         {
-            // currentEmployeeID = Controller.CreateAdvokat(textBox_EmployeeName.Text);
-            NewEmployeeID = Controller.CreateAdvokat(textBox_EmployeeName.Text);
+             currentEmployeeID = Controller.CreateAdvokat(textBox_EmployeeName.Text);
+            Set_ComboBox_Education_CreateEmployee(currentEmployeeID);
             comboBox_Education_CreateEmployee.Enabled = true;
             listBox_EmployeeService_CreateEmployee.Enabled = true;
-
             button_AddEducation_CreateEmployee.Enabled = true;
 
         }
@@ -175,12 +173,12 @@ namespace LawHouse.GUI
             if (listBox_EmployeeService_CreateEmployee.Items.Count > 0)
             {
                 List<EmployeeService> employeeService_InListBox = listBox_EmployeeService_CreateEmployee.Items.Cast<EmployeeService>().ToList();
-                if (!employeeService_InListBox.Any(employeeServise => employeeServise.Services_descriptionID == selectedemployeeService.ID)) { }
-                Controller.AddEmployeeServiceToEmployee(selectedemployeeService.ID, NewEmployeeID);
+                if (!employeeService_InListBox.Any(employeeServise => employeeServise.Services_descriptionID == selectedemployeeService.ID)) 
+                Controller.AddEmployeeServiceToEmployee(selectedemployeeService.ID, currentEmployeeID);
             }
             else
-                Controller.AddEmployeeServiceToEmployee(selectedemployeeService.ID, NewEmployeeID);
-            listBox_EmployeeService_CreateEmployee.DataSource = Controller.GetEmployeeServices(NewEmployeeID);
+                Controller.AddEmployeeServiceToEmployee(selectedemployeeService.ID, currentEmployeeID);
+            listBox_EmployeeService_CreateEmployee.DataSource = Controller.GetEmployeeServices(currentEmployeeID);
             listBox_EmployeeService_CreateEmployee.DisplayMember = "Navn";
 
 
@@ -202,6 +200,7 @@ namespace LawHouse.GUI
         {
             Side.TabPages.Remove(Side.SelectedTab);
         }
+
         #endregion
 
         #region Button_case
@@ -351,5 +350,7 @@ namespace LawHouse.GUI
 
 
         }
+
+ 
     }
 }

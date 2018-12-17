@@ -69,7 +69,6 @@
             this.label_EmployeeName = new System.Windows.Forms.Label();
             this.button_CreateEmployee = new System.Windows.Forms.Button();
             this.tabPage_CreateCase = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button_Cancel_CreateCase = new System.Windows.Forms.Button();
             this.button_Help_CreateCase = new System.Windows.Forms.Button();
             this.comboBox_Client_CreateCase = new System.Windows.Forms.ComboBox();
@@ -91,6 +90,7 @@
             this.label_CaseKilometers = new System.Windows.Forms.Label();
             this.label_CaseDescription = new System.Windows.Forms.Label();
             this.label_CaseEstimatedHours = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage_Overview = new System.Windows.Forms.TabPage();
             this.button_Help_Overview = new System.Windows.Forms.Button();
             this.button_AddNew = new System.Windows.Forms.Button();
@@ -537,7 +537,7 @@
             this.comboBox_Education_CreateEmployee.Name = "comboBox_Education_CreateEmployee";
             this.comboBox_Education_CreateEmployee.Size = new System.Drawing.Size(169, 24);
             this.comboBox_Education_CreateEmployee.TabIndex = 74;
-            // 
+             // 
             // label_EmployeeName
             // 
             this.label_EmployeeName.AutoSize = true;
@@ -590,13 +590,6 @@
             this.tabPage_CreateCase.TabIndex = 1;
             this.tabPage_CreateCase.Text = "Opret Sag";
             this.tabPage_CreateCase.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(13, 430);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(10, 22);
-            this.textBox1.TabIndex = 87;
             // 
             // button_Cancel_CreateCase
             // 
@@ -797,6 +790,13 @@
             this.label_CaseEstimatedHours.Size = new System.Drawing.Size(88, 17);
             this.label_CaseEstimatedHours.TabIndex = 67;
             this.label_CaseEstimatedHours.Text = "Time estimat";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(13, 430);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(10, 22);
+            this.textBox1.TabIndex = 87;
             // 
             // tabPage_Overview
             // 

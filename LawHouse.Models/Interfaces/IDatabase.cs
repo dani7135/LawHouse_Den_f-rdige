@@ -34,7 +34,7 @@ namespace LawHouse.Shared.Interfaces
         #endregion
 
         #region EmployeeService
-        List<EmployeeService> GetAllEmployeeService();
+        //List<EmployeeService> GetAllEmployeeService();
         #endregion
 
         #region ServiceType
