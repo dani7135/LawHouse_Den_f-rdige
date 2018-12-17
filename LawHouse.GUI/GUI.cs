@@ -184,6 +184,73 @@ namespace LawHouse.GUI
         }
         #endregion
 
+        #region Button_case
+        private void button_CreateCase_Click(object sender, EventArgs e)//Daniella
+        {
+            //create case...
+            Client selectedClient = (Client)comboBox_Client_CreateCase.SelectedItem;
+            Employee selectedEmployee = (Employee)comboBox_Employee_CreateCase.SelectedItem;
+            Category selectedService = (Category)comboBox_Category_CreateCase.SelectedItem;
+            Controller.CreateCase(textBox_CaseTitle.Text, textbox_CaseStartDate.Text, default(DateTime), textbox_CaseKilometers.Text, textBox_CaseEstimatedHours.Text,
+                richTextBox_CaseDescription.Text, richTextBox_CaseNotes.Text, selectedClient.ID, selectedEmployee.ID, selectedService.ID);
+            SetObjectListView_Overview();
+            tabControl_Overview.TabPages.Remove(tabPage_CreateCase);
+        }
+        private void button_Cancel_CreateCase_Click(object sender, EventArgs e)
+        {
+            tabControl_Overview.TabPages.Remove(tabControl_Overview.SelectedTab);
+        }
+        #endregion
+
+        #region Client
+        private void button_CreateClient_Click(object sender, EventArgs e)//Daniella
+        {
+            try
+            {
+                string navn = textBox_ClientName.Text;
+                string Adresse = textbox_ClientAdress.Text;
+                string TelefonNr = textBox_ClientPhoneNumber.Text;
+                Controller.CreateClient(navn, Adresse, TelefonNr);
+                MessageBox.Show("Oprettet");
+                textBox_ClientName.Clear();
+                textbox_ClientAdress.Clear();
+                textBox_ClientPhoneNumber.Clear();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ikke alt er valgt, gå venligst tilbage og indtast informatioen ");
+
+            }
+            SetObjectListView_Overview();
+            tabControl_Overview.TabPages.Remove(tabPage_CreateClient);
+        }
+        private void button_Finished_Click(object sender, EventArgs e)
+        {
+            SetObjectListView_Overview();
+            tabControl_Overview.TabPages.Remove(tabPage_CreateEmployee);
+        }
+        private void button_Cancel_CreateClient_Click(object sender, EventArgs e)
+        {
+            tabControl_Overview.TabPages.Remove(tabControl_Overview.SelectedTab);
+        }
+        #endregion
+
+        #region Service
+        private void button_Cancel_CreateService_Click(object sender, EventArgs e)
+        {
+            tabControl_Overview.TabPages.Remove(tabControl_Overview.SelectedTab);
+        }
+        private void button_AddService_Click(object sender, EventArgs e)
+        {
+            Case selectedCase = (Case)comboBox_Case_Create_Service.SelectedItem;
+            Employee selectedEmployee = (Employee)comboBox_Employee_Create_Service.SelectedItem;
+            Controller.CreateService(textbox_ServiceStartDate.Text, textBox_ServiceDescription.Text, textBox_ServicePrice.Text, label_ServiceHours.Text,
+                selectedCase.ID, selectedEmployee.ID);
+            SetObjectListView_Overview();
+            tabControl_Overview.TabPages.Remove(tabPage_CreateService);
+        }
+        #endregion
+
         #region Events
         private void comboBox_Overview_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -227,77 +294,16 @@ namespace LawHouse.GUI
             }
             tabControl_Overview.SelectedTab = toSwitchTo;
         }      
-
  
-
-
-       
-        private void button_CreateCase_Click(object sender, EventArgs e)//Daniella
-        {
-            //create case...
-            Client selectedClient = (Client)comboBox_Client_CreateCase.SelectedItem;
-            Employee selectedEmployee = (Employee)comboBox_Employee_CreateCase.SelectedItem;
-            Category selectedService = (Category)comboBox_Category_CreateCase.SelectedItem;
-            Controller.CreateCase(textBox_CaseTitle.Text, textbox_CaseStartDate.Text, default(DateTime), textbox_CaseKilometers.Text, textBox_CaseEstimatedHours.Text,
-                richTextBox_CaseDescription.Text, richTextBox_CaseNotes.Text, selectedClient.ID, selectedEmployee.ID, selectedService.ID);
-            SetObjectListView_Overview();
-            tabControl_Overview.TabPages.Remove(tabPage_CreateCase);
-        }
-        private void button_CreateClient_Click(object sender, EventArgs e)//Daniella
-        {
-            try
-            {
-                string navn = textBox_ClientName.Text;
-                string Adresse = textbox_ClientAdress.Text;
-                string TelefonNr = textBox_ClientPhoneNumber.Text;
-                Controller.CreateClient(navn, Adresse, TelefonNr);
-                MessageBox.Show("Oprettet");
-                textBox_ClientName.Clear();
-                textbox_ClientAdress.Clear();
-                textBox_ClientPhoneNumber.Clear();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Ikke alt er valgt, gå venligst tilbage og indtast informatioen ");
-
-            }
-            SetObjectListView_Overview();
-            tabControl_Overview.TabPages.Remove(tabPage_CreateClient);
-        }
-        private void button_Finished_Click(object sender, EventArgs e)
-        {
-            SetObjectListView_Overview();
-            tabControl_Overview.TabPages.Remove(tabPage_CreateEmployee);
-        }
+    
         private void comboBox_Category_CreateCase_SelectedIndexChanged(object sender, EventArgs e)
         {
             Category selectedCategory = (Category)comboBox_Category_CreateCase.SelectedItem;
             Set_ComboBox_Employee_CreateCase(selectedCategory.ID);
         }
-        private void button_Cancel_CreateCase_Click(object sender, EventArgs e)
-        {
-            tabControl_Overview.TabPages.Remove(tabControl_Overview.SelectedTab);
-        }
-     
-        private void button_Cancel_CreateClient_Click(object sender, EventArgs e)
-        {
-            tabControl_Overview.TabPages.Remove(tabControl_Overview.SelectedTab);
-        }
-        private void button_Cancel_CreateService_Click(object sender, EventArgs e)
-        {
-            tabControl_Overview.TabPages.Remove(tabControl_Overview.SelectedTab);
-        }
         #endregion
 
-        private void button_AddService_Click(object sender, EventArgs e)
-        {
-            Case selectedCase = (Case)comboBox_Case_Create_Service.SelectedItem;
-            Employee selectedEmployee = (Employee)comboBox_Employee_Create_Service.SelectedItem;
-            Controller.CreateService(textbox_ServiceStartDate.Text, textBox_ServiceDescription.Text, textBox_ServicePrice.Text, label_ServiceHours.Text,
-                selectedCase.ID, selectedEmployee.ID );
-            SetObjectListView_Overview();
-            tabControl_Overview.TabPages.Remove(tabPage_CreateService);
-        }
+       
 
         private void button_Overview_SaveChanges_Click(object sender, EventArgs e)//Daniella & Thomas
         {
