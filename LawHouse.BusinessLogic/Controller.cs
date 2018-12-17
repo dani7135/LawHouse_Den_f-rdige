@@ -79,7 +79,7 @@ namespace LawHouse.BusinessLogic
         #endregion
 
         #region Service
-        public static void CreateService(string startDato, string ydelseBeskrivelse, string pris, string timer, int sagsNr, int advokatId)
+        public static void CreateService(string startDato, string ydelseBeskrivelse, int pris, int timer, int sagsNr, int advokatId)
         {
             Service @ydelse = new Service(startDato, ydelseBeskrivelse, pris, timer, sagsNr, advokatId);
             currentDatabaseInstance.CreateService(@ydelse);
@@ -110,6 +110,7 @@ namespace LawHouse.BusinessLogic
         {
             return currentDatabaseInstance.GetAllEducation();
         }
+
         public static List<Education> GetEducationsFromEmployee(int employeeID)
         {
             return currentDatabaseInstance.GetEducationsFromEmployee(employeeID);
@@ -125,6 +126,23 @@ namespace LawHouse.BusinessLogic
         public static List<Category> GetAllCategory()
         {
             return currentDatabaseInstance.GetAllServiceType();
+        }
+
+        public static List<EmployeeService>GetAllServise()
+        {
+            return currentDatabaseInstance.GetAllEmployeeService();
+        }
+
+        #endregion
+        #region EmployeeService
+        public static void AddEmployeeServiceToEmployee(int id,int services_descriptionID)
+        {
+           currentDatabaseInstance.AddEmployeeServiceToEmployee(id, services_descriptionID);
+        }
+
+        public static List<EmployeeService> GetEmployeeServices( int id)
+        {
+            return currentDatabaseInstance.GetAllEmployeeService();
         }
         #endregion
 

@@ -49,6 +49,9 @@ namespace LawHouse.Shared.Interfaces
         void AddEducationToEmployee(string educationName, int employeeID);
         #endregion
 
-
+        #region EmployeeService
+        void AddEmployeeServiceToEmployee(int id, int services_descriptionID);
+        List<EmployeeService> GetEmployeeServices();
+        #endregion
     }
 }

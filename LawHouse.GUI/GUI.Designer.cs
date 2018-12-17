@@ -59,7 +59,7 @@
             this.tabPage_CreateEmployee = new System.Windows.Forms.TabPage();
             this.button_Cancel_CreateEmployee = new System.Windows.Forms.Button();
             this.button_Finished = new System.Windows.Forms.Button();
-            this.listBox_EmployeeEducations_CreateEmployee = new System.Windows.Forms.ListBox();
+            this.listBox_EmployeeService_CreateEmployee = new System.Windows.Forms.ListBox();
             this.label_AddedEmployeeSpecialities = new System.Windows.Forms.Label();
             this.button_AddEducation_CreateEmployee = new System.Windows.Forms.Button();
             this.button_Help_CreateEmployee = new System.Windows.Forms.Button();
@@ -69,6 +69,7 @@
             this.label_EmployeeName = new System.Windows.Forms.Label();
             this.button_CreateEmployee = new System.Windows.Forms.Button();
             this.tabPage_CreateCase = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button_Cancel_CreateCase = new System.Windows.Forms.Button();
             this.button_Help_CreateCase = new System.Windows.Forms.Button();
             this.comboBox_Client_CreateCase = new System.Windows.Forms.ComboBox();
@@ -121,7 +122,6 @@
             this.olvColumn_ServiceStartDate = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn_ServiceEmployeeID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Side = new System.Windows.Forms.TabControl();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage_CreateService.SuspendLayout();
             this.tabPage_CreateClient.SuspendLayout();
             this.tabPage_CreateEmployee.SuspendLayout();
@@ -427,7 +427,7 @@
             // 
             this.tabPage_CreateEmployee.Controls.Add(this.button_Cancel_CreateEmployee);
             this.tabPage_CreateEmployee.Controls.Add(this.button_Finished);
-            this.tabPage_CreateEmployee.Controls.Add(this.listBox_EmployeeEducations_CreateEmployee);
+            this.tabPage_CreateEmployee.Controls.Add(this.listBox_EmployeeService_CreateEmployee);
             this.tabPage_CreateEmployee.Controls.Add(this.label_AddedEmployeeSpecialities);
             this.tabPage_CreateEmployee.Controls.Add(this.button_AddEducation_CreateEmployee);
             this.tabPage_CreateEmployee.Controls.Add(this.button_Help_CreateEmployee);
@@ -468,17 +468,17 @@
             this.button_Finished.UseVisualStyleBackColor = true;
             this.button_Finished.Click += new System.EventHandler(this.button_Finished_Click);
             // 
-            // listBox_EmployeeEducations_CreateEmployee
+            // listBox_EmployeeService_CreateEmployee
             // 
-            this.listBox_EmployeeEducations_CreateEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.listBox_EmployeeService_CreateEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.listBox_EmployeeEducations_CreateEmployee.Enabled = false;
-            this.listBox_EmployeeEducations_CreateEmployee.FormattingEnabled = true;
-            this.listBox_EmployeeEducations_CreateEmployee.ItemHeight = 16;
-            this.listBox_EmployeeEducations_CreateEmployee.Location = new System.Drawing.Point(13, 107);
-            this.listBox_EmployeeEducations_CreateEmployee.Name = "listBox_EmployeeEducations_CreateEmployee";
-            this.listBox_EmployeeEducations_CreateEmployee.Size = new System.Drawing.Size(456, 276);
-            this.listBox_EmployeeEducations_CreateEmployee.TabIndex = 80;
+            this.listBox_EmployeeService_CreateEmployee.Enabled = false;
+            this.listBox_EmployeeService_CreateEmployee.FormattingEnabled = true;
+            this.listBox_EmployeeService_CreateEmployee.ItemHeight = 16;
+            this.listBox_EmployeeService_CreateEmployee.Location = new System.Drawing.Point(13, 107);
+            this.listBox_EmployeeService_CreateEmployee.Name = "listBox_EmployeeService_CreateEmployee";
+            this.listBox_EmployeeService_CreateEmployee.Size = new System.Drawing.Size(456, 276);
+            this.listBox_EmployeeService_CreateEmployee.TabIndex = 80;
             // 
             // label_AddedEmployeeSpecialities
             // 
@@ -562,7 +562,6 @@
             // 
             // tabPage_CreateCase
             // 
-            this.tabPage_CreateCase.Controls.Add(this.textBox1);
             this.tabPage_CreateCase.Controls.Add(this.button_Cancel_CreateCase);
             this.tabPage_CreateCase.Controls.Add(this.button_Help_CreateCase);
             this.tabPage_CreateCase.Controls.Add(this.comboBox_Client_CreateCase);
@@ -591,6 +590,13 @@
             this.tabPage_CreateCase.TabIndex = 1;
             this.tabPage_CreateCase.Text = "Opret Sag";
             this.tabPage_CreateCase.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(13, 430);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(10, 22);
+            this.textBox1.TabIndex = 87;
             // 
             // button_Cancel_CreateCase
             // 
@@ -1068,18 +1074,12 @@
             this.Side.Size = new System.Drawing.Size(809, 425);
             this.Side.TabIndex = 0;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(59, 349);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(10, 22);
-            this.textBox1.TabIndex = 87;
-            // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 450);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Side);
             this.Name = "GUI";
             this.Text = "LawHouse";
@@ -1096,6 +1096,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_Overview)).EndInit();
             this.Side.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1132,7 +1133,7 @@
         private System.Windows.Forms.TabPage tabPage_CreateEmployee;
         private System.Windows.Forms.Button button_Cancel_CreateEmployee;
         private System.Windows.Forms.Button button_Finished;
-        private System.Windows.Forms.ListBox listBox_EmployeeEducations_CreateEmployee;
+        private System.Windows.Forms.ListBox listBox_EmployeeService_CreateEmployee;
         private System.Windows.Forms.Label label_AddedEmployeeSpecialities;
         private System.Windows.Forms.Button button_AddEducation_CreateEmployee;
         private System.Windows.Forms.Button button_Help_CreateEmployee;

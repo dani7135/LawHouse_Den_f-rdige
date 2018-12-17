@@ -10,7 +10,8 @@ namespace LawHouse.GUI
 {
     public partial class GUI : Form
     {
-        int currentEmployeeID;
+        // int currentEmployeeID;
+        int NewEmployeeID;
         public GUI()
         {
             InitializeComponent();
@@ -159,25 +160,33 @@ namespace LawHouse.GUI
         #region Button_employee
         private void button_CreateEmployee_Click(object sender, EventArgs e)
         {
-            currentEmployeeID = Controller.CreateAdvokat(textBox_EmployeeName.Text);
+           // currentEmployeeID = Controller.CreateAdvokat(textBox_EmployeeName.Text);
+           NewEmployeeID = Controller.CreateAdvokat(textBox_EmployeeName.Text);
             comboBox_Education_CreateEmployee.Enabled = true;
-            listBox_EmployeeEducations_CreateEmployee.Enabled = true;
+            listBox_EmployeeService_CreateEmployee.Enabled = true;
 
             button_AddEducation_CreateEmployee.Enabled = true;
 
         }
         //DER ER FEJL HER, DEN SKAL LAVES OM TIL TJENSTE YDELSER
         private void button_AddSpeciality_CreateEmployee_Click(object sender, EventArgs e)
-        {/*
-            EmployeeService employeeService = (EmployeeService)comboBox_Education_CreateEmployee.SelectedItem;
+        {
+            EmployeeService selectedemployeeService = (EmployeeService)comboBox_Education_CreateEmployee.SelectedItem;
             if (listBox_EmployeeService_CreateEmployee.Items.Count > 0)
             {
                 List<EmployeeService> employeeService_InListBox = listBox_EmployeeService_CreateEmployee.Items.Cast<EmployeeService>().ToList();
-                if (!employeeService_InListBox.Any(employeeService => employeeService.)) ;
+                if (!employeeService_InListBox.Any(employeeServise => employeeServise.Services_descriptionID == selectedemployeeService.ID)) { }
+                Controller.AddEmployeeServiceToEmployee(selectedemployeeService.ID, NewEmployeeID);
             }
-            */
+            else
+                Controller.AddEmployeeServiceToEmployee(selectedemployeeService.ID, NewEmployeeID);
+            listBox_EmployeeService_CreateEmployee.DataSource = Controller.GetEmployeeServices(NewEmployeeID);
+            listBox_EmployeeService_CreateEmployee.DisplayMember = "Navn";
 
-               Education selectedEducation = (Education)comboBox_Education_CreateEmployee.SelectedItem;
+
+             /* Education selectedEducation = (Education)comboBox_Education_CreateEmployee.SelectedItem;
+
+
                if (listBox_EmployeeEducations_CreateEmployee.Items.Count > 0)
                {
                    List<Education> educationsInListBox = listBox_EmployeeEducations_CreateEmployee.Items.Cast<Education>().ToList();
@@ -187,7 +196,7 @@ namespace LawHouse.GUI
                else
                    Controller.AddEducationToEmployee(selectedEducation.Name, currentEmployeeID);
                listBox_EmployeeEducations_CreateEmployee.DataSource = Controller.GetEducationsFromEmployee(currentEmployeeID);
-               listBox_EmployeeEducations_CreateEmployee.DisplayMember = "Name";
+               listBox_EmployeeEducations_CreateEmployee.DisplayMember = "Name";*/
         }
         private void button_Cancel_CreateEmployee_Click(object sender, EventArgs e)
         {
@@ -255,7 +264,7 @@ namespace LawHouse.GUI
         {
             Case selectedCase = (Case)comboBox_Case_Create_Service.SelectedItem;
             Employee selectedEmployee = (Employee)comboBox_Employee_Create_Service.SelectedItem;
-            Controller.CreateService(textbox_ServiceStartDate.Text, textBox_ServiceDescription.Text, textBox_ServicePrice.Text, label_ServiceHours.Text,
+            Controller.CreateService(textbox_ServiceStartDate.Text, textBox_ServiceDescription.Text, Convert.ToInt32(textBox_ServicePrice.Text), Convert.ToInt32(textBox_ServiceHours.Text),
                 selectedCase.ID, selectedEmployee.ID);
             SetObjectListView_Overview();
             Side.TabPages.Remove(tabPage_CreateService);
