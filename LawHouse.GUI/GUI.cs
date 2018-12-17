@@ -22,6 +22,7 @@ namespace LawHouse.GUI
             Set_ComboBox_Case_Service();
             Set_ComboBox_Employee_CreateService();
             SetObjectListView_Overview();
+            
         }
 
         #region Set Controls
@@ -40,9 +41,10 @@ namespace LawHouse.GUI
                     break;
                 case "Sag":
                     objectListView_Overview.SetObjects(Controller.GetAllSag());
-                    List<Case> cases = objectListView_Overview.Objects.Cast<Case>().ToList();
-                    List<Case> doneCases = cases.Where(c =>  c.EndDate != default(DateTime)).ToList();
-                    objectListView_Overview.DisableObjects(doneCases);
+                    //   List<Case> cases = objectListView_Overview.Objects.Cast<Case>().ToList();
+                    // List<Case> doneCases = cases.Where(c => c.EndDate != Nullable<DateTime> ;
+                    olvColumn_CaseEndDate.IsVisible = true;
+                  //  objectListView_Overview.DisableObjects(doneCases);
                     olvColumn_CaseID.IsVisible = true;
                     olvColumn_CaseTitle.IsVisible = true;
                     olvColumn_CaseStartDate.IsVisible = true;
@@ -100,7 +102,7 @@ namespace LawHouse.GUI
             comboBox_Employee_CreateCase.ValueMember = "ID";
             comboBox_Employee_CreateCase.SelectedIndex = -1;
         }
-        private void Set_ComboBox_Client_CreateCase( )//Daniella
+        private void Set_ComboBox_Client_CreateCase()//Daniella
         {
             comboBox_Client_CreateCase.DataSource = Controller.GetAllClients();
             comboBox_Client_CreateCase.DisplayMember = "Name";
@@ -112,7 +114,7 @@ namespace LawHouse.GUI
         {
             comboBox_Education_CreateEmployee.DataSource = Controller.GetAllEducations();
             comboBox_Education_CreateEmployee.DisplayMember = "Name";
-            comboBox_Education_CreateEmployee.ValueMember ="EmployeeID";
+            comboBox_Education_CreateEmployee.ValueMember = "EmployeeID";
         }
         private void Set_ComboBox_Case_Service()
         {
@@ -142,13 +144,13 @@ namespace LawHouse.GUI
             tabsToHideAtStartup.Add("tabPage_CreateService");
             hideTabs(tabsToHideAtStartup);
         }
-  
 
-        private void hideTabs(List<string> tabsToHide)
+
+        private void hideTabs(List<string> tabsToHide)//Julius
         {
             foreach (string tabKey in tabsToHide)
             {
-                tabControl_Overview.TabPages.RemoveByKey(tabKey);
+                Side.TabPages.RemoveByKey(tabKey);
             }
         }
 
@@ -160,27 +162,36 @@ namespace LawHouse.GUI
             currentEmployeeID = Controller.CreateAdvokat(textBox_EmployeeName.Text);
             comboBox_Education_CreateEmployee.Enabled = true;
             listBox_EmployeeEducations_CreateEmployee.Enabled = true;
+
             button_AddEducation_CreateEmployee.Enabled = true;
 
         }
         //DER ER FEJL HER, DEN SKAL LAVES OM TIL TJENSTE YDELSER
         private void button_AddSpeciality_CreateEmployee_Click(object sender, EventArgs e)
-        {
-            Education selectedEducation = (Education)comboBox_Education_CreateEmployee.SelectedItem;
-            if (listBox_EmployeeEducations_CreateEmployee.Items.Count > 0)
+        {/*
+            EmployeeService employeeService = (EmployeeService)comboBox_Education_CreateEmployee.SelectedItem;
+            if (listBox_EmployeeService_CreateEmployee.Items.Count > 0)
             {
-                List<Education> educationsInListBox = listBox_EmployeeEducations_CreateEmployee.Items.Cast<Education>().ToList();
-                if (!educationsInListBox.Any(education => education.Name == selectedEducation.Name))
-                    Controller.AddEducationToEmployee(selectedEducation.Name, currentEmployeeID);
+                List<EmployeeService> employeeService_InListBox = listBox_EmployeeService_CreateEmployee.Items.Cast<EmployeeService>().ToList();
+                if (!employeeService_InListBox.Any(employeeService => employeeService.)) ;
             }
-            else
-                Controller.AddEducationToEmployee(selectedEducation.Name, currentEmployeeID);
-            listBox_EmployeeEducations_CreateEmployee.DataSource = Controller.GetEducationsFromEmployee(currentEmployeeID);
-            listBox_EmployeeEducations_CreateEmployee.DisplayMember = "Name";
+            */
+
+               Education selectedEducation = (Education)comboBox_Education_CreateEmployee.SelectedItem;
+               if (listBox_EmployeeEducations_CreateEmployee.Items.Count > 0)
+               {
+                   List<Education> educationsInListBox = listBox_EmployeeEducations_CreateEmployee.Items.Cast<Education>().ToList();
+                   if (!educationsInListBox.Any(education => education.Name == selectedEducation.Name))
+                       Controller.AddEducationToEmployee(selectedEducation.Name, currentEmployeeID);
+               }
+               else
+                   Controller.AddEducationToEmployee(selectedEducation.Name, currentEmployeeID);
+               listBox_EmployeeEducations_CreateEmployee.DataSource = Controller.GetEducationsFromEmployee(currentEmployeeID);
+               listBox_EmployeeEducations_CreateEmployee.DisplayMember = "Name";
         }
         private void button_Cancel_CreateEmployee_Click(object sender, EventArgs e)
         {
-            tabControl_Overview.TabPages.Remove(tabControl_Overview.SelectedTab);
+            Side.TabPages.Remove(Side.SelectedTab);
         }
         #endregion
 
@@ -191,14 +202,14 @@ namespace LawHouse.GUI
             Client selectedClient = (Client)comboBox_Client_CreateCase.SelectedItem;
             Employee selectedEmployee = (Employee)comboBox_Employee_CreateCase.SelectedItem;
             Category selectedService = (Category)comboBox_Category_CreateCase.SelectedItem;
-            Controller.CreateCase(textBox_CaseTitle.Text, textbox_CaseStartDate.Text, default(DateTime), textbox_CaseKilometers.Text, textBox_CaseEstimatedHours.Text,
+            Controller.CreateCase(textBox_CaseTitle.Text, textbox_CaseStartDate.Text, textBox1.Text /*default(DateTime)*/, textbox_CaseKilometers.Text, textBox_CaseEstimatedHours.Text,
                 richTextBox_CaseDescription.Text, richTextBox_CaseNotes.Text, selectedClient.ID, selectedEmployee.ID, selectedService.ID);
             SetObjectListView_Overview();
-            tabControl_Overview.TabPages.Remove(tabPage_CreateCase);
+            Side.TabPages.Remove(tabPage_CreateCase);
         }
         private void button_Cancel_CreateCase_Click(object sender, EventArgs e)
         {
-            tabControl_Overview.TabPages.Remove(tabControl_Overview.SelectedTab);
+            Side.TabPages.Remove(Side.SelectedTab);
         }
         #endregion
 
@@ -222,23 +233,23 @@ namespace LawHouse.GUI
 
             }
             SetObjectListView_Overview();
-            tabControl_Overview.TabPages.Remove(tabPage_CreateClient);
+            Side.TabPages.Remove(tabPage_CreateClient);
         }
         private void button_Finished_Click(object sender, EventArgs e)
         {
             SetObjectListView_Overview();
-            tabControl_Overview.TabPages.Remove(tabPage_CreateEmployee);
+            Side.TabPages.Remove(tabPage_CreateEmployee);
         }
         private void button_Cancel_CreateClient_Click(object sender, EventArgs e)
         {
-            tabControl_Overview.TabPages.Remove(tabControl_Overview.SelectedTab);
+            Side.TabPages.Remove(Side.SelectedTab);
         }
         #endregion
 
         #region Service
         private void button_Cancel_CreateService_Click(object sender, EventArgs e)
         {
-            tabControl_Overview.TabPages.Remove(tabControl_Overview.SelectedTab);
+            Side.TabPages.Remove(Side.SelectedTab);
         }
         private void button_AddService_Click(object sender, EventArgs e)
         {
@@ -247,7 +258,7 @@ namespace LawHouse.GUI
             Controller.CreateService(textbox_ServiceStartDate.Text, textBox_ServiceDescription.Text, textBox_ServicePrice.Text, label_ServiceHours.Text,
                 selectedCase.ID, selectedEmployee.ID);
             SetObjectListView_Overview();
-            tabControl_Overview.TabPages.Remove(tabPage_CreateService);
+            Side.TabPages.Remove(tabPage_CreateService);
         }
         #endregion
 
@@ -264,8 +275,8 @@ namespace LawHouse.GUI
             switch (selectedCategory)
             {
                 case "Sag":
-                    if (!tabControl_Overview.TabPages.Contains(tabPage_CreateCase))
-                        tabControl_Overview.TabPages.Insert(tabControl_Overview.TabPages.Count, tabPage_CreateCase);
+                    if (!Side.TabPages.Contains(tabPage_CreateCase))
+                        Side.TabPages.Insert(Side.TabPages.Count, tabPage_CreateCase);
                     textbox_CaseStartDate.Text = DateTime.Now.ToString("dd-MM-yyyy");
                     SetComboBox_ServiceType_CreateCase();
 
@@ -275,27 +286,27 @@ namespace LawHouse.GUI
                     toSwitchTo = tabPage_CreateCase;
                     break;
                 case "Advokat":
-                    if (!tabControl_Overview.TabPages.Contains(tabPage_CreateEmployee))
-                        tabControl_Overview.TabPages.Insert(tabControl_Overview.TabPages.Count, tabPage_CreateEmployee);
+                    if (!Side.TabPages.Contains(tabPage_CreateEmployee))
+                        Side.TabPages.Insert(Side.TabPages.Count, tabPage_CreateEmployee);
                     toSwitchTo = tabPage_CreateEmployee;
                     break;
                 case "Klient":
-                    if (!tabControl_Overview.TabPages.Contains(tabPage_CreateClient))
-                        tabControl_Overview.TabPages.Insert(tabControl_Overview.TabPages.Count, tabPage_CreateClient);
+                    if (!Side.TabPages.Contains(tabPage_CreateClient))
+                        Side.TabPages.Insert(Side.TabPages.Count, tabPage_CreateClient);
                     toSwitchTo = tabPage_CreateClient;
                     break;
                 case "Ydelse":
-                    if (!tabControl_Overview.TabPages.Contains(tabPage_CreateService))
-                        tabControl_Overview.TabPages.Insert(tabControl_Overview.TabPages.Count, tabPage_CreateService);
+                    if (!Side.TabPages.Contains(tabPage_CreateService))
+                        Side.TabPages.Insert(Side.TabPages.Count, tabPage_CreateService);
                     textbox_ServiceStartDate.Text = DateTime.Now.ToString("dd-MM-yyyy");
 
                     toSwitchTo = tabPage_CreateService;
                     break;
             }
-            tabControl_Overview.SelectedTab = toSwitchTo;
-        }      
- 
-    
+            Side.SelectedTab = toSwitchTo;
+        }
+
+
         private void comboBox_Category_CreateCase_SelectedIndexChanged(object sender, EventArgs e)
         {
             Category selectedCategory = (Category)comboBox_Category_CreateCase.SelectedItem;
@@ -303,24 +314,24 @@ namespace LawHouse.GUI
         }
         #endregion
 
-       
+
 
         private void button_Overview_SaveChanges_Click(object sender, EventArgs e)//Daniella & Thomas
         {
-         /*   foreach (object item in objectListView_Overview.Objects)
-            {
-                if (item is Case)
-                {
-                    Controller.UpdateCase(item);
-                }
-                else if (item is Employee)
-                {
-                    Controller.UpdateAdvokat(item);
-                }
-            }
-           */ 
+            /*   foreach (object item in objectListView_Overview.Objects)
+               {
+                   if (item is Case)
+                   {
+                       Controller.UpdateCase(item);
+                   }
+                   else if (item is Employee)
+                   {
+                       Controller.UpdateAdvokat(item);
+                   }
+               }
+              */
 
-            
+
         }
     }
 }
