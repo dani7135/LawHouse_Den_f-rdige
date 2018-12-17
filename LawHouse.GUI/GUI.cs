@@ -23,7 +23,7 @@ namespace LawHouse.GUI
             Set_ComboBox_Case_Service();
             Set_ComboBox_Employee_CreateService();
             SetObjectListView_Overview();
-            
+
         }
 
         #region Set Controls
@@ -43,7 +43,7 @@ namespace LawHouse.GUI
                 case "Sag":
                     objectListView_Overview.SetObjects(Controller.GetAllSag());
                     List<Case> cases = objectListView_Overview.Objects.Cast<Case>().ToList();
-                    List<Case> doneCases = cases.Where(c => c.EndDate != default(DateTime)).ToList() ;
+                    List<Case> doneCases = cases.Where(c => c.EndDate != default(DateTime)).ToList();
                     olvColumn_CaseEndDate.IsVisible = true;
                     objectListView_Overview.DisableObjects(doneCases);
                     olvColumn_CaseID.IsVisible = true;
@@ -160,8 +160,8 @@ namespace LawHouse.GUI
         #region Button_employee
         private void button_CreateEmployee_Click(object sender, EventArgs e)
         {
-           // currentEmployeeID = Controller.CreateAdvokat(textBox_EmployeeName.Text);
-           NewEmployeeID = Controller.CreateAdvokat(textBox_EmployeeName.Text);
+            // currentEmployeeID = Controller.CreateAdvokat(textBox_EmployeeName.Text);
+            NewEmployeeID = Controller.CreateAdvokat(textBox_EmployeeName.Text);
             comboBox_Education_CreateEmployee.Enabled = true;
             listBox_EmployeeService_CreateEmployee.Enabled = true;
 
@@ -184,19 +184,19 @@ namespace LawHouse.GUI
             listBox_EmployeeService_CreateEmployee.DisplayMember = "Navn";
 
 
-             /* Education selectedEducation = (Education)comboBox_Education_CreateEmployee.SelectedItem;
+            /* Education selectedEducation = (Education)comboBox_Education_CreateEmployee.SelectedItem;
 
 
-               if (listBox_EmployeeEducations_CreateEmployee.Items.Count > 0)
-               {
-                   List<Education> educationsInListBox = listBox_EmployeeEducations_CreateEmployee.Items.Cast<Education>().ToList();
-                   if (!educationsInListBox.Any(education => education.Name == selectedEducation.Name))
-                       Controller.AddEducationToEmployee(selectedEducation.Name, currentEmployeeID);
-               }
-               else
-                   Controller.AddEducationToEmployee(selectedEducation.Name, currentEmployeeID);
-               listBox_EmployeeEducations_CreateEmployee.DataSource = Controller.GetEducationsFromEmployee(currentEmployeeID);
-               listBox_EmployeeEducations_CreateEmployee.DisplayMember = "Name";*/
+              if (listBox_EmployeeEducations_CreateEmployee.Items.Count > 0)
+              {
+                  List<Education> educationsInListBox = listBox_EmployeeEducations_CreateEmployee.Items.Cast<Education>().ToList();
+                  if (!educationsInListBox.Any(education => education.Name == selectedEducation.Name))
+                      Controller.AddEducationToEmployee(selectedEducation.Name, currentEmployeeID);
+              }
+              else
+                  Controller.AddEducationToEmployee(selectedEducation.Name, currentEmployeeID);
+              listBox_EmployeeEducations_CreateEmployee.DataSource = Controller.GetEducationsFromEmployee(currentEmployeeID);
+              listBox_EmployeeEducations_CreateEmployee.DisplayMember = "Name";*/
         }
         private void button_Cancel_CreateEmployee_Click(object sender, EventArgs e)
         {
@@ -327,18 +327,27 @@ namespace LawHouse.GUI
 
         private void button_Overview_SaveChanges_Click(object sender, EventArgs e)//Daniella & Thomas
         {
-            /*   foreach (object item in objectListView_Overview.Objects)
-               {
-                   if (item is Case)
-                   {
-                       Controller.UpdateCase(item);
-                   }
-                   else if (item is Employee)
-                   {
-                       Controller.UpdateAdvokat(item);
-                   }
-               }
-              */
+            foreach (object item in objectListView_Overview.Objects)
+            {
+                if (item is Case)
+                {
+                    Controller.UpdateCase(item);
+                }
+                else if (item is Employee)
+                {
+                    Controller.UpdateAdvokat(item);
+                }
+                else if (item is Client)
+                {
+                    Controller.UpdateClient(item);
+
+                }
+                else if (item is Service)
+                {
+                    Controller.UpdateYdelse(item);
+                }
+            }
+
 
 
         }
