@@ -38,6 +38,8 @@ namespace LawHouse.GUI
                     olvColumn_ClientName.IsVisible = true;
                     olvColumn_ClientAdress.IsVisible = true;
                     olvColumn_ClientPhoneNumber.IsVisible = true;
+
+
                     break;
                 case "Sag":
                     objectListView_Overview.SetObjects(Controller.GetAllSag());
@@ -75,7 +77,7 @@ namespace LawHouse.GUI
             objectListView_Overview.RebuildColumns();
         }
 
-        private void ObjectListView_Overview_HideAllColums()//Daniella
+        private void ObjectListView_Overview_HideAllColums()//Julius
         {
             foreach (var item in objectListView_Overview.AllColumns)
             {
@@ -279,6 +281,16 @@ namespace LawHouse.GUI
         {
             SetObjectListView_Overview();
         }
+        private void Set_textbox_edidt_seltede_Employee()
+        {
+
+            
+
+            /*
+           
+      
+             */
+        }
 
         private void button_AddNew_Click(object sender, EventArgs e)//Julius
         {
@@ -324,10 +336,6 @@ namespace LawHouse.GUI
             ServiceType selectedServiceType = (ServiceType)comboBox_ServiceType_CreateCase.SelectedItem;
             Set_ComboBox_Employee_CreateCase(selectedServiceType.ID);
         }
-        #endregion
-
-
-
         private void button_Overview_SaveChanges_Click(object sender, EventArgs e)//Daniella & Thomas
         {
             foreach (object item in objectListView_Overview.Objects)
@@ -350,10 +358,8 @@ namespace LawHouse.GUI
                     Controller.UpdateYdelse(item);
                 }
             }
-
-
-
         }
+        #endregion
 
         #region button_Help
         private void button_Help_Overview_Click(object sender, EventArgs e)
@@ -380,5 +386,7 @@ namespace LawHouse.GUI
             System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
         }
         #endregion
+
+  
     }
 }
