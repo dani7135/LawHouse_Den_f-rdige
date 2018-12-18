@@ -6,7 +6,6 @@ using LawHouse.Shared.Interfaces;
 
 namespace LawHouse.BusinessLogic
 {
-
     public class Controller
     {
 
@@ -151,8 +150,5 @@ namespace LawHouse.BusinessLogic
         //    List<ListItems> GetItems = currentDatabaseInstance.GetAllList();
         //    return GetItems;
         //}
-
-
-
     }
 }
