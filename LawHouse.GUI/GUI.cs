@@ -211,11 +211,11 @@ namespace LawHouse.GUI
         }
         #endregion
 
-        #region Client
+        #region Button_client
         private void button_CreateClient_Click(object sender, EventArgs e)//Daniella
         {
-            try
-            {
+          //  try
+          //  {
                 string navn = textBox_ClientName.Text;
                 string Adresse = textbox_ClientAdress.Text;
                 string TelefonNr = textBox_ClientPhoneNumber.Text;
@@ -224,12 +224,12 @@ namespace LawHouse.GUI
                 textBox_ClientName.Clear();
                 textbox_ClientAdress.Clear();
                 textBox_ClientPhoneNumber.Clear();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Ikke alt er valgt, gå venligst tilbage og indtast informatioen ");
+       //     }
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("Ikke alt er valgt, gå venligst tilbage og indtast informatioen ");
 
-            }
+            //}
             SetObjectListView_Overview();
             Side.TabPages.Remove(tabPage_CreateClient);
         }
@@ -244,7 +244,7 @@ namespace LawHouse.GUI
         }
         #endregion
 
-        #region Service
+        #region Button_service
         private void button_Cancel_CreateService_Click(object sender, EventArgs e)
         {
             Side.TabPages.Remove(Side.SelectedTab);

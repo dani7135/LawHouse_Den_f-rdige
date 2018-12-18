@@ -111,6 +111,9 @@ namespace LawHouse.DataAccess
         {
             SqlCommand com = new SqlCommand();
             string sqlString = $"INSERT INTO KLient(Navn, Adresse, TelefonNr) VALUES (@Navn , @Adresse , @TelefonNr)";
+            com.Parameters.Add(new SqlParameter("Navn", klient.Name));
+            com.Parameters.Add(new SqlParameter("Adresse", klient.Address));
+            com.Parameters.Add(new SqlParameter("TelefonNr", klient.PhoneNo));
             SqlDatabaseUtilities.RunSqlCommand(sqlString, com);
 
         }
@@ -120,6 +123,9 @@ namespace LawHouse.DataAccess
             string sqlString =
                 $"UPDATE Klient SET Navn =@Navn, Adresse = @Adresse, TelefonNr = @TelefonNr " +
                 $"WHERE KlientNr = {klient.ID}";
+            com.Parameters.Add(new SqlParameter("Navn", klient.Name));
+            com.Parameters.Add(new SqlParameter("Adresse", klient.Address));
+            com.Parameters.Add(new SqlParameter("TelefonNr", klient.PhoneNo));
             SqlDatabaseUtilities.RunSqlCommand(sqlString, com);
         }
         public List<Client> GetAllClient()// By Daniella //By Julius
