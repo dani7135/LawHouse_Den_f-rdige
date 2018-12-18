@@ -164,9 +164,9 @@ namespace LawHouse.GUI
             listBox_EmployeeService_CreateEmployee.Enabled = true;
             button_AddEducation_CreateEmployee.Enabled = true;
 
+
         }
-        //DER ER FEJL HER, DEN SKAL LAVES OM TIL TJENSTE YDELSER
-        private void button_AddSpeciality_CreateEmployee_Click(object sender, EventArgs e)
+         private void button_AddSpeciality_CreateEmployee_Click(object sender, EventArgs e)
         {
             ServiceType selectedServiceType = comboBox_ServiceType_CreateEmployee.SelectedItem as ServiceType;
             if (listBox_EmployeeService_CreateEmployee.Items.Count > 0)
@@ -178,6 +178,9 @@ namespace LawHouse.GUI
             else
                 Controller.AddEmployeeServiceToEmployee(currentEmployeeID, selectedServiceType.ID);
             Set_ListBox_EmployeeService_CreateEmployee();
+            MessageBox.Show(" ");
+            Side.TabPages.Remove(tabPage_CreateEmployee);
+ 
         }
 
         private void Set_ListBox_EmployeeService_CreateEmployee()
