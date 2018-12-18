@@ -212,7 +212,7 @@ namespace LawHouse.GUI
         #endregion
 
         #region Button_client
-        private void button_CreateClient_Click(object sender, EventArgs e)//Daniella
+        private void button_CreateClient_Click(object sender, EventArgs e)//Thomas
         {
           //  try
           //  {
