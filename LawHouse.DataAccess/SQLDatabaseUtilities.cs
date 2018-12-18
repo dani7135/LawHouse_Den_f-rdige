@@ -15,7 +15,6 @@ namespace LawHouse.DataAccess
             {
                 using (com)
                 {
-
                     com.Connection = conn;
                     try
                     {

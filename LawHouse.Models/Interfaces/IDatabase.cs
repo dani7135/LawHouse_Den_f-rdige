@@ -51,7 +51,7 @@ namespace LawHouse.Shared.Interfaces
 
         #region EmployeeService
         void AddEmployeeServiceToEmployee(int id, int services_descriptionID);
-        List<EmployeeService> GetEmployeeServices(int employeeID);
+        List<EmployeeService> GetEmployeeService(int employeeID);
         #endregion
     }
 }

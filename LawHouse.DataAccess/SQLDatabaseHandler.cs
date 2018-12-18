@@ -27,7 +27,8 @@ namespace LawHouse.DataAccess
         #region Case
         public int CreateCase(Case @case)// By Daniella
         {//Grunden til at der den her er fordi den tager en case og opretter det ud for properties
-            string sqlString = $"INSERT INTO Sag(Arbejdstitel, StartDato, SlutDato, Kørselstimer, TimeEstimat, SagsBeskrivelse, InterneNoter , KlientNr, AdvokatId, YdelsesTypeNr )" + $"values(@Arbejdstitel , @Startdato , @SlutDato , @Kørselstimer , @TimeEstimat ,  @SagsBeskrivelse,   @InterneNoter ,  @KlientNr,  @AdvokatId,  @YdelsesTypeNr) " +
+            string sqlString = $"INSERT INTO Sag(Arbejdstitel, StartDato, SlutDato, Kørselstimer, TimeEstimat, SagsBeskrivelse, InterneNoter , KlientNr, AdvokatId, YdelsesTypeNr )" + 
+                               $"values(@Arbejdstitel , @Startdato , @SlutDato , @Kørselstimer , @TimeEstimat ,  @SagsBeskrivelse,   @InterneNoter ,  @KlientNr,  @AdvokatId,  @YdelsesTypeNr) " +
                                $"SELECT CAST(SCOPE_IDENTITY() AS int)";
             using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString))
             {
@@ -377,7 +378,7 @@ namespace LawHouse.DataAccess
             com.Parameters.Add(new SqlParameter("ydelsesTypeNr", serviceTypeID));
             SQLDatabaseUtilities.RunSqlInsertCommand(sqlString, com);
         }
-        public List<EmployeeService> GetEmployeeServices(int employeeID)//Daniella
+        public List<EmployeeService> GetEmployeeService(int employeeID)//Daniella
         {
             string sqlString = "SELECT * FROM Tjenesteydelse " +
                                 "Where AdvokatId = " + employeeID;

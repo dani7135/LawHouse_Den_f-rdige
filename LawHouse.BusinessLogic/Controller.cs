@@ -141,7 +141,7 @@ namespace LawHouse.BusinessLogic
 
         public static List<EmployeeService> GetEmployeeServices(int serviceTypeID)
         {
-            return currentDatabaseInstance.GetEmployeeServices(serviceTypeID);
+            return currentDatabaseInstance.GetEmployeeService(serviceTypeID);
         }
         #endregion
 
