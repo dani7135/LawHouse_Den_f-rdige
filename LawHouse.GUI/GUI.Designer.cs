@@ -149,10 +149,11 @@
             this.tabPage_CreateService.Controls.Add(this.textBox_ServiceDescription);
             this.tabPage_CreateService.Controls.Add(this.textbox_ServiceStartDate);
             this.tabPage_CreateService.Controls.Add(this.textBox_ServiceID);
-            this.tabPage_CreateService.Location = new System.Drawing.Point(4, 25);
+            this.tabPage_CreateService.Location = new System.Drawing.Point(4, 22);
+            this.tabPage_CreateService.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage_CreateService.Name = "tabPage_CreateService";
-            this.tabPage_CreateService.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_CreateService.Size = new System.Drawing.Size(801, 396);
+            this.tabPage_CreateService.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage_CreateService.Size = new System.Drawing.Size(599, 319);
             this.tabPage_CreateService.TabIndex = 4;
             this.tabPage_CreateService.Text = "Opret Ydelse";
             this.tabPage_CreateService.UseVisualStyleBackColor = true;
@@ -161,9 +162,10 @@
             // 
             this.button_Cancel_CreateService.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button_Cancel_CreateService.AutoSize = true;
-            this.button_Cancel_CreateService.Location = new System.Drawing.Point(621, 364);
+            this.button_Cancel_CreateService.Location = new System.Drawing.Point(466, 295);
+            this.button_Cancel_CreateService.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_Cancel_CreateService.Name = "button_Cancel_CreateService";
-            this.button_Cancel_CreateService.Size = new System.Drawing.Size(75, 27);
+            this.button_Cancel_CreateService.Size = new System.Drawing.Size(56, 23);
             this.button_Cancel_CreateService.TabIndex = 88;
             this.button_Cancel_CreateService.Text = "Annuller";
             this.button_Cancel_CreateService.UseVisualStyleBackColor = true;
@@ -173,37 +175,41 @@
             // 
             this.button_Help_CreateService.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button_Help_CreateService.AutoSize = true;
-            this.button_Help_CreateService.Location = new System.Drawing.Point(768, 6);
+            this.button_Help_CreateService.Location = new System.Drawing.Point(573, 5);
+            this.button_Help_CreateService.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_Help_CreateService.Name = "button_Help_CreateService";
-            this.button_Help_CreateService.Size = new System.Drawing.Size(27, 27);
+            this.button_Help_CreateService.Size = new System.Drawing.Size(23, 23);
             this.button_Help_CreateService.TabIndex = 87;
             this.button_Help_CreateService.Text = "?";
             this.button_Help_CreateService.UseVisualStyleBackColor = true;
+            this.button_Help_CreateService.Click += new System.EventHandler(this.button_Help_CreateService_Click);
             // 
             // comboBox_Employee_Create_Service
             // 
             this.comboBox_Employee_Create_Service.FormattingEnabled = true;
-            this.comboBox_Employee_Create_Service.Location = new System.Drawing.Point(106, 281);
+            this.comboBox_Employee_Create_Service.Location = new System.Drawing.Point(80, 228);
+            this.comboBox_Employee_Create_Service.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox_Employee_Create_Service.Name = "comboBox_Employee_Create_Service";
-            this.comboBox_Employee_Create_Service.Size = new System.Drawing.Size(121, 24);
+            this.comboBox_Employee_Create_Service.Size = new System.Drawing.Size(92, 21);
             this.comboBox_Employee_Create_Service.TabIndex = 46;
             // 
             // comboBox_Case_Create_Service
             // 
             this.comboBox_Case_Create_Service.FormattingEnabled = true;
-            this.comboBox_Case_Create_Service.Location = new System.Drawing.Point(106, 238);
+            this.comboBox_Case_Create_Service.Location = new System.Drawing.Point(80, 193);
+            this.comboBox_Case_Create_Service.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox_Case_Create_Service.Name = "comboBox_Case_Create_Service";
-            this.comboBox_Case_Create_Service.Size = new System.Drawing.Size(121, 24);
+            this.comboBox_Case_Create_Service.Size = new System.Drawing.Size(92, 21);
             this.comboBox_Case_Create_Service.TabIndex = 45;
             // 
             // button_AddService
             // 
             this.button_AddService.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button_AddService.AutoSize = true;
-            this.button_AddService.Location = new System.Drawing.Point(702, 364);
-            this.button_AddService.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_AddService.Location = new System.Drawing.Point(524, 295);
+            this.button_AddService.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_AddService.Name = "button_AddService";
-            this.button_AddService.Size = new System.Drawing.Size(93, 27);
+            this.button_AddService.Size = new System.Drawing.Size(72, 23);
             this.button_AddService.TabIndex = 44;
             this.button_AddService.Text = "Tilføj ydelse";
             this.button_AddService.UseVisualStyleBackColor = true;
@@ -212,106 +218,113 @@
             // label_EmployID
             // 
             this.label_EmployID.AutoSize = true;
-            this.label_EmployID.Location = new System.Drawing.Point(6, 281);
+            this.label_EmployID.Location = new System.Drawing.Point(4, 228);
+            this.label_EmployID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_EmployID.Name = "label_EmployID";
-            this.label_EmployID.Size = new System.Drawing.Size(59, 17);
+            this.label_EmployID.Size = new System.Drawing.Size(47, 13);
             this.label_EmployID.TabIndex = 43;
             this.label_EmployID.Text = "Advokat";
             // 
             // label_Case
             // 
             this.label_Case.AutoSize = true;
-            this.label_Case.Location = new System.Drawing.Point(6, 238);
+            this.label_Case.Location = new System.Drawing.Point(4, 193);
+            this.label_Case.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_Case.Name = "label_Case";
-            this.label_Case.Size = new System.Drawing.Size(33, 17);
+            this.label_Case.Size = new System.Drawing.Size(26, 13);
             this.label_Case.TabIndex = 42;
             this.label_Case.Text = "Sag";
             // 
             // label_ServiceHours
             // 
             this.label_ServiceHours.AutoSize = true;
-            this.label_ServiceHours.Location = new System.Drawing.Point(6, 190);
+            this.label_ServiceHours.Location = new System.Drawing.Point(4, 154);
+            this.label_ServiceHours.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_ServiceHours.Name = "label_ServiceHours";
-            this.label_ServiceHours.Size = new System.Drawing.Size(44, 17);
+            this.label_ServiceHours.Size = new System.Drawing.Size(33, 13);
             this.label_ServiceHours.TabIndex = 41;
             this.label_ServiceHours.Text = "Timer";
             // 
             // label_ServicePrice
             // 
             this.label_ServicePrice.AutoSize = true;
-            this.label_ServicePrice.Location = new System.Drawing.Point(6, 142);
+            this.label_ServicePrice.Location = new System.Drawing.Point(4, 115);
+            this.label_ServicePrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_ServicePrice.Name = "label_ServicePrice";
-            this.label_ServicePrice.Size = new System.Drawing.Size(32, 17);
+            this.label_ServicePrice.Size = new System.Drawing.Size(24, 13);
             this.label_ServicePrice.TabIndex = 40;
             this.label_ServicePrice.Text = "Pris";
             // 
             // label_ServiceDescription
             // 
             this.label_ServiceDescription.AutoSize = true;
-            this.label_ServiceDescription.Location = new System.Drawing.Point(6, 102);
+            this.label_ServiceDescription.Location = new System.Drawing.Point(4, 83);
+            this.label_ServiceDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_ServiceDescription.Name = "label_ServiceDescription";
-            this.label_ServiceDescription.Size = new System.Drawing.Size(80, 17);
+            this.label_ServiceDescription.Size = new System.Drawing.Size(61, 13);
             this.label_ServiceDescription.TabIndex = 39;
             this.label_ServiceDescription.Text = "Beskrivelse";
             // 
             // label_ServiceStartDate
             // 
             this.label_ServiceStartDate.AutoSize = true;
-            this.label_ServiceStartDate.Location = new System.Drawing.Point(6, 58);
+            this.label_ServiceStartDate.Location = new System.Drawing.Point(4, 47);
+            this.label_ServiceStartDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_ServiceStartDate.Name = "label_ServiceStartDate";
-            this.label_ServiceStartDate.Size = new System.Drawing.Size(70, 17);
+            this.label_ServiceStartDate.Size = new System.Drawing.Size(53, 13);
             this.label_ServiceStartDate.TabIndex = 38;
             this.label_ServiceStartDate.Text = "Start dato";
             // 
             // label_ServiceID
             // 
             this.label_ServiceID.AutoSize = true;
-            this.label_ServiceID.Location = new System.Drawing.Point(6, 12);
+            this.label_ServiceID.Location = new System.Drawing.Point(4, 10);
+            this.label_ServiceID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_ServiceID.Name = "label_ServiceID";
-            this.label_ServiceID.Size = new System.Drawing.Size(75, 17);
+            this.label_ServiceID.Size = new System.Drawing.Size(56, 13);
             this.label_ServiceID.TabIndex = 37;
             this.label_ServiceID.Text = "Ydelses nr";
             // 
             // textBox_ServiceHours
             // 
-            this.textBox_ServiceHours.Location = new System.Drawing.Point(106, 185);
-            this.textBox_ServiceHours.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_ServiceHours.Location = new System.Drawing.Point(80, 150);
+            this.textBox_ServiceHours.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox_ServiceHours.Name = "textBox_ServiceHours";
-            this.textBox_ServiceHours.Size = new System.Drawing.Size(121, 22);
+            this.textBox_ServiceHours.Size = new System.Drawing.Size(92, 20);
             this.textBox_ServiceHours.TabIndex = 34;
             // 
             // textBox_ServicePrice
             // 
-            this.textBox_ServicePrice.Location = new System.Drawing.Point(106, 137);
-            this.textBox_ServicePrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_ServicePrice.Location = new System.Drawing.Point(80, 111);
+            this.textBox_ServicePrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox_ServicePrice.Name = "textBox_ServicePrice";
-            this.textBox_ServicePrice.Size = new System.Drawing.Size(121, 22);
+            this.textBox_ServicePrice.Size = new System.Drawing.Size(92, 20);
             this.textBox_ServicePrice.TabIndex = 33;
             // 
             // textBox_ServiceDescription
             // 
-            this.textBox_ServiceDescription.Location = new System.Drawing.Point(106, 97);
-            this.textBox_ServiceDescription.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_ServiceDescription.Location = new System.Drawing.Point(80, 79);
+            this.textBox_ServiceDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox_ServiceDescription.Name = "textBox_ServiceDescription";
-            this.textBox_ServiceDescription.Size = new System.Drawing.Size(121, 22);
+            this.textBox_ServiceDescription.Size = new System.Drawing.Size(92, 20);
             this.textBox_ServiceDescription.TabIndex = 32;
             // 
             // textbox_ServiceStartDate
             // 
             this.textbox_ServiceStartDate.Enabled = false;
-            this.textbox_ServiceStartDate.Location = new System.Drawing.Point(106, 53);
-            this.textbox_ServiceStartDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textbox_ServiceStartDate.Location = new System.Drawing.Point(80, 43);
+            this.textbox_ServiceStartDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textbox_ServiceStartDate.Name = "textbox_ServiceStartDate";
-            this.textbox_ServiceStartDate.Size = new System.Drawing.Size(121, 22);
+            this.textbox_ServiceStartDate.Size = new System.Drawing.Size(92, 20);
             this.textbox_ServiceStartDate.TabIndex = 31;
             // 
             // textBox_ServiceID
             // 
             this.textBox_ServiceID.Enabled = false;
-            this.textBox_ServiceID.Location = new System.Drawing.Point(106, 7);
-            this.textBox_ServiceID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_ServiceID.Location = new System.Drawing.Point(80, 6);
+            this.textBox_ServiceID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox_ServiceID.Name = "textBox_ServiceID";
-            this.textBox_ServiceID.Size = new System.Drawing.Size(121, 22);
+            this.textBox_ServiceID.Size = new System.Drawing.Size(92, 20);
             this.textBox_ServiceID.TabIndex = 30;
             // 
             // tabPage_CreateClient
@@ -325,10 +338,11 @@
             this.tabPage_CreateClient.Controls.Add(this.textBox_ClientPhoneNumber);
             this.tabPage_CreateClient.Controls.Add(this.textbox_ClientAdress);
             this.tabPage_CreateClient.Controls.Add(this.textBox_ClientName);
-            this.tabPage_CreateClient.Location = new System.Drawing.Point(4, 25);
+            this.tabPage_CreateClient.Location = new System.Drawing.Point(4, 22);
+            this.tabPage_CreateClient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage_CreateClient.Name = "tabPage_CreateClient";
-            this.tabPage_CreateClient.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_CreateClient.Size = new System.Drawing.Size(801, 396);
+            this.tabPage_CreateClient.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage_CreateClient.Size = new System.Drawing.Size(599, 319);
             this.tabPage_CreateClient.TabIndex = 3;
             this.tabPage_CreateClient.Text = "Opret Klient";
             this.tabPage_CreateClient.UseVisualStyleBackColor = true;
@@ -337,9 +351,10 @@
             // 
             this.button_Cancel_CreateClient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button_Cancel_CreateClient.AutoSize = true;
-            this.button_Cancel_CreateClient.Location = new System.Drawing.Point(619, 362);
+            this.button_Cancel_CreateClient.Location = new System.Drawing.Point(464, 293);
+            this.button_Cancel_CreateClient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_Cancel_CreateClient.Name = "button_Cancel_CreateClient";
-            this.button_Cancel_CreateClient.Size = new System.Drawing.Size(75, 27);
+            this.button_Cancel_CreateClient.Size = new System.Drawing.Size(56, 23);
             this.button_Cancel_CreateClient.TabIndex = 88;
             this.button_Cancel_CreateClient.Text = "Annuller";
             this.button_Cancel_CreateClient.UseVisualStyleBackColor = true;
@@ -349,20 +364,21 @@
             // 
             this.button_Help_CreateClient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button_Help_CreateClient.AutoSize = true;
-            this.button_Help_CreateClient.Location = new System.Drawing.Point(768, 6);
+            this.button_Help_CreateClient.Location = new System.Drawing.Point(573, 5);
+            this.button_Help_CreateClient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_Help_CreateClient.Name = "button_Help_CreateClient";
-            this.button_Help_CreateClient.Size = new System.Drawing.Size(27, 27);
+            this.button_Help_CreateClient.Size = new System.Drawing.Size(23, 23);
             this.button_Help_CreateClient.TabIndex = 86;
             this.button_Help_CreateClient.Text = "?";
             this.button_Help_CreateClient.UseVisualStyleBackColor = true;
+            this.button_Help_CreateClient.Click += new System.EventHandler(this.button_Help_CreateClient_Click);
             // 
             // button_CreateClient
             // 
             this.button_CreateClient.AutoSize = true;
-            this.button_CreateClient.Location = new System.Drawing.Point(701, 362);
-            this.button_CreateClient.Margin = new System.Windows.Forms.Padding(4);
+            this.button_CreateClient.Location = new System.Drawing.Point(526, 294);
             this.button_CreateClient.Name = "button_CreateClient";
-            this.button_CreateClient.Size = new System.Drawing.Size(93, 27);
+            this.button_CreateClient.Size = new System.Drawing.Size(72, 23);
             this.button_CreateClient.TabIndex = 20;
             this.button_CreateClient.Text = "Opret Klient";
             this.button_CreateClient.UseVisualStyleBackColor = true;
@@ -371,55 +387,49 @@
             // label_ClientPhoneNumber
             // 
             this.label_ClientPhoneNumber.AutoSize = true;
-            this.label_ClientPhoneNumber.Location = new System.Drawing.Point(7, 87);
-            this.label_ClientPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_ClientPhoneNumber.Location = new System.Drawing.Point(5, 71);
             this.label_ClientPhoneNumber.Name = "label_ClientPhoneNumber";
-            this.label_ClientPhoneNumber.Size = new System.Drawing.Size(71, 17);
+            this.label_ClientPhoneNumber.Size = new System.Drawing.Size(54, 13);
             this.label_ClientPhoneNumber.TabIndex = 19;
             this.label_ClientPhoneNumber.Text = "TelefonNr";
             // 
             // label_ClientAdress
             // 
             this.label_ClientAdress.AutoSize = true;
-            this.label_ClientAdress.Location = new System.Drawing.Point(7, 49);
-            this.label_ClientAdress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_ClientAdress.Location = new System.Drawing.Point(5, 40);
             this.label_ClientAdress.Name = "label_ClientAdress";
-            this.label_ClientAdress.Size = new System.Drawing.Size(60, 17);
+            this.label_ClientAdress.Size = new System.Drawing.Size(45, 13);
             this.label_ClientAdress.TabIndex = 18;
             this.label_ClientAdress.Text = "Adresse";
             // 
             // label_ClientName
             // 
             this.label_ClientName.AutoSize = true;
-            this.label_ClientName.Location = new System.Drawing.Point(7, 13);
-            this.label_ClientName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_ClientName.Location = new System.Drawing.Point(5, 11);
             this.label_ClientName.Name = "label_ClientName";
-            this.label_ClientName.Size = new System.Drawing.Size(41, 17);
+            this.label_ClientName.Size = new System.Drawing.Size(33, 13);
             this.label_ClientName.TabIndex = 17;
             this.label_ClientName.Text = "Navn";
             // 
             // textBox_ClientPhoneNumber
             // 
-            this.textBox_ClientPhoneNumber.Location = new System.Drawing.Point(99, 87);
-            this.textBox_ClientPhoneNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_ClientPhoneNumber.Location = new System.Drawing.Point(74, 71);
             this.textBox_ClientPhoneNumber.Name = "textBox_ClientPhoneNumber";
-            this.textBox_ClientPhoneNumber.Size = new System.Drawing.Size(169, 22);
+            this.textBox_ClientPhoneNumber.Size = new System.Drawing.Size(128, 20);
             this.textBox_ClientPhoneNumber.TabIndex = 16;
             // 
             // textbox_ClientAdress
             // 
-            this.textbox_ClientAdress.Location = new System.Drawing.Point(99, 49);
-            this.textbox_ClientAdress.Margin = new System.Windows.Forms.Padding(4);
+            this.textbox_ClientAdress.Location = new System.Drawing.Point(74, 40);
             this.textbox_ClientAdress.Name = "textbox_ClientAdress";
-            this.textbox_ClientAdress.Size = new System.Drawing.Size(169, 22);
+            this.textbox_ClientAdress.Size = new System.Drawing.Size(128, 20);
             this.textbox_ClientAdress.TabIndex = 15;
             // 
             // textBox_ClientName
             // 
-            this.textBox_ClientName.Location = new System.Drawing.Point(99, 13);
-            this.textBox_ClientName.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_ClientName.Location = new System.Drawing.Point(74, 11);
             this.textBox_ClientName.Name = "textBox_ClientName";
-            this.textBox_ClientName.Size = new System.Drawing.Size(169, 22);
+            this.textBox_ClientName.Size = new System.Drawing.Size(128, 20);
             this.textBox_ClientName.TabIndex = 14;
             // 
             // tabPage_CreateEmployee
@@ -435,10 +445,11 @@
             this.tabPage_CreateEmployee.Controls.Add(this.comboBox_ServiceType_CreateEmployee);
             this.tabPage_CreateEmployee.Controls.Add(this.label_EmployeeName);
             this.tabPage_CreateEmployee.Controls.Add(this.button_CreateEmployee);
-            this.tabPage_CreateEmployee.Location = new System.Drawing.Point(4, 25);
+            this.tabPage_CreateEmployee.Location = new System.Drawing.Point(4, 22);
+            this.tabPage_CreateEmployee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage_CreateEmployee.Name = "tabPage_CreateEmployee";
-            this.tabPage_CreateEmployee.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_CreateEmployee.Size = new System.Drawing.Size(801, 396);
+            this.tabPage_CreateEmployee.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage_CreateEmployee.Size = new System.Drawing.Size(599, 319);
             this.tabPage_CreateEmployee.TabIndex = 2;
             this.tabPage_CreateEmployee.Text = "Opret Advokat";
             this.tabPage_CreateEmployee.UseVisualStyleBackColor = true;
@@ -447,9 +458,10 @@
             // 
             this.button_Cancel_CreateEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button_Cancel_CreateEmployee.AutoSize = true;
-            this.button_Cancel_CreateEmployee.Location = new System.Drawing.Point(639, 363);
+            this.button_Cancel_CreateEmployee.Location = new System.Drawing.Point(479, 294);
+            this.button_Cancel_CreateEmployee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_Cancel_CreateEmployee.Name = "button_Cancel_CreateEmployee";
-            this.button_Cancel_CreateEmployee.Size = new System.Drawing.Size(75, 27);
+            this.button_Cancel_CreateEmployee.Size = new System.Drawing.Size(56, 23);
             this.button_Cancel_CreateEmployee.TabIndex = 87;
             this.button_Cancel_CreateEmployee.Text = "Annuller";
             this.button_Cancel_CreateEmployee.UseVisualStyleBackColor = true;
@@ -459,9 +471,10 @@
             // 
             this.button_Finished.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button_Finished.AutoSize = true;
-            this.button_Finished.Location = new System.Drawing.Point(720, 363);
+            this.button_Finished.Location = new System.Drawing.Point(540, 294);
+            this.button_Finished.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_Finished.Name = "button_Finished";
-            this.button_Finished.Size = new System.Drawing.Size(75, 27);
+            this.button_Finished.Size = new System.Drawing.Size(56, 23);
             this.button_Finished.TabIndex = 81;
             this.button_Finished.Text = "Færdig";
             this.button_Finished.UseVisualStyleBackColor = true;
@@ -473,18 +486,19 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.listBox_EmployeeService_CreateEmployee.Enabled = false;
             this.listBox_EmployeeService_CreateEmployee.FormattingEnabled = true;
-            this.listBox_EmployeeService_CreateEmployee.ItemHeight = 16;
-            this.listBox_EmployeeService_CreateEmployee.Location = new System.Drawing.Point(13, 107);
+            this.listBox_EmployeeService_CreateEmployee.Location = new System.Drawing.Point(10, 87);
+            this.listBox_EmployeeService_CreateEmployee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBox_EmployeeService_CreateEmployee.Name = "listBox_EmployeeService_CreateEmployee";
-            this.listBox_EmployeeService_CreateEmployee.Size = new System.Drawing.Size(456, 276);
+            this.listBox_EmployeeService_CreateEmployee.Size = new System.Drawing.Size(343, 225);
             this.listBox_EmployeeService_CreateEmployee.TabIndex = 80;
             // 
             // label_AddedEmployeeSpecialities
             // 
             this.label_AddedEmployeeSpecialities.AutoSize = true;
-            this.label_AddedEmployeeSpecialities.Location = new System.Drawing.Point(10, 86);
+            this.label_AddedEmployeeSpecialities.Location = new System.Drawing.Point(8, 70);
+            this.label_AddedEmployeeSpecialities.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_AddedEmployeeSpecialities.Name = "label_AddedEmployeeSpecialities";
-            this.label_AddedEmployeeSpecialities.Size = new System.Drawing.Size(117, 17);
+            this.label_AddedEmployeeSpecialities.Size = new System.Drawing.Size(87, 13);
             this.label_AddedEmployeeSpecialities.TabIndex = 79;
             this.label_AddedEmployeeSpecialities.Text = "Efteruddannelser";
             // 
@@ -492,9 +506,10 @@
             // 
             this.button_AddEducation_CreateEmployee.AutoSize = true;
             this.button_AddEducation_CreateEmployee.Enabled = false;
-            this.button_AddEducation_CreateEmployee.Location = new System.Drawing.Point(314, 49);
+            this.button_AddEducation_CreateEmployee.Location = new System.Drawing.Point(236, 40);
+            this.button_AddEducation_CreateEmployee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_AddEducation_CreateEmployee.Name = "button_AddEducation_CreateEmployee";
-            this.button_AddEducation_CreateEmployee.Size = new System.Drawing.Size(155, 27);
+            this.button_AddEducation_CreateEmployee.Size = new System.Drawing.Size(116, 23);
             this.button_AddEducation_CreateEmployee.TabIndex = 78;
             this.button_AddEducation_CreateEmployee.Text = "Tilføj tjensteydelse";
             this.button_AddEducation_CreateEmployee.UseVisualStyleBackColor = true;
@@ -504,46 +519,49 @@
             // 
             this.button_Help_CreateEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button_Help_CreateEmployee.AutoSize = true;
-            this.button_Help_CreateEmployee.Location = new System.Drawing.Point(768, 6);
+            this.button_Help_CreateEmployee.Location = new System.Drawing.Point(573, 5);
+            this.button_Help_CreateEmployee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_Help_CreateEmployee.Name = "button_Help_CreateEmployee";
-            this.button_Help_CreateEmployee.Size = new System.Drawing.Size(27, 27);
+            this.button_Help_CreateEmployee.Size = new System.Drawing.Size(23, 23);
             this.button_Help_CreateEmployee.TabIndex = 77;
             this.button_Help_CreateEmployee.Text = "?";
             this.button_Help_CreateEmployee.UseVisualStyleBackColor = true;
+            this.button_Help_CreateEmployee.Click += new System.EventHandler(this.button_Help_CreateEmployee_Click);
             // 
             // label_EmployeeEducation
             // 
             this.label_EmployeeEducation.AutoSize = true;
-            this.label_EmployeeEducation.Location = new System.Drawing.Point(7, 48);
+            this.label_EmployeeEducation.Location = new System.Drawing.Point(5, 39);
+            this.label_EmployeeEducation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_EmployeeEducation.Name = "label_EmployeeEducation";
-            this.label_EmployeeEducation.Size = new System.Drawing.Size(104, 17);
+            this.label_EmployeeEducation.Size = new System.Drawing.Size(78, 13);
             this.label_EmployeeEducation.TabIndex = 76;
             this.label_EmployeeEducation.Text = "Tjenesteydelse";
             // 
             // textBox_EmployeeName
             // 
-            this.textBox_EmployeeName.Location = new System.Drawing.Point(139, 12);
+            this.textBox_EmployeeName.Location = new System.Drawing.Point(104, 10);
+            this.textBox_EmployeeName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox_EmployeeName.Name = "textBox_EmployeeName";
-            this.textBox_EmployeeName.Size = new System.Drawing.Size(169, 22);
+            this.textBox_EmployeeName.Size = new System.Drawing.Size(128, 20);
             this.textBox_EmployeeName.TabIndex = 75;
             // 
             // comboBox_ServiceType_CreateEmployee
             // 
             this.comboBox_ServiceType_CreateEmployee.Enabled = false;
             this.comboBox_ServiceType_CreateEmployee.FormattingEnabled = true;
-            this.comboBox_ServiceType_CreateEmployee.Location = new System.Drawing.Point(139, 49);
-            this.comboBox_ServiceType_CreateEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox_ServiceType_CreateEmployee.Location = new System.Drawing.Point(104, 40);
+            this.comboBox_ServiceType_CreateEmployee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox_ServiceType_CreateEmployee.Name = "comboBox_ServiceType_CreateEmployee";
-            this.comboBox_ServiceType_CreateEmployee.Size = new System.Drawing.Size(169, 24);
+            this.comboBox_ServiceType_CreateEmployee.Size = new System.Drawing.Size(128, 21);
             this.comboBox_ServiceType_CreateEmployee.TabIndex = 74;
             // 
             // label_EmployeeName
             // 
             this.label_EmployeeName.AutoSize = true;
-            this.label_EmployeeName.Location = new System.Drawing.Point(7, 12);
-            this.label_EmployeeName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_EmployeeName.Location = new System.Drawing.Point(5, 10);
             this.label_EmployeeName.Name = "label_EmployeeName";
-            this.label_EmployeeName.Size = new System.Drawing.Size(101, 17);
+            this.label_EmployeeName.Size = new System.Drawing.Size(80, 13);
             this.label_EmployeeName.TabIndex = 73;
             this.label_EmployeeName.Text = "Advokat Navn*";
             // 
@@ -551,9 +569,10 @@
             // 
             this.button_CreateEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button_CreateEmployee.AutoSize = true;
-            this.button_CreateEmployee.Location = new System.Drawing.Point(325, 16);
+            this.button_CreateEmployee.Location = new System.Drawing.Point(240, 12);
+            this.button_CreateEmployee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_CreateEmployee.Name = "button_CreateEmployee";
-            this.button_CreateEmployee.Size = new System.Drawing.Size(108, 27);
+            this.button_CreateEmployee.Size = new System.Drawing.Size(85, 23);
             this.button_CreateEmployee.TabIndex = 0;
             this.button_CreateEmployee.Text = "Opret advokat";
             this.button_CreateEmployee.UseVisualStyleBackColor = true;
@@ -582,10 +601,11 @@
             this.tabPage_CreateCase.Controls.Add(this.label_CaseKilometers);
             this.tabPage_CreateCase.Controls.Add(this.label_CaseDescription);
             this.tabPage_CreateCase.Controls.Add(this.label_CaseEstimatedHours);
-            this.tabPage_CreateCase.Location = new System.Drawing.Point(4, 25);
+            this.tabPage_CreateCase.Location = new System.Drawing.Point(4, 22);
+            this.tabPage_CreateCase.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage_CreateCase.Name = "tabPage_CreateCase";
-            this.tabPage_CreateCase.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_CreateCase.Size = new System.Drawing.Size(801, 396);
+            this.tabPage_CreateCase.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage_CreateCase.Size = new System.Drawing.Size(599, 319);
             this.tabPage_CreateCase.TabIndex = 1;
             this.tabPage_CreateCase.Text = "Opret Sag";
             this.tabPage_CreateCase.UseVisualStyleBackColor = true;
@@ -594,9 +614,10 @@
             // 
             this.button_Cancel_CreateCase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button_Cancel_CreateCase.AutoSize = true;
-            this.button_Cancel_CreateCase.Location = new System.Drawing.Point(631, 364);
+            this.button_Cancel_CreateCase.Location = new System.Drawing.Point(473, 295);
+            this.button_Cancel_CreateCase.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_Cancel_CreateCase.Name = "button_Cancel_CreateCase";
-            this.button_Cancel_CreateCase.Size = new System.Drawing.Size(75, 27);
+            this.button_Cancel_CreateCase.Size = new System.Drawing.Size(56, 23);
             this.button_Cancel_CreateCase.TabIndex = 86;
             this.button_Cancel_CreateCase.Text = "Annuller";
             this.button_Cancel_CreateCase.UseVisualStyleBackColor = true;
@@ -606,29 +627,33 @@
             // 
             this.button_Help_CreateCase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button_Help_CreateCase.AutoSize = true;
-            this.button_Help_CreateCase.Location = new System.Drawing.Point(768, 6);
+            this.button_Help_CreateCase.Location = new System.Drawing.Point(573, 5);
+            this.button_Help_CreateCase.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_Help_CreateCase.Name = "button_Help_CreateCase";
-            this.button_Help_CreateCase.Size = new System.Drawing.Size(27, 27);
+            this.button_Help_CreateCase.Size = new System.Drawing.Size(23, 23);
             this.button_Help_CreateCase.TabIndex = 85;
             this.button_Help_CreateCase.Text = "?";
             this.button_Help_CreateCase.UseVisualStyleBackColor = true;
+            this.button_Help_CreateCase.Click += new System.EventHandler(this.button_Help_CreateCase_Click);
             // 
             // comboBox_Client_CreateCase
             // 
             this.comboBox_Client_CreateCase.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_Client_CreateCase.FormattingEnabled = true;
-            this.comboBox_Client_CreateCase.Location = new System.Drawing.Point(137, 272);
+            this.comboBox_Client_CreateCase.Location = new System.Drawing.Point(103, 221);
+            this.comboBox_Client_CreateCase.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox_Client_CreateCase.Name = "comboBox_Client_CreateCase";
-            this.comboBox_Client_CreateCase.Size = new System.Drawing.Size(169, 24);
+            this.comboBox_Client_CreateCase.Size = new System.Drawing.Size(128, 21);
             this.comboBox_Client_CreateCase.TabIndex = 84;
             // 
             // richTextBox_CaseNotes
             // 
             this.richTextBox_CaseNotes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox_CaseNotes.Location = new System.Drawing.Point(526, 151);
+            this.richTextBox_CaseNotes.Location = new System.Drawing.Point(394, 123);
+            this.richTextBox_CaseNotes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.richTextBox_CaseNotes.Name = "richTextBox_CaseNotes";
-            this.richTextBox_CaseNotes.Size = new System.Drawing.Size(226, 155);
+            this.richTextBox_CaseNotes.Size = new System.Drawing.Size(170, 127);
             this.richTextBox_CaseNotes.TabIndex = 83;
             this.richTextBox_CaseNotes.Text = "";
             // 
@@ -636,53 +661,54 @@
             // 
             this.richTextBox_CaseDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox_CaseDescription.Location = new System.Drawing.Point(526, 16);
+            this.richTextBox_CaseDescription.Location = new System.Drawing.Point(394, 13);
+            this.richTextBox_CaseDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.richTextBox_CaseDescription.Name = "richTextBox_CaseDescription";
-            this.richTextBox_CaseDescription.Size = new System.Drawing.Size(226, 155);
+            this.richTextBox_CaseDescription.Size = new System.Drawing.Size(170, 127);
             this.richTextBox_CaseDescription.TabIndex = 82;
             this.richTextBox_CaseDescription.Text = "";
             // 
             // textbox_CaseStartDate
             // 
             this.textbox_CaseStartDate.Enabled = false;
-            this.textbox_CaseStartDate.Location = new System.Drawing.Point(137, 109);
-            this.textbox_CaseStartDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textbox_CaseStartDate.Location = new System.Drawing.Point(103, 89);
+            this.textbox_CaseStartDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textbox_CaseStartDate.Name = "textbox_CaseStartDate";
-            this.textbox_CaseStartDate.Size = new System.Drawing.Size(169, 22);
+            this.textbox_CaseStartDate.Size = new System.Drawing.Size(128, 20);
             this.textbox_CaseStartDate.TabIndex = 64;
             // 
             // textbox_CaseKilometers
             // 
-            this.textbox_CaseKilometers.Location = new System.Drawing.Point(137, 149);
-            this.textbox_CaseKilometers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textbox_CaseKilometers.Location = new System.Drawing.Point(103, 121);
+            this.textbox_CaseKilometers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textbox_CaseKilometers.Name = "textbox_CaseKilometers";
-            this.textbox_CaseKilometers.Size = new System.Drawing.Size(169, 22);
+            this.textbox_CaseKilometers.Size = new System.Drawing.Size(128, 20);
             this.textbox_CaseKilometers.TabIndex = 68;
             // 
             // textBox_CaseTitle
             // 
-            this.textBox_CaseTitle.Location = new System.Drawing.Point(137, 65);
-            this.textBox_CaseTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_CaseTitle.Location = new System.Drawing.Point(103, 53);
+            this.textBox_CaseTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox_CaseTitle.Name = "textBox_CaseTitle";
-            this.textBox_CaseTitle.Size = new System.Drawing.Size(169, 22);
+            this.textBox_CaseTitle.Size = new System.Drawing.Size(128, 20);
             this.textBox_CaseTitle.TabIndex = 63;
             // 
             // textBox_CaseEstimatedHours
             // 
-            this.textBox_CaseEstimatedHours.Location = new System.Drawing.Point(137, 188);
-            this.textBox_CaseEstimatedHours.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_CaseEstimatedHours.Location = new System.Drawing.Point(103, 153);
+            this.textBox_CaseEstimatedHours.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox_CaseEstimatedHours.Name = "textBox_CaseEstimatedHours";
-            this.textBox_CaseEstimatedHours.Size = new System.Drawing.Size(169, 22);
+            this.textBox_CaseEstimatedHours.Size = new System.Drawing.Size(128, 20);
             this.textBox_CaseEstimatedHours.TabIndex = 69;
             // 
             // button_CreateCase
             // 
             this.button_CreateCase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button_CreateCase.AutoSize = true;
-            this.button_CreateCase.Location = new System.Drawing.Point(712, 364);
-            this.button_CreateCase.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_CreateCase.Location = new System.Drawing.Point(531, 295);
+            this.button_CreateCase.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_CreateCase.Name = "button_CreateCase";
-            this.button_CreateCase.Size = new System.Drawing.Size(83, 27);
+            this.button_CreateCase.Size = new System.Drawing.Size(65, 23);
             this.button_CreateCase.TabIndex = 81;
             this.button_CreateCase.Text = "Opret Sag";
             this.button_CreateCase.UseVisualStyleBackColor = true;
@@ -691,36 +717,39 @@
             // label_CaseNotes
             // 
             this.label_CaseNotes.AutoSize = true;
-            this.label_CaseNotes.Location = new System.Drawing.Point(351, 154);
+            this.label_CaseNotes.Location = new System.Drawing.Point(263, 125);
+            this.label_CaseNotes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_CaseNotes.Name = "label_CaseNotes";
-            this.label_CaseNotes.Size = new System.Drawing.Size(89, 17);
+            this.label_CaseNotes.Size = new System.Drawing.Size(67, 13);
             this.label_CaseNotes.TabIndex = 80;
             this.label_CaseNotes.Text = "Interne noter";
             // 
             // comboBox_Employee_CreateCase
             // 
             this.comboBox_Employee_CreateCase.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_Employee_CreateCase.Location = new System.Drawing.Point(137, 230);
-            this.comboBox_Employee_CreateCase.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox_Employee_CreateCase.Location = new System.Drawing.Point(103, 187);
+            this.comboBox_Employee_CreateCase.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox_Employee_CreateCase.Name = "comboBox_Employee_CreateCase";
-            this.comboBox_Employee_CreateCase.Size = new System.Drawing.Size(169, 24);
+            this.comboBox_Employee_CreateCase.Size = new System.Drawing.Size(128, 21);
             this.comboBox_Employee_CreateCase.TabIndex = 76;
             // 
             // label_Employee
             // 
             this.label_Employee.AutoSize = true;
-            this.label_Employee.Location = new System.Drawing.Point(6, 230);
+            this.label_Employee.Location = new System.Drawing.Point(4, 187);
+            this.label_Employee.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_Employee.Name = "label_Employee";
-            this.label_Employee.Size = new System.Drawing.Size(93, 17);
+            this.label_Employee.Size = new System.Drawing.Size(70, 13);
             this.label_Employee.TabIndex = 79;
             this.label_Employee.Text = "Medarbejder*";
             // 
             // label_Client
             // 
             this.label_Client.AutoSize = true;
-            this.label_Client.Location = new System.Drawing.Point(6, 272);
+            this.label_Client.Location = new System.Drawing.Point(4, 221);
+            this.label_Client.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_Client.Name = "label_Client";
-            this.label_Client.Size = new System.Drawing.Size(48, 17);
+            this.label_Client.Size = new System.Drawing.Size(37, 13);
             this.label_Client.TabIndex = 78;
             this.label_Client.Text = "Klient*";
             // 
@@ -728,65 +757,69 @@
             // 
             this.comboBox_ServiceType_CreateCase.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_ServiceType_CreateCase.FormattingEnabled = true;
-            this.comboBox_ServiceType_CreateCase.Location = new System.Drawing.Point(137, 16);
-            this.comboBox_ServiceType_CreateCase.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox_ServiceType_CreateCase.Location = new System.Drawing.Point(103, 13);
+            this.comboBox_ServiceType_CreateCase.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox_ServiceType_CreateCase.Name = "comboBox_ServiceType_CreateCase";
-            this.comboBox_ServiceType_CreateCase.Size = new System.Drawing.Size(169, 24);
+            this.comboBox_ServiceType_CreateCase.Size = new System.Drawing.Size(128, 21);
             this.comboBox_ServiceType_CreateCase.TabIndex = 59;
             this.comboBox_ServiceType_CreateCase.SelectedIndexChanged += new System.EventHandler(this.comboBox_ServiceType_CreateCase_SelectedIndexChanged);
             // 
             // label_Service
             // 
             this.label_Service.AutoSize = true;
-            this.label_Service.Location = new System.Drawing.Point(6, 16);
-            this.label_Service.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_Service.Location = new System.Drawing.Point(4, 13);
             this.label_Service.Name = "label_Service";
-            this.label_Service.Size = new System.Drawing.Size(76, 17);
+            this.label_Service.Size = new System.Drawing.Size(58, 13);
             this.label_Service.TabIndex = 72;
             this.label_Service.Text = "Sags type*";
             // 
             // label_CaseTitle
             // 
             this.label_CaseTitle.AutoSize = true;
-            this.label_CaseTitle.Location = new System.Drawing.Point(6, 65);
+            this.label_CaseTitle.Location = new System.Drawing.Point(4, 53);
+            this.label_CaseTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_CaseTitle.Name = "label_CaseTitle";
-            this.label_CaseTitle.Size = new System.Drawing.Size(83, 17);
+            this.label_CaseTitle.Size = new System.Drawing.Size(62, 13);
             this.label_CaseTitle.TabIndex = 61;
             this.label_CaseTitle.Text = "Arbejdstitel*";
             // 
             // label_CaseStartDate
             // 
             this.label_CaseStartDate.AutoSize = true;
-            this.label_CaseStartDate.Location = new System.Drawing.Point(6, 109);
+            this.label_CaseStartDate.Location = new System.Drawing.Point(4, 89);
+            this.label_CaseStartDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_CaseStartDate.Name = "label_CaseStartDate";
-            this.label_CaseStartDate.Size = new System.Drawing.Size(70, 17);
+            this.label_CaseStartDate.Size = new System.Drawing.Size(53, 13);
             this.label_CaseStartDate.TabIndex = 62;
             this.label_CaseStartDate.Text = "Start dato";
             // 
             // label_CaseKilometers
             // 
             this.label_CaseKilometers.AutoSize = true;
-            this.label_CaseKilometers.Location = new System.Drawing.Point(6, 151);
+            this.label_CaseKilometers.Location = new System.Drawing.Point(4, 123);
+            this.label_CaseKilometers.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_CaseKilometers.Name = "label_CaseKilometers";
-            this.label_CaseKilometers.Size = new System.Drawing.Size(86, 17);
+            this.label_CaseKilometers.Size = new System.Drawing.Size(63, 13);
             this.label_CaseKilometers.TabIndex = 65;
             this.label_CaseKilometers.Text = "Kørselstimer";
             // 
             // label_CaseDescription
             // 
             this.label_CaseDescription.AutoSize = true;
-            this.label_CaseDescription.Location = new System.Drawing.Point(351, 19);
+            this.label_CaseDescription.Location = new System.Drawing.Point(263, 15);
+            this.label_CaseDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_CaseDescription.Name = "label_CaseDescription";
-            this.label_CaseDescription.Size = new System.Drawing.Size(116, 17);
+            this.label_CaseDescription.Size = new System.Drawing.Size(88, 13);
             this.label_CaseDescription.TabIndex = 71;
             this.label_CaseDescription.Text = "Sagsbeskrivelse*";
             // 
             // label_CaseEstimatedHours
             // 
             this.label_CaseEstimatedHours.AutoSize = true;
-            this.label_CaseEstimatedHours.Location = new System.Drawing.Point(1, 191);
+            this.label_CaseEstimatedHours.Location = new System.Drawing.Point(1, 155);
+            this.label_CaseEstimatedHours.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_CaseEstimatedHours.Name = "label_CaseEstimatedHours";
-            this.label_CaseEstimatedHours.Size = new System.Drawing.Size(88, 17);
+            this.label_CaseEstimatedHours.Size = new System.Drawing.Size(66, 13);
             this.label_CaseEstimatedHours.TabIndex = 67;
             this.label_CaseEstimatedHours.Text = "Time estimat";
             // 
@@ -798,10 +831,11 @@
             this.tabPage_Overview.Controls.Add(this.comboBox_Overview);
             this.tabPage_Overview.Controls.Add(this.button_Overview_SaveChanges);
             this.tabPage_Overview.Controls.Add(this.objectListView_Overview);
-            this.tabPage_Overview.Location = new System.Drawing.Point(4, 25);
+            this.tabPage_Overview.Location = new System.Drawing.Point(4, 22);
+            this.tabPage_Overview.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage_Overview.Name = "tabPage_Overview";
-            this.tabPage_Overview.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_Overview.Size = new System.Drawing.Size(801, 396);
+            this.tabPage_Overview.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage_Overview.Size = new System.Drawing.Size(599, 319);
             this.tabPage_Overview.TabIndex = 0;
             this.tabPage_Overview.Text = "Oversigt";
             this.tabPage_Overview.UseVisualStyleBackColor = true;
@@ -810,19 +844,22 @@
             // 
             this.button_Help_Overview.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button_Help_Overview.AutoSize = true;
-            this.button_Help_Overview.Location = new System.Drawing.Point(768, 6);
+            this.button_Help_Overview.Location = new System.Drawing.Point(573, 5);
+            this.button_Help_Overview.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_Help_Overview.Name = "button_Help_Overview";
-            this.button_Help_Overview.Size = new System.Drawing.Size(27, 27);
+            this.button_Help_Overview.Size = new System.Drawing.Size(23, 23);
             this.button_Help_Overview.TabIndex = 14;
             this.button_Help_Overview.Text = "?";
             this.button_Help_Overview.UseVisualStyleBackColor = true;
+            this.button_Help_Overview.Click += new System.EventHandler(this.button_Help_Overview_Click);
             // 
             // button_AddNew
             // 
             this.button_AddNew.AutoSize = true;
-            this.button_AddNew.Location = new System.Drawing.Point(200, 6);
+            this.button_AddNew.Location = new System.Drawing.Point(150, 5);
+            this.button_AddNew.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_AddNew.Name = "button_AddNew";
-            this.button_AddNew.Size = new System.Drawing.Size(85, 27);
+            this.button_AddNew.Size = new System.Drawing.Size(66, 23);
             this.button_AddNew.TabIndex = 13;
             this.button_AddNew.Text = "Opret ny...";
             this.button_AddNew.UseVisualStyleBackColor = true;
@@ -831,9 +868,10 @@
             // label_Overview
             // 
             this.label_Overview.AutoSize = true;
-            this.label_Overview.Location = new System.Drawing.Point(6, 9);
+            this.label_Overview.Location = new System.Drawing.Point(4, 7);
+            this.label_Overview.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_Overview.Name = "label_Overview";
-            this.label_Overview.Size = new System.Drawing.Size(61, 17);
+            this.label_Overview.Size = new System.Drawing.Size(46, 13);
             this.label_Overview.TabIndex = 12;
             this.label_Overview.Text = "Kategori";
             // 
@@ -841,9 +879,10 @@
             // 
             this.comboBox_Overview.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_Overview.FormattingEnabled = true;
-            this.comboBox_Overview.Location = new System.Drawing.Point(73, 6);
+            this.comboBox_Overview.Location = new System.Drawing.Point(55, 5);
+            this.comboBox_Overview.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox_Overview.Name = "comboBox_Overview";
-            this.comboBox_Overview.Size = new System.Drawing.Size(121, 24);
+            this.comboBox_Overview.Size = new System.Drawing.Size(92, 21);
             this.comboBox_Overview.TabIndex = 11;
             this.comboBox_Overview.SelectedIndexChanged += new System.EventHandler(this.comboBox_Overview_SelectedIndexChanged);
             // 
@@ -851,9 +890,10 @@
             // 
             this.button_Overview_SaveChanges.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button_Overview_SaveChanges.AutoSize = true;
-            this.button_Overview_SaveChanges.Location = new System.Drawing.Point(644, 6);
+            this.button_Overview_SaveChanges.Location = new System.Drawing.Point(481, 5);
+            this.button_Overview_SaveChanges.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_Overview_SaveChanges.Name = "button_Overview_SaveChanges";
-            this.button_Overview_SaveChanges.Size = new System.Drawing.Size(118, 27);
+            this.button_Overview_SaveChanges.Size = new System.Drawing.Size(90, 23);
             this.button_Overview_SaveChanges.TabIndex = 1;
             this.button_Overview_SaveChanges.Text = "Gem ændringer";
             this.button_Overview_SaveChanges.UseVisualStyleBackColor = true;
@@ -917,12 +957,12 @@
             this.objectListView_Overview.FullRowSelect = true;
             this.objectListView_Overview.GridLines = true;
             this.objectListView_Overview.HasCollapsibleGroups = false;
-            this.objectListView_Overview.Location = new System.Drawing.Point(9, 42);
-            this.objectListView_Overview.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.objectListView_Overview.Location = new System.Drawing.Point(7, 34);
+            this.objectListView_Overview.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.objectListView_Overview.Name = "objectListView_Overview";
             this.objectListView_Overview.ShowGroups = false;
             this.objectListView_Overview.ShowImagesOnSubItems = true;
-            this.objectListView_Overview.Size = new System.Drawing.Size(782, 345);
+            this.objectListView_Overview.Size = new System.Drawing.Size(588, 281);
             this.objectListView_Overview.TabIndex = 10;
             this.objectListView_Overview.UseCompatibleStateImageBehavior = false;
             this.objectListView_Overview.UseFiltering = true;
@@ -1101,19 +1141,21 @@
             this.Side.Controls.Add(this.tabPage_CreateEmployee);
             this.Side.Controls.Add(this.tabPage_CreateClient);
             this.Side.Controls.Add(this.tabPage_CreateService);
-            this.Side.Location = new System.Drawing.Point(13, 13);
+            this.Side.Location = new System.Drawing.Point(10, 11);
+            this.Side.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Side.Multiline = true;
             this.Side.Name = "Side";
             this.Side.SelectedIndex = 0;
-            this.Side.Size = new System.Drawing.Size(809, 425);
+            this.Side.Size = new System.Drawing.Size(607, 345);
             this.Side.TabIndex = 0;
             // 
             // GUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 450);
+            this.ClientSize = new System.Drawing.Size(626, 366);
             this.Controls.Add(this.Side);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "GUI";
             this.Text = "LawHouse";
             this.tabPage_CreateService.ResumeLayout(false);

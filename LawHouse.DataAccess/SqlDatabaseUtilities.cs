@@ -7,15 +7,14 @@ using System.Threading.Tasks;
 
 namespace LawHouse.DataAccess
 {
-    public class SqlDatabaseUtilities //By Julius
+    public class SQLDatabaseUtilities //By Julius
     {
-        public static void RunSqlCommand(string commandToRun, SqlCommand com) //By Daniella, refactored by Julius
+        public static void RunSqlInsertCommand(string commandToRun, SqlCommand com) //By Daniella, refactored by Julius
         {
             using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString))
             {
                 using (com)
                 {
-
                     com.Connection = conn;
                     try
                     {
@@ -31,7 +30,7 @@ namespace LawHouse.DataAccess
             }
         }
 
-        public static List<List<string>> GenericSqlStringDataReader(string sqlString) //By Julius
+        public static List<List<string>> ReadSqlCommand(string sqlString) //By Julius
         {
             SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString);
             SqlCommand com = new SqlCommand(sqlString, conn);

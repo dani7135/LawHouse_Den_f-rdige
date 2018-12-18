@@ -17,12 +17,12 @@ using LawHouse.Shared.Interfaces;
 
 namespace DataAccess
 {
-    //XMLDummyDatabaseHandler virker ikke på grund at navneskift
-
+    // XMLDummyDatabaseHandler virker ikke på grund af navneskift
+    //i Interfacen, samt i støtteklasserne
     /*
     public class XMLDummyDatabaseHandler : IDatabase // By Julius
     {
-        public XMLDummyDatabaseHandler()//i know how this works, i think -Julius
+        public XMLDummyDatabaseHandler()
         {
             string path = System.IO.Directory.GetCurrentDirectory();
             //Relativ position ://Lawhouse2//lawhouse//bin//debug
