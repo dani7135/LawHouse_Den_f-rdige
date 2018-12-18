@@ -9,7 +9,7 @@ namespace LawHouse.BusinessLogic
     public class Controller
     {
 
-        private static IDatabase currentDatabaseInstance = SqlDatabase.Instance(); //Sql Database
+        private static IDatabase currentDatabaseInstance = SQLDatabaseHandler.Instance(); //Sql Database
 
         #region Employee
         public static int CreateAdvokat(string advokatNavn)
