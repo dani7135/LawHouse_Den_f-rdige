@@ -121,6 +121,12 @@
             this.olvColumn_ServiceStartDate = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn_ServiceEmployeeID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Side = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.Tab_edit = new System.Windows.Forms.TabControl();
+            this.tab_edit_case = new System.Windows.Forms.TabPage();
+            this.tab_edit_employee = new System.Windows.Forms.TabPage();
+            this.tab_edit_client = new System.Windows.Forms.TabPage();
+            this.tab_edit_Service = new System.Windows.Forms.TabPage();
             this.tabPage_CreateService.SuspendLayout();
             this.tabPage_CreateClient.SuspendLayout();
             this.tabPage_CreateEmployee.SuspendLayout();
@@ -128,6 +134,8 @@
             this.tabPage_Overview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_Overview)).BeginInit();
             this.Side.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.Tab_edit.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage_CreateService
@@ -1101,12 +1109,76 @@
             this.Side.Controls.Add(this.tabPage_CreateEmployee);
             this.Side.Controls.Add(this.tabPage_CreateClient);
             this.Side.Controls.Add(this.tabPage_CreateService);
+            this.Side.Controls.Add(this.tabPage1);
             this.Side.Location = new System.Drawing.Point(13, 13);
             this.Side.Multiline = true;
             this.Side.Name = "Side";
             this.Side.SelectedIndex = 0;
             this.Side.Size = new System.Drawing.Size(809, 425);
             this.Side.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.Tab_edit);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(801, 396);
+            this.tabPage1.TabIndex = 5;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // Tab_edit
+            // 
+            this.Tab_edit.Controls.Add(this.tab_edit_case);
+            this.Tab_edit.Controls.Add(this.tab_edit_employee);
+            this.Tab_edit.Controls.Add(this.tab_edit_client);
+            this.Tab_edit.Controls.Add(this.tab_edit_Service);
+            this.Tab_edit.Location = new System.Drawing.Point(107, 15);
+            this.Tab_edit.Name = "Tab_edit";
+            this.Tab_edit.SelectedIndex = 0;
+            this.Tab_edit.Size = new System.Drawing.Size(477, 381);
+            this.Tab_edit.TabIndex = 0;
+            // 
+            // tab_edit_case
+            // 
+            this.tab_edit_case.Location = new System.Drawing.Point(4, 25);
+            this.tab_edit_case.Name = "tab_edit_case";
+            this.tab_edit_case.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_edit_case.Size = new System.Drawing.Size(469, 352);
+            this.tab_edit_case.TabIndex = 0;
+            this.tab_edit_case.Text = "Sag";
+            this.tab_edit_case.UseVisualStyleBackColor = true;
+            // 
+            // tab_edit_employee
+            // 
+            this.tab_edit_employee.Location = new System.Drawing.Point(4, 25);
+            this.tab_edit_employee.Name = "tab_edit_employee";
+            this.tab_edit_employee.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_edit_employee.Size = new System.Drawing.Size(469, 352);
+            this.tab_edit_employee.TabIndex = 1;
+            this.tab_edit_employee.Text = "Ansat";
+            this.tab_edit_employee.UseVisualStyleBackColor = true;
+            // 
+            // tab_edit_client
+            // 
+            this.tab_edit_client.Location = new System.Drawing.Point(4, 25);
+            this.tab_edit_client.Name = "tab_edit_client";
+            this.tab_edit_client.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_edit_client.Size = new System.Drawing.Size(469, 352);
+            this.tab_edit_client.TabIndex = 2;
+            this.tab_edit_client.Text = "Klient";
+            this.tab_edit_client.UseVisualStyleBackColor = true;
+            // 
+            // tab_edit_Service
+            // 
+            this.tab_edit_Service.Location = new System.Drawing.Point(4, 25);
+            this.tab_edit_Service.Name = "tab_edit_Service";
+            this.tab_edit_Service.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_edit_Service.Size = new System.Drawing.Size(469, 352);
+            this.tab_edit_Service.TabIndex = 3;
+            this.tab_edit_Service.Text = "Ydelse";
+            this.tab_edit_Service.UseVisualStyleBackColor = true;
             // 
             // GUI
             // 
@@ -1128,6 +1200,8 @@
             this.tabPage_Overview.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_Overview)).EndInit();
             this.Side.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.Tab_edit.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1227,6 +1301,12 @@
         private BrightIdeasSoftware.OLVColumn olvColumn_ServiceStartDate;
         private BrightIdeasSoftware.OLVColumn olvColumn_ServiceEmployeeID;
         private System.Windows.Forms.TabControl Side;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabControl Tab_edit;
+        private System.Windows.Forms.TabPage tab_edit_case;
+        private System.Windows.Forms.TabPage tab_edit_employee;
+        private System.Windows.Forms.TabPage tab_edit_client;
+        private System.Windows.Forms.TabPage tab_edit_Service;
     }
 }
 

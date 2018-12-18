@@ -199,14 +199,25 @@ namespace LawHouse.GUI
         #region Button_case
         private void button_CreateCase_Click(object sender, EventArgs e)//Daniella
         {
+            try
+            {
+                Client selectedClient = (Client)comboBox_Client_CreateCase.SelectedItem;
+                Employee selectedEmployee = (Employee)comboBox_Employee_CreateCase.SelectedItem;
+                ServiceType selectedService = (ServiceType)comboBox_ServiceType_CreateCase.SelectedItem;
+                Controller.CreateCase(textBox_CaseTitle.Text, textbox_CaseStartDate.Text, default(DateTime), textbox_CaseKilometers.Text, textBox_CaseEstimatedHours.Text,
+                    richTextBox_CaseDescription.Text, richTextBox_CaseNotes.Text, selectedClient.ID, selectedEmployee.ID, selectedService.ID);
+                SetObjectListView_Overview();
+                Side.TabPages.Remove(tabPage_CreateCase);
+                 
+               
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ikke alle er udfyldt, vend venligst tilbage");
+
+            }
             //create case...
-            Client selectedClient = (Client)comboBox_Client_CreateCase.SelectedItem;
-            Employee selectedEmployee = (Employee)comboBox_Employee_CreateCase.SelectedItem;
-            ServiceType selectedService = (ServiceType)comboBox_ServiceType_CreateCase.SelectedItem;
-            Controller.CreateCase(textBox_CaseTitle.Text, textbox_CaseStartDate.Text, default(DateTime), textbox_CaseKilometers.Text, textBox_CaseEstimatedHours.Text,
-                richTextBox_CaseDescription.Text, richTextBox_CaseNotes.Text, selectedClient.ID, selectedEmployee.ID, selectedService.ID);
-            SetObjectListView_Overview();
-            Side.TabPages.Remove(tabPage_CreateCase);
+
         }
         private void button_Cancel_CreateCase_Click(object sender, EventArgs e)
         {
