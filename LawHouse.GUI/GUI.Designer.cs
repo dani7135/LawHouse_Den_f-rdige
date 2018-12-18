@@ -528,16 +528,16 @@
             this.textBox_EmployeeName.Size = new System.Drawing.Size(169, 22);
             this.textBox_EmployeeName.TabIndex = 75;
             // 
-            // comboBox_Education_CreateEmployee
+            // comboBox_ServiceType_CreateEmployee
             // 
             this.comboBox_ServiceType_CreateEmployee.Enabled = false;
             this.comboBox_ServiceType_CreateEmployee.FormattingEnabled = true;
             this.comboBox_ServiceType_CreateEmployee.Location = new System.Drawing.Point(139, 49);
             this.comboBox_ServiceType_CreateEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox_ServiceType_CreateEmployee.Name = "comboBox_Education_CreateEmployee";
+            this.comboBox_ServiceType_CreateEmployee.Name = "comboBox_ServiceType_CreateEmployee";
             this.comboBox_ServiceType_CreateEmployee.Size = new System.Drawing.Size(169, 24);
             this.comboBox_ServiceType_CreateEmployee.TabIndex = 74;
-             // 
+            // 
             // label_EmployeeName
             // 
             this.label_EmployeeName.AutoSize = true;
@@ -1003,7 +1003,7 @@
             // 
             // olvColumn_ClientName
             // 
-            this.olvColumn_ClientName.AspectName = "ID";
+            this.olvColumn_ClientName.AspectName = "Name";
             this.olvColumn_ClientName.Text = "Klient Navn";
             // 
             // olvColumn_ClientAdress

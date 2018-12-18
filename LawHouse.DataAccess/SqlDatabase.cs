@@ -165,8 +165,12 @@ namespace LawHouse.DataAccess
         {
             SqlCommand com = new SqlCommand();
             String sqlString =
-                $"UPDATE Advokat SET Navn = @Navn" +
+                $"UPDATE Advokat SET Navn = @Navn " +
                  $"WHERE AdvokatID =@AdvokatId";
+            com.Parameters.Add(new SqlParameter("AdvokatId", advokat.ID));
+
+            com.Parameters.Add(new SqlParameter("Navn", advokat.Name));
+        
             SqlDatabaseUtilities.RunSqlCommand(sqlString, com);
 
         }
@@ -275,6 +279,16 @@ namespace LawHouse.DataAccess
             string sqlString =
                 $"UPDATE Ydelse SET Startdato = @StartDato , YdelsesBeskrivelse =@YdelsesBeskrivelse , Pris = @Pris ,Timer = @Timer , SagsNr = @SagsNr , AdvokatId = @AdvokatId " +
                 $"WHERE YdelsesNr ={ydelse.ID}";
+            //com.Parameters.Add(new SqlParameter("Navn", advokat.Name));
+            com.Parameters.Add(new SqlParameter("Startdato", ydelse.StartDate));
+            com.Parameters.Add(new SqlParameter("YdelsesBeskrivelse", ydelse.Services_description));
+            com.Parameters.Add(new SqlParameter("Pris", ydelse.Price));
+            com.Parameters.Add(new SqlParameter("Timer", ydelse.Timer));
+            com.Parameters.Add(new SqlParameter("SagsNr", ydelse.CaseID));
+            com.Parameters.Add(new SqlParameter("AdvokatId", ydelse.CaseID));
+
+
+
             SqlDatabaseUtilities.RunSqlCommand(sqlString, com);
         }
         public List<Service> GetAllServices()// By Daniella //By Julius
