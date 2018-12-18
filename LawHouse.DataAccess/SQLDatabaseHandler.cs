@@ -12,22 +12,23 @@ namespace LawHouse.DataAccess
 {
     //Singletone er blevet brugt nedenunder og i kontrolleren
     //A singleton is a convenient way for accessing the service from anywhere in the application code
-    public class SqlDatabase : IDatabase
+    public class SQLDatabaseHandler : IDatabase
     {
-        private static SqlDatabase _database = null;//By Daniella
-        private SqlDatabase() { }
-        public static SqlDatabase Instance()
+        private static SQLDatabaseHandler _databaseHandler = null;//By Daniella
+        private SQLDatabaseHandler() { }
+        public static SQLDatabaseHandler Instance()
         {
-            if (_database == null)
+            if (_databaseHandler == null)
             {
-                _database = new SqlDatabase();
+                _databaseHandler = new SQLDatabaseHandler();
             }
-            return _database;
+            return _databaseHandler;
         }
         #region Case
         public int CreateCase(Case @case)// By Daniella
         {//Grunden til at der den her er fordi den tager en case og opretter det ud for properties
-            string sqlString = $"INSERT INTO Sag(Arbejdstitel, StartDato, SlutDato, Kørselstimer, TimeEstimat, SagsBeskrivelse, InterneNoter , KlientNr, AdvokatId, YdelsesTypeNr )" + $"values(@Arbejdstitel , @Startdato , @SlutDato , @Kørselstimer , @TimeEstimat ,  @SagsBeskrivelse,   @InterneNoter ,  @KlientNr,  @AdvokatId,  @YdelsesTypeNr) " +
+            string sqlString = $"INSERT INTO Sag(Arbejdstitel, StartDato, SlutDato, Kørselstimer, TimeEstimat, SagsBeskrivelse, InterneNoter , KlientNr, AdvokatId, YdelsesTypeNr )" + 
+                               $"values(@Arbejdstitel , @Startdato , @SlutDato , @Kørselstimer , @TimeEstimat ,  @SagsBeskrivelse,   @InterneNoter ,  @KlientNr,  @AdvokatId,  @YdelsesTypeNr) " +
                                $"SELECT CAST(SCOPE_IDENTITY() AS int)";
             using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnString))
             {
@@ -55,7 +56,7 @@ namespace LawHouse.DataAccess
                     return (int)com.ExecuteScalar();
                 }
             }
-            //  SqlDatabaseUtilities.RunSqlCommand(sqlString);
+            //  SQLDatabaseUtilities.RunSqlInsertCommand(sqlString);
         }
         public void UpdateCase(Case @case)// By Daniella, refactored by Julius
         {
@@ -73,7 +74,7 @@ namespace LawHouse.DataAccess
             com.Parameters.Add(new SqlParameter("KlientNr", @case.ClientNr));
             com.Parameters.Add(new SqlParameter("AdvokatId", @case.EmployeeID));
             com.Parameters.Add(new SqlParameter("YdelsesTypeNr", @case.ServiceTypeID));
-            SqlDatabaseUtilities.RunSqlCommand(sqlString, com);
+            SQLDatabaseUtilities.RunSqlInsertCommand(sqlString, com);
         }
         public List<Case> GetAllCase()// By Daniella //By Julius
         {
@@ -82,7 +83,7 @@ namespace LawHouse.DataAccess
                                " JOIN Klient ON Sag.KlientNr = Klient.KlientNr";
             List<Case> listOfSag = new List<Case>();
 
-            List<List<string>> rawReadValue = SqlDatabaseUtilities.GenericSqlStringDataReader(sqlString);
+            List<List<string>> rawReadValue = SQLDatabaseUtilities.ReadSqlCommand(sqlString);
 
             foreach (List<string> x in rawReadValue)
             {
@@ -114,7 +115,7 @@ namespace LawHouse.DataAccess
             com.Parameters.Add(new SqlParameter("Navn", klient.Name));
             com.Parameters.Add(new SqlParameter("Adresse", klient.Address));
             com.Parameters.Add(new SqlParameter("TelefonNr", klient.PhoneNo));
-            SqlDatabaseUtilities.RunSqlCommand(sqlString, com);
+            SQLDatabaseUtilities.RunSqlInsertCommand(sqlString, com);
 
         }
         public void UpdateClient(Client klient) // By Thomas
@@ -126,14 +127,14 @@ namespace LawHouse.DataAccess
             com.Parameters.Add(new SqlParameter("Navn", klient.Name));
             com.Parameters.Add(new SqlParameter("Adresse", klient.Address));
             com.Parameters.Add(new SqlParameter("TelefonNr", klient.PhoneNo));
-            SqlDatabaseUtilities.RunSqlCommand(sqlString, com);
+            SQLDatabaseUtilities.RunSqlInsertCommand(sqlString, com);
         }
         public List<Client> GetAllClient()// By Daniella //By Julius
         {
             string sqlString = "SELECT * FROM Klient";
             List<Client> listOfKlient = new List<Client>();
 
-            List<List<string>> rawReadValue = SqlDatabaseUtilities.GenericSqlStringDataReader(sqlString);
+            List<List<string>> rawReadValue = SQLDatabaseUtilities.ReadSqlCommand(sqlString);
 
             foreach (List<string> x in rawReadValue)
             {
@@ -177,7 +178,7 @@ namespace LawHouse.DataAccess
 
             com.Parameters.Add(new SqlParameter("Navn", advokat.Name));
         
-            SqlDatabaseUtilities.RunSqlCommand(sqlString, com);
+            SQLDatabaseUtilities.RunSqlInsertCommand(sqlString, com);
 
         }
         public List<Employee> GetAllEmployee()// By Daniella //By Julius
@@ -185,7 +186,7 @@ namespace LawHouse.DataAccess
             string sqlString = "SELECT * FROM Advokat";
             List<Employee> listOfAdvokat = new List<Employee>();
 
-            List<List<string>> rawReadValue = SqlDatabaseUtilities.GenericSqlStringDataReader(sqlString);
+            List<List<string>> rawReadValue = SQLDatabaseUtilities.ReadSqlCommand(sqlString);
 
             foreach (List<string> x in rawReadValue)
             {
@@ -204,7 +205,7 @@ namespace LawHouse.DataAccess
                                 WHERE YdelsesTypeNr = " + ydelsesTypeNr;
             List<Employee> listOfAdvokat = new List<Employee>();
 
-            List<List<string>> rawReadValue = SqlDatabaseUtilities.GenericSqlStringDataReader(sqlString);
+            List<List<string>> rawReadValue = SQLDatabaseUtilities.ReadSqlCommand(sqlString);
 
             foreach (List<string> x in rawReadValue)
             {
@@ -222,7 +223,7 @@ namespace LawHouse.DataAccess
             string sqlString = "SELECT * FROM Tjenesteydelse";
             List<EmployeeService> listOfTjenesteydelse = new List<EmployeeService>();
 
-            List<List<string>> rawReadValue = SqlDatabaseUtilities.GenericSqlStringDataReader(sqlString);
+            List<List<string>> rawReadValue = SQLDatabaseUtilities.ReadSqlCommand(sqlString);
 
             foreach (List<string> x in rawReadValue)
             {
@@ -242,7 +243,7 @@ namespace LawHouse.DataAccess
             string sqlString = "SELECT * FROM YdelseType";
             List<ServiceType> listOfYdelsetype = new List<ServiceType>();
 
-            List<List<string>> rawReadValue = SqlDatabaseUtilities.GenericSqlStringDataReader(sqlString);
+            List<List<string>> rawReadValue = SQLDatabaseUtilities.ReadSqlCommand(sqlString);
 
             foreach (List<string> x in rawReadValue)
             {
@@ -267,14 +268,14 @@ namespace LawHouse.DataAccess
                 com.Parameters.Add(new SqlParameter("Timer", ydelse.Timer));
                 com.Parameters.Add(new SqlParameter("SagsNr", ydelse.CaseID));
                 com.Parameters.Add(new SqlParameter("AdvokatId", ydelse.EmployeeID));
-                SqlDatabaseUtilities.RunSqlCommand(sqlString, com);
+                SQLDatabaseUtilities.RunSqlInsertCommand(sqlString, com);
             }
             /*
                     public void CreateClient(Client klient)//By Thomas
         {
             SqlCommand com = new SqlCommand();
             string sqlString = $"INSERT INTO KLient(Navn, Adresse, TelefonNr) VALUES (@Navn , @Adresse , @TelefonNr)";
-            SqlDatabaseUtilities.RunSqlCommand(sqlString, com);
+            SQLDatabaseUtilities.RunSqlInsertCommand(sqlString, com);
 
         }
              */
@@ -295,14 +296,14 @@ namespace LawHouse.DataAccess
 
 
 
-            SqlDatabaseUtilities.RunSqlCommand(sqlString, com);
+            SQLDatabaseUtilities.RunSqlInsertCommand(sqlString, com);
         }
         public List<Service> GetAllServices()// By Daniella //By Julius
         {
             string sqlString = "SELECT * FROM Ydelse";
             List<Service> listOfYdelse = new List<Service>();
 
-            List<List<string>> rawReadValue = SqlDatabaseUtilities.GenericSqlStringDataReader(sqlString);
+            List<List<string>> rawReadValue = SQLDatabaseUtilities.ReadSqlCommand(sqlString);
 
             foreach (List<string> x in rawReadValue)
             {
@@ -326,7 +327,7 @@ namespace LawHouse.DataAccess
             string sqlString = "SELECT * FROM Efteruddannelse";
             List<Education> listOfEfteruddannelse = new List<Education>();
 
-            List<List<string>> rawReadValue = SqlDatabaseUtilities.GenericSqlStringDataReader(sqlString);
+            List<List<string>> rawReadValue = SQLDatabaseUtilities.ReadSqlCommand(sqlString);
 
             foreach (List<string> x in rawReadValue)
             {
@@ -346,7 +347,7 @@ namespace LawHouse.DataAccess
      
 
            List <Education> listOfEducation = new List<Education>();
-            List<List<string>> rawReadValue = SqlDatabaseUtilities.GenericSqlStringDataReader(sqlString);
+            List<List<string>> rawReadValue = SQLDatabaseUtilities.ReadSqlCommand(sqlString);
             foreach (List<string> x in rawReadValue)
             {
                 Education @Efteruddannelse = new Education();
@@ -363,7 +364,7 @@ namespace LawHouse.DataAccess
             string sqlString = $"INSERT INTO Efteruddannelse(Navn, AdvokatId) VALUES (@efteruddannelse, @advokatId)";
             com.Parameters.Add(new SqlParameter("efteruddannelse", efteruddannelse));
             com.Parameters.Add(new SqlParameter("advokatId", advokatId));
-            SqlDatabaseUtilities.RunSqlCommand(sqlString, com);
+            SQLDatabaseUtilities.RunSqlInsertCommand(sqlString, com);
           
         }
         #endregion
@@ -375,14 +376,14 @@ namespace LawHouse.DataAccess
             string sqlString = $"INSERT INTO Tjenesteydelse(AdvokatId, YdelsesTypeNr) VALUES (@advokatId, @ydelsesTypeNr)";
             com.Parameters.Add(new SqlParameter("advokatId", id));
             com.Parameters.Add(new SqlParameter("ydelsesTypeNr", serviceTypeID));
-            SqlDatabaseUtilities.RunSqlCommand(sqlString, com);
+            SQLDatabaseUtilities.RunSqlInsertCommand(sqlString, com);
         }
-        public List<EmployeeService> GetEmployeeServices(int employeeID)//Daniella
+        public List<EmployeeService> GetEmployeeService(int employeeID)//Daniella
         {
             string sqlString = "SELECT * FROM Tjenesteydelse " +
                                 "Where AdvokatId = " + employeeID;
             List<EmployeeService> listofEmployeeService = new List<EmployeeService>();
-            List<List<string>> rawReadValue = SqlDatabaseUtilities.GenericSqlStringDataReader(sqlString);
+            List<List<string>> rawReadValue = SQLDatabaseUtilities.ReadSqlCommand(sqlString);
             foreach (List<string> x in rawReadValue)
             {
                 EmployeeService employeeService = new EmployeeService();
@@ -400,7 +401,7 @@ namespace LawHouse.DataAccess
         //    string sqlString = "SELECT * FROM List";
         //    List<ListItems> listOfListItems = new List<ListItems>();
 
-        //    List<List<string>> rawReadValue = SqlDatabaseUtilities.GenericSqlStringDataReader(sqlString);
+        //    List<List<string>> rawReadValue = SQLDatabaseUtilities.ReadSqlCommand(sqlString);
 
         //    foreach (List<string> x in rawReadValue)
         //    {

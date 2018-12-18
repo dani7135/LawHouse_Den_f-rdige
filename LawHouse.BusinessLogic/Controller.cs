@@ -6,11 +6,10 @@ using LawHouse.Shared.Interfaces;
 
 namespace LawHouse.BusinessLogic
 {
-
     public class Controller
     {
 
-        private static IDatabase currentDatabaseInstance = SqlDatabase.Instance(); //Sql Database
+        private static IDatabase currentDatabaseInstance = SQLDatabaseHandler.Instance(); //Sql Database
 
         #region Employee
         public static int CreateAdvokat(string advokatNavn)
@@ -142,7 +141,7 @@ namespace LawHouse.BusinessLogic
 
         public static List<EmployeeService> GetEmployeeServices(int serviceTypeID)
         {
-            return currentDatabaseInstance.GetEmployeeServices(serviceTypeID);
+            return currentDatabaseInstance.GetEmployeeService(serviceTypeID);
         }
         #endregion
 
@@ -151,8 +150,5 @@ namespace LawHouse.BusinessLogic
         //    List<ListItems> GetItems = currentDatabaseInstance.GetAllList();
         //    return GetItems;
         //}
-
-
-
     }
 }
