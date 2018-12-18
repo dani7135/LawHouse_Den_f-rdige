@@ -90,7 +90,6 @@
             this.label_CaseKilometers = new System.Windows.Forms.Label();
             this.label_CaseDescription = new System.Windows.Forms.Label();
             this.label_CaseEstimatedHours = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage_Overview = new System.Windows.Forms.TabPage();
             this.button_Help_Overview = new System.Windows.Forms.Button();
             this.button_AddNew = new System.Windows.Forms.Button();
@@ -791,13 +790,6 @@
             this.label_CaseEstimatedHours.TabIndex = 67;
             this.label_CaseEstimatedHours.Text = "Time estimat";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(13, 430);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(10, 22);
-            this.textBox1.TabIndex = 87;
-            // 
             // tabPage_Overview
             // 
             this.tabPage_Overview.Controls.Add(this.button_Help_Overview);
@@ -945,117 +937,159 @@
             // 
             this.olvColumn_CaseID.AspectName = "ID";
             this.olvColumn_CaseID.IsEditable = false;
+            this.olvColumn_CaseID.MinimumWidth = 70;
             this.olvColumn_CaseID.Text = "SagsNr";
+            this.olvColumn_CaseID.Width = 70;
             // 
             // olvColumn_CaseTitle
             // 
             this.olvColumn_CaseTitle.AspectName = "WorkTitle";
             this.olvColumn_CaseTitle.IsEditable = false;
+            this.olvColumn_CaseTitle.MinimumWidth = 100;
             this.olvColumn_CaseTitle.Text = "Arbejdstitel";
+            this.olvColumn_CaseTitle.Width = 100;
             // 
             // olvColumn_CaseStartDate
             // 
             this.olvColumn_CaseStartDate.AspectName = "StartDate";
             this.olvColumn_CaseStartDate.IsEditable = false;
+            this.olvColumn_CaseStartDate.MinimumWidth = 70;
             this.olvColumn_CaseStartDate.Text = "StartDato";
+            this.olvColumn_CaseStartDate.Width = 70;
             // 
             // olvColumn_CaseEndDate
             // 
             this.olvColumn_CaseEndDate.AspectName = "EndDate";
+            this.olvColumn_CaseEndDate.MinimumWidth = 70;
             this.olvColumn_CaseEndDate.Text = "SlutDato";
+            this.olvColumn_CaseEndDate.Width = 70;
             // 
             // olvColumn_CaseKilometers
             // 
             this.olvColumn_CaseKilometers.AspectName = "Kiloemeters";
+            this.olvColumn_CaseKilometers.MinimumWidth = 70;
             this.olvColumn_CaseKilometers.Text = "Kørselstimer";
+            this.olvColumn_CaseKilometers.Width = 70;
             // 
             // olvColumn_CaseEstimatedHours
             // 
             this.olvColumn_CaseEstimatedHours.AspectName = "TimeEstimat";
+            this.olvColumn_CaseEstimatedHours.MinimumWidth = 70;
             this.olvColumn_CaseEstimatedHours.Text = "TimeEstimat";
+            this.olvColumn_CaseEstimatedHours.Width = 70;
             // 
             // olvColumn_CaseDescription
             // 
             this.olvColumn_CaseDescription.AspectName = "CaseDescription";
+            this.olvColumn_CaseDescription.MinimumWidth = 120;
             this.olvColumn_CaseDescription.Text = "SagsBeskrivelse";
-            this.olvColumn_CaseDescription.Width = 90;
+            this.olvColumn_CaseDescription.Width = 120;
             // 
             // olvColumn_CaseNotes
             // 
             this.olvColumn_CaseNotes.AspectName = "internal_Notes";
+            this.olvColumn_CaseNotes.MinimumWidth = 70;
             this.olvColumn_CaseNotes.Text = "InterneNoter";
+            this.olvColumn_CaseNotes.Width = 70;
             // 
             // olvColumn_ClientID
             // 
             this.olvColumn_ClientID.AspectName = "ID";
             this.olvColumn_ClientID.IsEditable = false;
+            this.olvColumn_ClientID.MinimumWidth = 70;
             this.olvColumn_ClientID.Text = "KlientNr";
+            this.olvColumn_ClientID.Width = 70;
             // 
             // olvColumn_CaseEmployeeID
             // 
             this.olvColumn_CaseEmployeeID.AspectName = "EmployeeID";
+            this.olvColumn_CaseEmployeeID.MinimumWidth = 70;
             this.olvColumn_CaseEmployeeID.Text = "AdvokatNr";
+            this.olvColumn_CaseEmployeeID.Width = 70;
             // 
             // olvColumn_ServiceTypeID
             // 
             this.olvColumn_ServiceTypeID.AspectName = "ServiceTypeID";
+            this.olvColumn_ServiceTypeID.MinimumWidth = 70;
             this.olvColumn_ServiceTypeID.Text = "YdelsesTypeNr";
+            this.olvColumn_ServiceTypeID.Width = 70;
             // 
             // olvColumn_ClientName
             // 
             this.olvColumn_ClientName.AspectName = "Name";
+            this.olvColumn_ClientName.MinimumWidth = 100;
             this.olvColumn_ClientName.Text = "Klient Navn";
+            this.olvColumn_ClientName.Width = 100;
             // 
             // olvColumn_ClientAdress
             // 
             this.olvColumn_ClientAdress.AspectName = "Address";
+            this.olvColumn_ClientAdress.MinimumWidth = 100;
             this.olvColumn_ClientAdress.Text = "Adresse";
+            this.olvColumn_ClientAdress.Width = 100;
             // 
             // olvColumn_ClientPhoneNumber
             // 
             this.olvColumn_ClientPhoneNumber.AspectName = "PhoneNo";
+            this.olvColumn_ClientPhoneNumber.MinimumWidth = 70;
             this.olvColumn_ClientPhoneNumber.Text = "TelefonNr";
+            this.olvColumn_ClientPhoneNumber.Width = 70;
             // 
             // olvColumn_EmployeeID
             // 
             this.olvColumn_EmployeeID.AspectName = "ID";
+            this.olvColumn_EmployeeID.MinimumWidth = 70;
             this.olvColumn_EmployeeID.Text = "AdvokatId";
             this.olvColumn_EmployeeID.Width = 107;
             // 
             // olvColumn_EmployeeName
             // 
             this.olvColumn_EmployeeName.AspectName = "Name";
+            this.olvColumn_EmployeeName.MinimumWidth = 100;
             this.olvColumn_EmployeeName.Text = "Advokat Navn";
+            this.olvColumn_EmployeeName.Width = 100;
             // 
             // olvColumn_ServiceID
             // 
             this.olvColumn_ServiceID.AspectName = "ID";
+            this.olvColumn_ServiceID.MinimumWidth = 70;
             this.olvColumn_ServiceID.Text = "Ydelses Nr";
+            this.olvColumn_ServiceID.Width = 70;
             // 
             // olvColumn_ServiceDescription
             // 
             this.olvColumn_ServiceDescription.AspectName = "Services_description";
+            this.olvColumn_ServiceDescription.MinimumWidth = 100;
             this.olvColumn_ServiceDescription.Text = "Ydelse Beskrivelse";
+            this.olvColumn_ServiceDescription.Width = 100;
             // 
             // olvColumn_ServicePrice
             // 
             this.olvColumn_ServicePrice.AspectName = "Price";
+            this.olvColumn_ServicePrice.MinimumWidth = 70;
             this.olvColumn_ServicePrice.Text = "Pris";
+            this.olvColumn_ServicePrice.Width = 70;
             // 
             // olvColumn_ServiceHours
             // 
             this.olvColumn_ServiceHours.AspectName = "Timer";
+            this.olvColumn_ServiceHours.MinimumWidth = 70;
             this.olvColumn_ServiceHours.Text = "Timer";
+            this.olvColumn_ServiceHours.Width = 70;
             // 
             // olvColumn_ServiceStartDate
             // 
             this.olvColumn_ServiceStartDate.AspectName = "StartDate";
+            this.olvColumn_ServiceStartDate.MinimumWidth = 70;
             this.olvColumn_ServiceStartDate.Text = "Start dato";
+            this.olvColumn_ServiceStartDate.Width = 70;
             // 
             // olvColumn_ServiceEmployeeID
             // 
             this.olvColumn_ServiceEmployeeID.AspectName = "ID";
+            this.olvColumn_ServiceEmployeeID.MinimumWidth = 100;
             this.olvColumn_ServiceEmployeeID.Text = "AdvokatNr";
+            this.olvColumn_ServiceEmployeeID.Width = 100;
             // 
             // Side
             // 
@@ -1079,7 +1113,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 450);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Side);
             this.Name = "GUI";
             this.Text = "LawHouse";
@@ -1096,7 +1129,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.objectListView_Overview)).EndInit();
             this.Side.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1195,7 +1227,6 @@
         private BrightIdeasSoftware.OLVColumn olvColumn_ServiceStartDate;
         private BrightIdeasSoftware.OLVColumn olvColumn_ServiceEmployeeID;
         private System.Windows.Forms.TabControl Side;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
