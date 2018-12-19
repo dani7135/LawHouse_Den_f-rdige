@@ -5,9 +5,7 @@ using LawHouse.DataAccess;
 using LawHouse.Shared.Entities;
 using LawHouse.Shared.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Data.SqlClient;
- using LawHouse.UnitTest.Properties;
-using LawHouse.Shared.Entities;
+using LawHouse.UnitTest.Properties;
 
 namespace LawHouse.UnitTest
 {
@@ -22,37 +20,11 @@ namespace LawHouse.UnitTest
             using (SqlConnection conn = new SqlConnection(Settings.Default.ConnString))
             using (SqlCommand com = new SqlCommand(sqlString, conn))
             {
-                using ()
+                //using () 
             }
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //40
         [TestMethod]
         public void CheckSQLDatabaseHandler_GetInstance() //Julius
         {
