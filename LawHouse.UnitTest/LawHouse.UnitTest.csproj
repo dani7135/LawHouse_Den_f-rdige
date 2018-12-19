@@ -56,6 +56,24 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LawHouse.BusinessLogic\LawHouse.BusinessLogic.csproj">
+      <Project>{e5e7c63e-aec6-4070-8943-5c888b9e8913}</Project>
+      <Name>LawHouse.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LawHouse.DataAccess\LawHouse.DataAccess.csproj">
+      <Project>{702cc11c-9523-4345-8456-118328979e57}</Project>
+      <Name>LawHouse.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LawHouse.GUI\LawHouse.GUI.csproj">
+      <Project>{585fa715-d1e2-433d-8e39-3c804a1f8630}</Project>
+      <Name>LawHouse.GUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LawHouse.Models\LawHouse.Shared.csproj">
+      <Project>{bb905ba9-9c53-4cf0-a919-4bbbef4d04be}</Project>
+      <Name>LawHouse.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
