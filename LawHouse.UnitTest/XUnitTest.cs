@@ -5,15 +5,25 @@ using LawHouse.DataAccess;
 using LawHouse.Shared.Entities;
 using LawHouse.Shared.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Data.SqlClient;
+ using LawHouse.UnitTest.Properties;
+using LawHouse.Shared.Entities;
 
 namespace LawHouse.UnitTest
 {
     [TestClass]
     public class XUnitTest
     {
-        [TestMethod]
-        public void TestMethod1()
+        
+        public void CheckGetAllEducationIndex()
         {
+
+            const string sqlString = "select * from Efteruddannelse";
+            using (SqlConnection conn = new SqlConnection(Settings.Default.ConnString))
+            using (SqlCommand com = new SqlCommand(sqlString, conn))
+            {
+                using ()
+            }
         }
 
 
