@@ -12,7 +12,13 @@ namespace LawHouse.UnitTest
     [TestClass]
     public class XUnitTest
     {
-        
+
+        [TestMethod]
+        public void CheckSQLDatabaseHandler_GetInstance() //Julius
+        {
+            IDatabase currentDatabaseInstance = SQLDatabaseHandler.Instance();
+            Assert.IsInstanceOfType(currentDatabaseInstance, typeof(IDatabase));
+        }
         public void CheckGetAllEducationIndex()
         {
 
@@ -25,12 +31,6 @@ namespace LawHouse.UnitTest
         }
 
 
-        [TestMethod]
-        public void CheckSQLDatabaseHandler_GetInstance() //Julius
-        {
-            IDatabase currentDatabaseInstance = SQLDatabaseHandler.Instance();
-            Assert.IsInstanceOfType(currentDatabaseInstance, typeof(IDatabase));
-        }
         [TestMethod]
         public void CheckEstablishConnectionToSQLDatabaseWithBuildinMethode() //Julius
         {
