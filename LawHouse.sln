@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LawHouse.Shared", "LawHouse
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LawHouse.GUI", "LawHouse.GUI\LawHouse.GUI.csproj", "{585FA715-D1E2-433D-8E39-3C804A1F8630}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LawHouse.UnitTest", "LawHouse.XUnitTest\LawHouse.UnitTest.csproj", "{6F5C488D-ABA8-4C09-A38D-5F9EF4AA0D04}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LawHouse.UnitTest", "LawHouse.UnitTest\LawHouse.UnitTest.csproj", "{6B03728C-8674-4E5B-B17E-763AA1278575}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{585FA715-D1E2-433D-8E39-3C804A1F8630}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{585FA715-D1E2-433D-8E39-3C804A1F8630}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{585FA715-D1E2-433D-8E39-3C804A1F8630}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6F5C488D-ABA8-4C09-A38D-5F9EF4AA0D04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6F5C488D-ABA8-4C09-A38D-5F9EF4AA0D04}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6F5C488D-ABA8-4C09-A38D-5F9EF4AA0D04}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6F5C488D-ABA8-4C09-A38D-5F9EF4AA0D04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B03728C-8674-4E5B-B17E-763AA1278575}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B03728C-8674-4E5B-B17E-763AA1278575}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B03728C-8674-4E5B-B17E-763AA1278575}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B03728C-8674-4E5B-B17E-763AA1278575}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
