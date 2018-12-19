@@ -38,6 +38,8 @@ namespace LawHouse.GUI
                     olvColumn_ClientName.IsVisible = true;
                     olvColumn_ClientAdress.IsVisible = true;
                     olvColumn_ClientPhoneNumber.IsVisible = true;
+
+
                     break;
                 case "Sag":
                     objectListView_Overview.SetObjects(Controller.GetAllSag());
@@ -75,7 +77,7 @@ namespace LawHouse.GUI
             objectListView_Overview.RebuildColumns();
         }
 
-        private void ObjectListView_Overview_HideAllColums()//Daniella
+        private void ObjectListView_Overview_HideAllColums()//Julius
         {
             foreach (var item in objectListView_Overview.AllColumns)
             {
@@ -199,14 +201,25 @@ namespace LawHouse.GUI
         #region Button_case
         private void button_CreateCase_Click(object sender, EventArgs e)//Daniella
         {
+            try
+            {
+                Client selectedClient = (Client)comboBox_Client_CreateCase.SelectedItem;
+                Employee selectedEmployee = (Employee)comboBox_Employee_CreateCase.SelectedItem;
+                ServiceType selectedService = (ServiceType)comboBox_ServiceType_CreateCase.SelectedItem;
+                Controller.CreateCase(textBox_CaseTitle.Text, textbox_CaseStartDate.Text, default(DateTime), textbox_CaseKilometers.Text, textBox_CaseEstimatedHours.Text,
+                    richTextBox_CaseDescription.Text, richTextBox_CaseNotes.Text, selectedClient.ID, selectedEmployee.ID, selectedService.ID);
+                SetObjectListView_Overview();
+                Side.TabPages.Remove(tabPage_CreateCase);
+                 
+               
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ikke alle er udfyldt, vend venligst tilbage");
+
+            }
             //create case...
-            Client selectedClient = (Client)comboBox_Client_CreateCase.SelectedItem;
-            Employee selectedEmployee = (Employee)comboBox_Employee_CreateCase.SelectedItem;
-            ServiceType selectedService = (ServiceType)comboBox_ServiceType_CreateCase.SelectedItem;
-            Controller.CreateCase(textBox_CaseTitle.Text, textbox_CaseStartDate.Text, default(DateTime), textbox_CaseKilometers.Text, textBox_CaseEstimatedHours.Text,
-                richTextBox_CaseDescription.Text, richTextBox_CaseNotes.Text, selectedClient.ID, selectedEmployee.ID, selectedService.ID);
-            SetObjectListView_Overview();
-            Side.TabPages.Remove(tabPage_CreateCase);
+
         }
         private void button_Cancel_CreateCase_Click(object sender, EventArgs e)
         {
@@ -268,6 +281,16 @@ namespace LawHouse.GUI
         {
             SetObjectListView_Overview();
         }
+        private void Set_textbox_edidt_seltede_Employee()
+        {
+
+            
+
+            /*
+           
+      
+             */
+        }
 
         private void button_AddNew_Click(object sender, EventArgs e)//Julius
         {
@@ -313,10 +336,6 @@ namespace LawHouse.GUI
             ServiceType selectedServiceType = (ServiceType)comboBox_ServiceType_CreateCase.SelectedItem;
             Set_ComboBox_Employee_CreateCase(selectedServiceType.ID);
         }
-        #endregion
-
-
-
         private void button_Overview_SaveChanges_Click(object sender, EventArgs e)//Daniella & Thomas
         {
             foreach (object item in objectListView_Overview.Objects)
@@ -339,10 +358,8 @@ namespace LawHouse.GUI
                     Controller.UpdateYdelse(item);
                 }
             }
-
-
-
         }
+        #endregion
 
         #region button_Help
         //Julius
@@ -367,5 +384,7 @@ namespace LawHouse.GUI
             System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
         }
         #endregion
+
+  
     }
 }
