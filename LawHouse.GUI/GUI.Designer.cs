@@ -959,7 +959,6 @@
             this.objectListView_Overview.UseCompatibleStateImageBehavior = false;
             this.objectListView_Overview.UseFiltering = true;
             this.objectListView_Overview.View = System.Windows.Forms.View.Details;
-            this.objectListView_Overview.DoubleClick += new System.EventHandler(this.objectListView_Overview_DoubleClick);
             // 
             // olvColumn_Primary
             // 
@@ -1027,7 +1026,7 @@
             // 
             // olvColumn_ClientID
             // 
-            this.olvColumn_ClientID.AspectName = "ID";
+            this.olvColumn_ClientID.AspectName = "ClientNr";
             this.olvColumn_ClientID.IsEditable = false;
             this.olvColumn_ClientID.MinimumWidth = 70;
             this.olvColumn_ClientID.Text = "KlientNr";

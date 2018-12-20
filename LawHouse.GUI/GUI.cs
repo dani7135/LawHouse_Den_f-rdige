@@ -55,7 +55,7 @@ namespace LawHouse.GUI
                     olvColumn_CaseEstimatedHours.IsVisible = true;
                     olvColumn_CaseDescription.IsVisible = true;
                     olvColumn_CaseNotes.IsVisible = true;
-                    olvColumn_CaseID.IsVisible = true;
+                    olvColumn_ClientID.IsVisible = true;
                     olvColumn_CaseEmployeeID.IsVisible = true;
                     olvColumn_ServiceTypeID.IsVisible = true;
                    
@@ -406,10 +406,6 @@ namespace LawHouse.GUI
 
         #endregion
 
-        private void objectListView_Overview_DoubleClick(object sender, EventArgs e)
-        {
-
-            
-        }
+       
     }
 }
