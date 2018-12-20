@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using LawHouse.GUI.Properties;
 
 namespace LawHouse.GUI
 {
