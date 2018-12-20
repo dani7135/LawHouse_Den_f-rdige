@@ -127,9 +127,17 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Opretadvokat.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Hjælpe knap.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Opretsag.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Opretydelse.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
