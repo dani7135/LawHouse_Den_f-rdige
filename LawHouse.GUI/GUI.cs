@@ -367,7 +367,7 @@ namespace LawHouse.GUI
         #endregion
 
         #region button_Help
-        //Julius
+        //Julius, billeder af Daniella
         private string getHelpFilesFolder()
         {
             string paththisDirectory = Directory.GetCurrentDirectory();
@@ -375,7 +375,7 @@ namespace LawHouse.GUI
 
             System.IO.DirectoryInfo folderMainDirectory = Directory.GetParent(paththisDirectory).Parent.Parent.Parent;
             string pathMainDirectory = folderMainDirectory.FullName.ToString();
-            string pathPdfFolder = Path.Combine(pathMainDirectory, "HelpFiles");
+            string pathPdfFolder = Path.Combine(pathMainDirectory, "LawHouse.GUI", "Resources");
             return pathPdfFolder;
         }
         private void button_Help_Overview_Click(object sender, EventArgs e)
@@ -403,11 +403,6 @@ namespace LawHouse.GUI
             string file = Path.Combine(getHelpFilesFolder(), "Help_CreateService.jpg");
             System.Diagnostics.Process.Start(file);
         }
-
-
-
         #endregion
-
-       
     }
 }

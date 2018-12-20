@@ -128,16 +128,16 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Opretadvokat.jpg" />
+    <None Include="Resources\Help_CreateEmployee.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Hjælpe knap.jpg" />
+    <None Include="Resources\Help_Oversigt.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Opretsag.jpg" />
+    <None Include="Resources\Help_CreateCase.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Opretydelse.jpg" />
+    <None Include="Resources\Help_CreateClient.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
