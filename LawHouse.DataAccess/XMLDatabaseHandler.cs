@@ -12,8 +12,7 @@ using System.Data.SqlClient;
 using LawHouse.Shared.Entities;
 using LawHouse.Shared.Interfaces;
 using LawHouse.Shared;
-using LawHouse.Shared.Entities;
-using LawHouse.Shared.Interfaces;
+ 
 
 namespace DataAccess
 {

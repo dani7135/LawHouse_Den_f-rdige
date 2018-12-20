@@ -15,7 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LawHouse.UnitTest", "LawHou
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HelpFiles", "HelpFiles", "{3363E3AA-6934-4EC8-85CD-367F9BFB40C8}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\..\..\Desktop\Help_Oversigt.jpg = ..\..\..\..\Desktop\Help_Oversigt.jpg
+		..\..\OneDrive - Erhvervsakademiet Lillebælt\Første semester projekt\LawHouse\Hjælpe knap.jpg = ..\..\OneDrive - Erhvervsakademiet Lillebælt\Første semester projekt\LawHouse\Hjælpe knap.jpg
+		..\..\OneDrive - Erhvervsakademiet Lillebælt\Første semester projekt\LawHouse\Opretadvokat.jpg = ..\..\OneDrive - Erhvervsakademiet Lillebælt\Første semester projekt\LawHouse\Opretadvokat.jpg
+		..\..\OneDrive - Erhvervsakademiet Lillebælt\Første semester projekt\LawHouse\Opretsag.jpg = ..\..\OneDrive - Erhvervsakademiet Lillebælt\Første semester projekt\LawHouse\Opretsag.jpg
+		..\..\OneDrive - Erhvervsakademiet Lillebælt\Første semester projekt\LawHouse\Opretydelse.jpg = ..\..\OneDrive - Erhvervsakademiet Lillebælt\Første semester projekt\LawHouse\Opretydelse.jpg
 	EndProjectSection
 EndProject
 Global

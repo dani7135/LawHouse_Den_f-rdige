@@ -22,7 +22,7 @@ namespace LawHouse.GUI
             Set_ComboBox_Case_Service();
             Set_ComboBox_Employee_CreateService();
             Set_ComboBox_ServiceType_CreateEmployee();
-            SetObjectListView_Overview();
+             SetObjectListView_Overview();
 
         }
 
@@ -35,7 +35,7 @@ namespace LawHouse.GUI
             {
                 case "Klient":
                     objectListView_Overview.SetObjects(Controller.GetAllClients());
-                    olvColumn_ClientID.IsVisible = true;
+                    olvColumn_Client_Klientnr.IsVisible = true;
                     olvColumn_ClientName.IsVisible = true;
                     olvColumn_ClientAdress.IsVisible = true;
                     olvColumn_ClientPhoneNumber.IsVisible = true;
@@ -55,9 +55,11 @@ namespace LawHouse.GUI
                     olvColumn_CaseEstimatedHours.IsVisible = true;
                     olvColumn_CaseDescription.IsVisible = true;
                     olvColumn_CaseNotes.IsVisible = true;
-                    olvColumn_CaseID.IsVisible = true;
+                    olvColumn_ClientID.IsVisible = true;
+              //      olvColumn_CaseID.IsVisible = true;
                     olvColumn_CaseEmployeeID.IsVisible = true;
                     olvColumn_ServiceTypeID.IsVisible = true;
+                   
                     break;
                 case "Advokat":
                     objectListView_Overview.SetObjects(Controller.GetAllAdvokat());
@@ -113,19 +115,19 @@ namespace LawHouse.GUI
             comboBox_Client_CreateCase.SelectedIndex = -1;
         }
 
-        private void Set_ComboBox_ServiceType_CreateEmployee()
+        private void Set_ComboBox_ServiceType_CreateEmployee()//Daniella
         {
             comboBox_ServiceType_CreateEmployee.DataSource = Controller.GetAllServiceType();
             comboBox_ServiceType_CreateEmployee.DisplayMember = "Name";
             comboBox_ServiceType_CreateEmployee.ValueMember = "ID";
         }
-        private void Set_ComboBox_Case_Service()
+        private void Set_ComboBox_Case_Service()//Daniella
         {
             comboBox_Case_Create_Service.DataSource = Controller.GetAllSag();
             comboBox_Case_Create_Service.DisplayMember = "WorkTitle";
             comboBox_Case_Create_Service.ValueMember = "ID";
         }
-        private void Set_ComboBox_Employee_CreateService()
+        private void Set_ComboBox_Employee_CreateService()//Daniella
         {
             comboBox_Employee_Create_Service.DataSource = Controller.GetAllAdvokat();
             comboBox_Employee_Create_Service.DisplayMember = "Name";
@@ -138,6 +140,11 @@ namespace LawHouse.GUI
             comboBox_ServiceType_CreateCase.ValueMember = "ID";
         }
 
+      
+   
+   
+
+      
         private void Set_TabControl_Overview_Pages()//Julius
         {
             List<string> tabsToHideAtStartup = new List<string>();
@@ -145,6 +152,7 @@ namespace LawHouse.GUI
             tabsToHideAtStartup.Add("tabPage_CreateEmployee");
             tabsToHideAtStartup.Add("tabPage_CreateClient");
             tabsToHideAtStartup.Add("tabPage_CreateService");
+            tabsToHideAtStartup.Add("tabpage_edit");
             hideTabs(tabsToHideAtStartup);
         }
 
@@ -196,6 +204,9 @@ namespace LawHouse.GUI
         {
             Side.TabPages.Remove(Side.SelectedTab);
         }
+
+
+        
 
         #endregion
 
@@ -262,11 +273,11 @@ namespace LawHouse.GUI
         #endregion
 
         #region Button_service
-        private void button_Cancel_CreateService_Click(object sender, EventArgs e)
+        private void button_Cancel_CreateService_Click(object sender, EventArgs e)//Daniella
         {
             Side.TabPages.Remove(Side.SelectedTab);
         }
-        private void button_AddService_Click(object sender, EventArgs e)
+        private void button_AddService_Click(object sender, EventArgs e)//Daniella
         {
             Case selectedCase = (Case)comboBox_Case_Create_Service.SelectedItem;
             Employee selectedEmployee = (Employee)comboBox_Employee_Create_Service.SelectedItem;
@@ -282,16 +293,7 @@ namespace LawHouse.GUI
         {
             SetObjectListView_Overview();
         }
-        private void Set_textbox_edidt_seltede_Employee()
-        {
-
-            
-
-            /*
-           
-      
-             */
-        }
+    
 
         private void button_AddNew_Click(object sender, EventArgs e)//Julius
         {
@@ -327,12 +329,13 @@ namespace LawHouse.GUI
 
                     toSwitchTo = tabPage_CreateService;
                     break;
+
             }
             Side.SelectedTab = toSwitchTo;
         }
 
 
-        private void comboBox_ServiceType_CreateCase_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox_ServiceType_CreateCase_SelectedIndexChanged(object sender, EventArgs e) //Daniella
         {
             ServiceType selectedServiceType = (ServiceType)comboBox_ServiceType_CreateCase.SelectedItem;
             Set_ComboBox_Employee_CreateCase(selectedServiceType.ID);
@@ -399,8 +402,11 @@ namespace LawHouse.GUI
             string file = Path.Combine(getHelpFilesFolder(), "Help_CreateService.jpg");
             System.Diagnostics.Process.Start(file);
         }
+
+
+
         #endregion
 
-  
+       
     }
 }
