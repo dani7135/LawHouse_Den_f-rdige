@@ -18,6 +18,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HelpFiles", "HelpFiles", "{
 		..\..\..\..\Desktop\Help_Oversigt.jpg = ..\..\..\..\Desktop\Help_Oversigt.jpg
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClassDiagram", "ClassDiagram", "{97D746BE-B4D4-4EFF-BC80-DAEC7A29FFEB}"
+	ProjectSection(SolutionItems) = preProject
+		LawHouse.BusinessLogic\ClassDiagram1.cd = LawHouse.BusinessLogic\ClassDiagram1.cd
+		LawHouse.GUI\ClassDiagram1.cd = LawHouse.GUI\ClassDiagram1.cd
+		LawHouse.Models\ClassDiagram1.cd = LawHouse.Models\ClassDiagram1.cd
+		LawHouse.DataAccess\ClassDiagram1.cd = LawHouse.DataAccess\ClassDiagram1.cd
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
