@@ -42,32 +42,7 @@ namespace LawHouse.UnitTest
 
 
             }
-        }
-         [ TestMethod]        
-         public static void CheakGetEducationsFromEmployeeIndex(Employee employee)
-         {
-
-             SQLDatabaseHandler databaseHandler = SQLDatabaseHandler.Instance();
-             databaseHandler.GetEducationsFromEmployee(employee.ID);
-             Assert.IsTrue(true);
-
-
-            /* string sqlString = "SELECT * FROM Efteruddannelse " +
-                  "JOIN Advokat ON Efteruddannelse.AdvokatId = Advokat.AdvokatId " +
-                  $"WHERE Efteruddannelse.AdvokatId ={employee.ID} ";
-             using (SqlConnection conn = new SqlConnection(Settings.Default.ConnString))
-             using (SqlCommand com = new SqlCommand(sqlString, conn))
-             {
-                 conn.Open();
-                 using (SqlDataReader sqld = com.ExecuteReader())
-                 {
-                     if (sqld.Read())
-                     {
-                         Assert.IsNotNull(sqld[0]);
-                     }
-                 }
-             }*/
-        }
+        }        
 
         [TestMethod]
         public void CheckEstablishConnectionToSQLDatabaseWithBuildinMethode() //Julius

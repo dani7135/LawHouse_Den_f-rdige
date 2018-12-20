@@ -109,6 +109,7 @@
             this.olvColumn_ClientID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn_CaseEmployeeID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn_ServiceTypeID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn_Client_Klientnr = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn_ClientName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn_ClientAdress = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn_ClientPhoneNumber = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -121,7 +122,6 @@
             this.olvColumn_ServiceStartDate = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn_ServiceEmployeeID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Side = new System.Windows.Forms.TabControl();
-            this.olvColumn_Client_Klientnr = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.tabPage_CreateService.SuspendLayout();
             this.tabPage_CreateClient.SuspendLayout();
             this.tabPage_CreateEmployee.SuspendLayout();
@@ -1049,6 +1049,12 @@
             this.olvColumn_ServiceTypeID.Text = "YdelsesTypeNr";
             this.olvColumn_ServiceTypeID.Width = 70;
             // 
+            // olvColumn_Client_Klientnr
+            // 
+            this.olvColumn_Client_Klientnr.AspectName = "ID";
+            this.olvColumn_Client_Klientnr.IsEditable = false;
+            this.olvColumn_Client_Klientnr.Text = "Klientnr";
+            // 
             // olvColumn_ClientName
             // 
             this.olvColumn_ClientName.AspectName = "Name";
@@ -1073,6 +1079,7 @@
             // olvColumn_EmployeeID
             // 
             this.olvColumn_EmployeeID.AspectName = "ID";
+            this.olvColumn_EmployeeID.IsEditable = false;
             this.olvColumn_EmployeeID.MinimumWidth = 70;
             this.olvColumn_EmployeeID.Text = "AdvokatId";
             this.olvColumn_EmployeeID.Width = 107;
@@ -1087,6 +1094,7 @@
             // olvColumn_ServiceID
             // 
             this.olvColumn_ServiceID.AspectName = "ID";
+            this.olvColumn_ServiceID.IsEditable = false;
             this.olvColumn_ServiceID.MinimumWidth = 70;
             this.olvColumn_ServiceID.Text = "Ydelses Nr";
             this.olvColumn_ServiceID.Width = 70;
@@ -1143,11 +1151,6 @@
             this.Side.SelectedIndex = 0;
             this.Side.Size = new System.Drawing.Size(809, 425);
             this.Side.TabIndex = 0;
-            // 
-            // olvColumn_Client_Klientnr
-            // 
-            this.olvColumn_Client_Klientnr.AspectName = "ID";
-            this.olvColumn_Client_Klientnr.Text = "Klientnr";
             // 
             // GUI
             // 
