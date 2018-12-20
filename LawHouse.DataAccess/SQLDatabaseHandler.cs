@@ -237,8 +237,7 @@ namespace LawHouse.DataAccess
         #endregion
 
         #region ServiceType
-        //Den har med kategory med i stedet for employeeservis, så den skal nok laves om
-        public List<ServiceType> GetAllServiceType()// By Daniella //By Julius
+         public List<ServiceType> GetAllServiceType()// By Daniella //By Julius
         {
             string sqlString = "SELECT * FROM YdelseType";
             List<ServiceType> listOfYdelsetype = new List<ServiceType>();
