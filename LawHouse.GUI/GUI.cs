@@ -2,6 +2,7 @@
 using LawHouse.Shared.Entities;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -365,6 +366,9 @@ namespace LawHouse.GUI
         //Julius
         private void button_Help_Overview_Click(object sender, EventArgs e)
         {
+            string paththisDirectory = Directory.GetCurrentDirectory();
+            //string pathMainDirectory = Directory.GetParent(paththisDirectory)
+            //string pathPdfFolder = Path.Combine(pathCurrent)
             System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=2Q_ZzBGPdqE");
         }
         private void button_Help_CreateCase_Click(object sender, EventArgs e)
