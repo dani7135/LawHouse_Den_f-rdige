@@ -364,28 +364,40 @@ namespace LawHouse.GUI
 
         #region button_Help
         //Julius
-        private void button_Help_Overview_Click(object sender, EventArgs e)
+        private string getHelpFilesFolder()
         {
             string paththisDirectory = Directory.GetCurrentDirectory();
-            //string pathMainDirectory = Directory.GetParent(paththisDirectory)
-            //string pathPdfFolder = Path.Combine(pathCurrent)
-            System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=2Q_ZzBGPdqE");
+            // "*driveletter*:\\Users\\*myUsername*\\source\\repos\\*reposName*\\*projectFolderName*\\LawHouse.GUI\\bin\\Debug"
+
+            System.IO.DirectoryInfo folderMainDirectory = Directory.GetParent(paththisDirectory).Parent.Parent.Parent;
+            string pathMainDirectory = folderMainDirectory.FullName.ToString();
+            string pathPdfFolder = Path.Combine(pathMainDirectory, "\\HelpFiles");
+            return pathPdfFolder;
+        }
+        private void button_Help_Overview_Click(object sender, EventArgs e)
+        {
+            string file = getHelpFilesFolder() + "";
+            System.Diagnostics.Process.Start(file);
         }
         private void button_Help_CreateCase_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+            string file = getHelpFilesFolder() + "";
+            System.Diagnostics.Process.Start(file);
         }
         private void button_Help_CreateEmployee_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+            string file = getHelpFilesFolder() + "";
+            System.Diagnostics.Process.Start(file);
         }
         private void button_Help_CreateClient_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+            string file = getHelpFilesFolder() + "";
+            System.Diagnostics.Process.Start(file);
         }
         private void button_Help_CreateService_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+            string file = getHelpFilesFolder() + "";
+            System.Diagnostics.Process.Start(file);
         }
         #endregion
 
