@@ -373,7 +373,7 @@ namespace LawHouse.GUI
             string paththisDirectory = Directory.GetCurrentDirectory();
             // "*driveletter*:\\Users\\*myUsername*\\source\\repos\\*reposName*\\*projectFolderName*\\LawHouse.GUI\\bin\\Debug"
 
-            System.IO.DirectoryInfo folderMainDirectory = Directory.GetParent(paththisDirectory).Parent.Parent.Parent;
+            System.IO.DirectoryInfo folderMainDirectory = Directory.GetParent(paththisDirectory).Parent.Parent;
             string pathMainDirectory = folderMainDirectory.FullName.ToString();
             string pathPdfFolder = Path.Combine(pathMainDirectory, "LawHouse.GUI", "Resources");
             return pathPdfFolder;
