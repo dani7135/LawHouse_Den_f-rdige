@@ -371,32 +371,32 @@ namespace LawHouse.GUI
 
             System.IO.DirectoryInfo folderMainDirectory = Directory.GetParent(paththisDirectory).Parent.Parent.Parent;
             string pathMainDirectory = folderMainDirectory.FullName.ToString();
-            string pathPdfFolder = Path.Combine(pathMainDirectory, "\\HelpFiles");
+            string pathPdfFolder = Path.Combine(pathMainDirectory, "HelpFiles");
             return pathPdfFolder;
         }
         private void button_Help_Overview_Click(object sender, EventArgs e)
         {
-            string file = getHelpFilesFolder() + "";
+            string file = Path.Combine(getHelpFilesFolder(), "Help_Oversigt.jpg");
             System.Diagnostics.Process.Start(file);
         }
         private void button_Help_CreateCase_Click(object sender, EventArgs e)
         {
-            string file = getHelpFilesFolder() + "";
+            string file = Path.Combine(getHelpFilesFolder(), "Help_CreateCase.jpg");
             System.Diagnostics.Process.Start(file);
         }
         private void button_Help_CreateEmployee_Click(object sender, EventArgs e)
         {
-            string file = getHelpFilesFolder() + "";
+            string file = Path.Combine(getHelpFilesFolder(), "Help_CreateEmployee.jpg");
             System.Diagnostics.Process.Start(file);
         }
         private void button_Help_CreateClient_Click(object sender, EventArgs e)
         {
-            string file = getHelpFilesFolder() + "";
+            string file = Path.Combine(getHelpFilesFolder(), "Help_CreateClient.jpg");
             System.Diagnostics.Process.Start(file);
         }
         private void button_Help_CreateService_Click(object sender, EventArgs e)
         {
-            string file = getHelpFilesFolder() + "";
+            string file = Path.Combine(getHelpFilesFolder(), "Help_CreateService.jpg");
             System.Diagnostics.Process.Start(file);
         }
         #endregion
