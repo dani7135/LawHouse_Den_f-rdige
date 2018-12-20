@@ -35,7 +35,7 @@ namespace LawHouse.GUI
             {
                 case "Klient":
                     objectListView_Overview.SetObjects(Controller.GetAllClients());
-                    olvColumn_ClientID.IsVisible = true;
+                    olvColumn_Client_Klientnr.IsVisible = true;
                     olvColumn_ClientName.IsVisible = true;
                     olvColumn_ClientAdress.IsVisible = true;
                     olvColumn_ClientPhoneNumber.IsVisible = true;
@@ -56,6 +56,7 @@ namespace LawHouse.GUI
                     olvColumn_CaseDescription.IsVisible = true;
                     olvColumn_CaseNotes.IsVisible = true;
                     olvColumn_ClientID.IsVisible = true;
+              //      olvColumn_CaseID.IsVisible = true;
                     olvColumn_CaseEmployeeID.IsVisible = true;
                     olvColumn_ServiceTypeID.IsVisible = true;
                    

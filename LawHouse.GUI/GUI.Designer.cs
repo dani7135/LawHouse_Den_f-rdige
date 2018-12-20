@@ -121,6 +121,7 @@
             this.olvColumn_ServiceStartDate = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn_ServiceEmployeeID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Side = new System.Windows.Forms.TabControl();
+            this.olvColumn_Client_Klientnr = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.tabPage_CreateService.SuspendLayout();
             this.tabPage_CreateClient.SuspendLayout();
             this.tabPage_CreateEmployee.SuspendLayout();
@@ -162,7 +163,7 @@
             // 
             this.button_Cancel_CreateService.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button_Cancel_CreateService.AutoSize = true;
-            this.button_Cancel_CreateService.Location = new System.Drawing.Point(603, 358);
+            this.button_Cancel_CreateService.Location = new System.Drawing.Point(572, 358);
             this.button_Cancel_CreateService.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_Cancel_CreateService.Name = "button_Cancel_CreateService";
             this.button_Cancel_CreateService.Size = new System.Drawing.Size(93, 33);
@@ -344,7 +345,7 @@
             // 
             this.button_Cancel_CreateClient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button_Cancel_CreateClient.AutoSize = true;
-            this.button_Cancel_CreateClient.Location = new System.Drawing.Point(600, 356);
+            this.button_Cancel_CreateClient.Location = new System.Drawing.Point(601, 363);
             this.button_Cancel_CreateClient.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_Cancel_CreateClient.Name = "button_Cancel_CreateClient";
             this.button_Cancel_CreateClient.Size = new System.Drawing.Size(93, 33);
@@ -569,7 +570,7 @@
             // 
             this.button_CreateEmployee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button_CreateEmployee.AutoSize = true;
-            this.button_CreateEmployee.Location = new System.Drawing.Point(289, 10);
+            this.button_CreateEmployee.Location = new System.Drawing.Point(315, 7);
             this.button_CreateEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_CreateEmployee.Name = "button_CreateEmployee";
             this.button_CreateEmployee.Size = new System.Drawing.Size(144, 33);
@@ -905,6 +906,7 @@
             this.objectListView_Overview.AllColumns.Add(this.olvColumn_ClientID);
             this.objectListView_Overview.AllColumns.Add(this.olvColumn_CaseEmployeeID);
             this.objectListView_Overview.AllColumns.Add(this.olvColumn_ServiceTypeID);
+            this.objectListView_Overview.AllColumns.Add(this.olvColumn_Client_Klientnr);
             this.objectListView_Overview.AllColumns.Add(this.olvColumn_ClientName);
             this.objectListView_Overview.AllColumns.Add(this.olvColumn_ClientAdress);
             this.objectListView_Overview.AllColumns.Add(this.olvColumn_ClientPhoneNumber);
@@ -934,6 +936,7 @@
             this.olvColumn_ClientID,
             this.olvColumn_CaseEmployeeID,
             this.olvColumn_ServiceTypeID,
+            this.olvColumn_Client_Klientnr,
             this.olvColumn_ClientName,
             this.olvColumn_ClientAdress,
             this.olvColumn_ClientPhoneNumber,
@@ -1141,6 +1144,11 @@
             this.Side.Size = new System.Drawing.Size(809, 425);
             this.Side.TabIndex = 0;
             // 
+            // olvColumn_Client_Klientnr
+            // 
+            this.olvColumn_Client_Klientnr.AspectName = "ID";
+            this.olvColumn_Client_Klientnr.Text = "Klientnr";
+            // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1261,6 +1269,7 @@
         private BrightIdeasSoftware.OLVColumn olvColumn_ServiceStartDate;
         private BrightIdeasSoftware.OLVColumn olvColumn_ServiceEmployeeID;
         private System.Windows.Forms.TabControl Side;
+        private BrightIdeasSoftware.OLVColumn olvColumn_Client_Klientnr;
     }
 }
 
