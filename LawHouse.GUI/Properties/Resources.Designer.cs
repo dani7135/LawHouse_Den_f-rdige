@@ -59,5 +59,15 @@ namespace LawHouse.GUI.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Hjælpe_knap {
+            get {
+                object obj = ResourceManager.GetObject("Hjælpe_knap", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
