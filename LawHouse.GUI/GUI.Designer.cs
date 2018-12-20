@@ -614,7 +614,7 @@
             // 
             this.button_Cancel_CreateCase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button_Cancel_CreateCase.AutoSize = true;
-            this.button_Cancel_CreateCase.Location = new System.Drawing.Point(612, 358);
+            this.button_Cancel_CreateCase.Location = new System.Drawing.Point(585, 358);
             this.button_Cancel_CreateCase.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_Cancel_CreateCase.Name = "button_Cancel_CreateCase";
             this.button_Cancel_CreateCase.Size = new System.Drawing.Size(93, 33);
