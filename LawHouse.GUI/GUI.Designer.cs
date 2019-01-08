@@ -1151,7 +1151,7 @@
             this.Side.SelectedIndex = 0;
             this.Side.Size = new System.Drawing.Size(809, 425);
             this.Side.TabIndex = 0;
-            this.Side.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.Side_Selecting);
+            //this.Side.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.Side_Selecting);
             // 
             // GUI
             // 

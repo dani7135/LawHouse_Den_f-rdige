@@ -60,12 +60,6 @@ namespace LawHouse.GUI
                     olvColumn_CaseEmployeeID.IsVisible = true;
                    
                     olvColumn_ServiceTypeID.IsVisible = true;
-                    /*
-                            comboBox_Client_CreateCase.DataSource = Controller.GetAllClients();
-             comboBox_Client_CreateCase.DisplayMember = "Name";
-             comboBox_Client_CreateCase.ValueMember = "ID";
-             comboBox_Client_CreateCase.SelectedIndex = -1;
-                     */
                     break;
                 case "Advokat":
                     objectListView_Overview.SetObjects(Controller.GetAllAdvokat());
@@ -165,7 +159,7 @@ namespace LawHouse.GUI
             }
         }
 
-
+        /*
         private void Side_Selecting(object sender, TabControlCancelEventArgs e)//Daniella
         {
             Set_ComboBox_ServiceType_CreateCase();
@@ -175,6 +169,7 @@ namespace LawHouse.GUI
             Set_ComboBox_Employee_CreateService();
             Set_ComboBox_ServiceType_CreateEmployee();
         }
+        */
         #endregion
 
         #region Button_employee
@@ -306,7 +301,7 @@ namespace LawHouse.GUI
         {
             SetObjectListView_Overview();
         }
-    
+
 
         private void button_AddNew_Click(object sender, EventArgs e)//Julius
         {
@@ -319,10 +314,7 @@ namespace LawHouse.GUI
                         Side.TabPages.Insert(Side.TabPages.Count, tabPage_CreateCase);
                     textbox_CaseStartDate.Text = DateTime.Now.ToString("dd-MM-yyyy");
                     SetComboBox_ServiceType_CreateCase();
-
                     comboBox_Employee_CreateCase.DataSource = Controller.GetEmployeesFromServiceType(selectedServiceType.Length);
-
-
                     toSwitchTo = tabPage_CreateCase;
                     break;
                 case "Advokat":
@@ -339,10 +331,8 @@ namespace LawHouse.GUI
                     if (!Side.TabPages.Contains(tabPage_CreateService))
                         Side.TabPages.Insert(Side.TabPages.Count, tabPage_CreateService);
                     textbox_ServiceStartDate.Text = DateTime.Now.ToString("dd-MM-yyyy");
-
                     toSwitchTo = tabPage_CreateService;
                     break;
-
             }
             Side.SelectedTab = toSwitchTo;
         }
