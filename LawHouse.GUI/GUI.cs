@@ -173,7 +173,7 @@ namespace LawHouse.GUI
         #endregion
 
         #region Button_employee
-        private void button_CreateEmployee_Click(object sender, EventArgs e)//Denne linje kode
+        private void button_CreateEmployee_Click(object sender, EventArgs e)//Daniella//Denne linje kode
         {
             currentEmployeeID = Controller.CreateAdvokat(textBox_EmployeeName.Text);
             comboBox_ServiceType_CreateEmployee.Enabled = true;
@@ -182,7 +182,7 @@ namespace LawHouse.GUI
             SetObjectListView_Overview();
 
         }
-         private void button_AddEmployeeService_CreateEmployee_Click(object sender, EventArgs e)//Denne linje kode
+         private void button_AddEmployeeService_CreateEmployee_Click(object sender, EventArgs e)//Daniella//Denne linje kode
         {
             ServiceType selectedServiceType = comboBox_ServiceType_CreateEmployee.SelectedItem as ServiceType;
             if (listBox_EmployeeService_CreateEmployee.Items.Count > 0)
@@ -199,7 +199,7 @@ namespace LawHouse.GUI
  
         }
 
-        private void Set_ListBox_EmployeeService_CreateEmployee()
+        private void Set_ListBox_EmployeeService_CreateEmployee()//Daniella
         {
             listBox_EmployeeService_CreateEmployee.DataSource = Controller.GetEmployeeServices(currentEmployeeID);
             listBox_EmployeeService_CreateEmployee.DisplayMember = "ServiceID";

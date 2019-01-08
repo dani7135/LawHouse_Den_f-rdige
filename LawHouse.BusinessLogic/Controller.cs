@@ -12,23 +12,23 @@ namespace LawHouse.BusinessLogic
         private static IDatabase currentDatabaseInstance = SQLDatabaseHandler.Instance(); //Sql Database
 
         #region Employee
-        public static int CreateAdvokat(string advokatNavn)//Denne linje kode
+        public static int CreateAdvokat(string advokatNavn)//Dennie//Denne linje kode
         {
             Employee ad = new Employee(advokatNavn);
             int id = currentDatabaseInstance.CreateEmployee(ad);
             return id; 
         }
 
-        public static List<Employee> GetAllAdvokat()
+        public static List<Employee> GetAllAdvokat()//Daniella
         {
             return currentDatabaseInstance.GetAllEmployee();
         }
-        public static List<Employee> GetEmployeesFromServiceType(int serviceTypeID)
+        public static List<Employee> GetEmployeesFromServiceType(int serviceTypeID)//Daniella
         {
             return currentDatabaseInstance.GetEmployeesFromServiceType(serviceTypeID);
         }
 
-        public static void UpdateAdvokat(object objectToUpdate)
+        public static void UpdateAdvokat(object objectToUpdate)//Daniella
         {
             Employee employee = (Employee)objectToUpdate;
             currentDatabaseInstance.UpdateEmployee(employee);
@@ -36,6 +36,7 @@ namespace LawHouse.BusinessLogic
         #endregion
 
         #region Case
+        //Daniella
         public static int CreateCase(string arbejdstitel, string startDato, DateTime slutDato, string kørselstimer,
         string timeEstimat, string sagsBeskrivelse, string interneNoter, int klientNr, int advokatId, int ydelsesTypeNr)
         {
@@ -57,20 +58,20 @@ namespace LawHouse.BusinessLogic
 
         #region Client
 
-        public static void CreateClient(string navn, string adresse, string telefonNr)
+        public static void CreateClient(string navn, string adresse, string telefonNr)//Thomas
         {
             Client kl = new Client(navn, adresse, telefonNr);
             currentDatabaseInstance.CreateClient(kl);
         }
 
-        public static void UpdateClient(object objectToUpdate)
+        public static void UpdateClient(object objectToUpdate)//Thomas
         
         {
             Client client = (Client)objectToUpdate;
             currentDatabaseInstance.UpdateClient(client);
         }
 
-        public static List<Client> GetAllClients()
+        public static List<Client> GetAllClients()//Daniella
         {
             List<Client> GetClient = currentDatabaseInstance.GetAllClient();
             return GetClient;
@@ -78,18 +79,18 @@ namespace LawHouse.BusinessLogic
         #endregion
 
         #region Service
-        public static void CreateService(string startDato, string ydelseBeskrivelse, int pris, int timer, int sagsNr, int advokatId)
+        public static void CreateService(string startDato, string ydelseBeskrivelse, int pris, int timer, int sagsNr, int advokatId)//Daniella
         {
             Service @ydelse = new Service(startDato, ydelseBeskrivelse, pris, timer, sagsNr, advokatId);
             currentDatabaseInstance.CreateService(@ydelse);
         }
 
-        public static List<Service> GetAllServices()
+        public static List<Service> GetAllServices()//Daniella
         {
             return currentDatabaseInstance.GetAllServices();
         }
 
-        public static void UpdateYdelse(object objectToUpdate)
+        public static void UpdateYdelse(object objectToUpdate)//Daniella
         {
 
             Service service = (Service)objectToUpdate;
@@ -98,19 +99,19 @@ namespace LawHouse.BusinessLogic
         #endregion
 
         #region Case
-        public static void UpdateCase(Case @case)
+        public static void UpdateCase(Case @case)//Daniella
         {
             currentDatabaseInstance.UpdateCase(@case);
         }
         #endregion
 
         #region Education
-        public static List<Education> GetAllEducations()
+        public static List<Education> GetAllEducations()//Julius
         {
             return currentDatabaseInstance.GetAllEducation();
         }
 
-        public static List<Education> GetEducationsFromEmployee(int employeeID)
+        public static List<Education> GetEducationsFromEmployee(int employeeID)//Julius
         {
             return currentDatabaseInstance.GetEducationsFromEmployee(employeeID);
         }
@@ -134,12 +135,12 @@ namespace LawHouse.BusinessLogic
 
         #endregion
         #region EmployeeService
-        public static void AddEmployeeServiceToEmployee(int id,int services_descriptionID)//Denne linje kode
+        public static void AddEmployeeServiceToEmployee(int id,int services_descriptionID)//Daniella//Denne linje kode
         {
            currentDatabaseInstance.AddEmployeeServiceToEmployee(id, services_descriptionID);
         }
 
-        public static List<EmployeeService> GetEmployeeServices(int serviceTypeID) 
+        public static List<EmployeeService> GetEmployeeServices(int serviceTypeID) //Daniella
         {
             return currentDatabaseInstance.GetEmployeeService(serviceTypeID);
         }
