@@ -115,7 +115,7 @@ namespace LawHouse.BusinessLogic
             return currentDatabaseInstance.GetEducationsFromEmployee(employeeID);
         }
 
-        public static void AddEducationToEmployee(string specialName, int advokatId)
+        public static void AddEducationToEmployee(string specialName, int advokatId)//Dene kode
         {
             currentDatabaseInstance.AddEducationToEmployee(specialName, advokatId);
         }

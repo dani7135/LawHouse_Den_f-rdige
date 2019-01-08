@@ -61,7 +61,7 @@
             this.button_Finished = new System.Windows.Forms.Button();
             this.listBox_EmployeeService_CreateEmployee = new System.Windows.Forms.ListBox();
             this.label_AddedEmployeeSpecialities = new System.Windows.Forms.Label();
-            this.button_AddEducation_CreateEmployee = new System.Windows.Forms.Button();
+            this.button_AddEmployeeService_CreateEmployee = new System.Windows.Forms.Button();
             this.button_Help_CreateEmployee = new System.Windows.Forms.Button();
             this.label_EmployeeEducation = new System.Windows.Forms.Label();
             this.textBox_EmployeeName = new System.Windows.Forms.TextBox();
@@ -439,7 +439,7 @@
             this.tabPage_CreateEmployee.Controls.Add(this.button_Finished);
             this.tabPage_CreateEmployee.Controls.Add(this.listBox_EmployeeService_CreateEmployee);
             this.tabPage_CreateEmployee.Controls.Add(this.label_AddedEmployeeSpecialities);
-            this.tabPage_CreateEmployee.Controls.Add(this.button_AddEducation_CreateEmployee);
+            this.tabPage_CreateEmployee.Controls.Add(this.button_AddEmployeeService_CreateEmployee);
             this.tabPage_CreateEmployee.Controls.Add(this.button_Help_CreateEmployee);
             this.tabPage_CreateEmployee.Controls.Add(this.label_EmployeeEducation);
             this.tabPage_CreateEmployee.Controls.Add(this.textBox_EmployeeName);
@@ -497,24 +497,24 @@
             // label_AddedEmployeeSpecialities
             // 
             this.label_AddedEmployeeSpecialities.AutoSize = true;
-            this.label_AddedEmployeeSpecialities.Location = new System.Drawing.Point(11, 86);
+            this.label_AddedEmployeeSpecialities.Location = new System.Drawing.Point(7, 88);
             this.label_AddedEmployeeSpecialities.Name = "label_AddedEmployeeSpecialities";
-            this.label_AddedEmployeeSpecialities.Size = new System.Drawing.Size(117, 17);
+            this.label_AddedEmployeeSpecialities.Size = new System.Drawing.Size(101, 17);
             this.label_AddedEmployeeSpecialities.TabIndex = 79;
-            this.label_AddedEmployeeSpecialities.Text = "Efteruddannelser";
+            this.label_AddedEmployeeSpecialities.Text = "Tjensteydelser";
             // 
-            // button_AddEducation_CreateEmployee
+            // button_AddEmployeeService_CreateEmployee
             // 
-            this.button_AddEducation_CreateEmployee.AutoSize = true;
-            this.button_AddEducation_CreateEmployee.Enabled = false;
-            this.button_AddEducation_CreateEmployee.Location = new System.Drawing.Point(315, 49);
-            this.button_AddEducation_CreateEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button_AddEducation_CreateEmployee.Name = "button_AddEducation_CreateEmployee";
-            this.button_AddEducation_CreateEmployee.Size = new System.Drawing.Size(180, 33);
-            this.button_AddEducation_CreateEmployee.TabIndex = 78;
-            this.button_AddEducation_CreateEmployee.Text = "Tilføj tjensteydelse";
-            this.button_AddEducation_CreateEmployee.UseVisualStyleBackColor = true;
-            this.button_AddEducation_CreateEmployee.Click += new System.EventHandler(this.button_AddSpeciality_CreateEmployee_Click);
+            this.button_AddEmployeeService_CreateEmployee.AutoSize = true;
+            this.button_AddEmployeeService_CreateEmployee.Enabled = false;
+            this.button_AddEmployeeService_CreateEmployee.Location = new System.Drawing.Point(315, 49);
+            this.button_AddEmployeeService_CreateEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_AddEmployeeService_CreateEmployee.Name = "button_AddEmployeeService_CreateEmployee";
+            this.button_AddEmployeeService_CreateEmployee.Size = new System.Drawing.Size(180, 33);
+            this.button_AddEmployeeService_CreateEmployee.TabIndex = 78;
+            this.button_AddEmployeeService_CreateEmployee.Text = "Tilføj tjensteydelse";
+            this.button_AddEmployeeService_CreateEmployee.UseVisualStyleBackColor = true;
+            this.button_AddEmployeeService_CreateEmployee.Click += new System.EventHandler(this.button_AddEmployeeService_CreateEmployee_Click);
             // 
             // button_Help_CreateEmployee
             // 
@@ -1151,6 +1151,7 @@
             this.Side.SelectedIndex = 0;
             this.Side.Size = new System.Drawing.Size(809, 425);
             this.Side.TabIndex = 0;
+            this.Side.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.Side_Selecting);
             // 
             // GUI
             // 
@@ -1212,7 +1213,7 @@
         private System.Windows.Forms.Button button_Finished;
         private System.Windows.Forms.ListBox listBox_EmployeeService_CreateEmployee;
         private System.Windows.Forms.Label label_AddedEmployeeSpecialities;
-        private System.Windows.Forms.Button button_AddEducation_CreateEmployee;
+        private System.Windows.Forms.Button button_AddEmployeeService_CreateEmployee;
         private System.Windows.Forms.Button button_Help_CreateEmployee;
         private System.Windows.Forms.Label label_EmployeeEducation;
         private System.Windows.Forms.TextBox textBox_EmployeeName;

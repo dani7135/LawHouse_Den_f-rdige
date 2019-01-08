@@ -17,6 +17,7 @@ namespace LawHouse.Shared.Entities
         public string internal_Notes { get; set; }
         public int ClientNr { get; set; }
         public int EmployeeID { get; set; }
+
         public int ServiceTypeID { get; set; }
 
         public Case() { }

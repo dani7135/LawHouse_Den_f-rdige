@@ -99,6 +99,7 @@ namespace LawHouse.DataAccess
                 @sag.internal_Notes = x[7];
                 @sag.ClientNr = Convert.ToInt32(x[8]);
                 @sag.EmployeeID = Convert.ToInt32(x[9]);
+                 
                 @sag.ServiceTypeID = Convert.ToInt32(x[10]);
                 listOfSag.Add(@sag);
             }
