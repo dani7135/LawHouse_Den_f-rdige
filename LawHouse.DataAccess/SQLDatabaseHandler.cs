@@ -151,7 +151,7 @@ namespace LawHouse.DataAccess
         #endregion
 
         #region Employee
-        public int CreateEmployee(Employee advokat)// By Dennie
+        public int CreateEmployee(Employee advokat)// By Dennie //Denne linje
         {
             string sqlString = @"INSERT INTO Advokat(Navn) VALUES (@Navn)
                                 SELECT CAST(SCOPE_IDENTITY() AS int)";
@@ -199,7 +199,7 @@ namespace LawHouse.DataAccess
             return listOfAdvokat;
         }
 
-        public List<Employee> GetEmployeesFromServiceType(int ydelsesTypeNr)// By Daniella //By Julius
+        public List<Employee> GetEmployeesFromServiceType(int ydelsesTypeNr)// By Daniella //By Julius //Denne linje kode
         {
             string sqlString = @"SELECT * FROM ADVOKAT
                                 JOIN Tjenesteydelse ON Tjenesteydelse.AdvokatId = Advokat.AdvokatId

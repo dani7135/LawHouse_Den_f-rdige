@@ -12,7 +12,7 @@ namespace LawHouse.BusinessLogic
         private static IDatabase currentDatabaseInstance = SQLDatabaseHandler.Instance(); //Sql Database
 
         #region Employee
-        public static int CreateAdvokat(string advokatNavn)
+        public static int CreateAdvokat(string advokatNavn)//Denne linje kode
         {
             Employee ad = new Employee(advokatNavn);
             int id = currentDatabaseInstance.CreateEmployee(ad);
@@ -134,12 +134,12 @@ namespace LawHouse.BusinessLogic
 
         #endregion
         #region EmployeeService
-        public static void AddEmployeeServiceToEmployee(int id,int services_descriptionID)
+        public static void AddEmployeeServiceToEmployee(int id,int services_descriptionID)//Denne linje kode
         {
            currentDatabaseInstance.AddEmployeeServiceToEmployee(id, services_descriptionID);
         }
 
-        public static List<EmployeeService> GetEmployeeServices(int serviceTypeID)
+        public static List<EmployeeService> GetEmployeeServices(int serviceTypeID) 
         {
             return currentDatabaseInstance.GetEmployeeService(serviceTypeID);
         }
