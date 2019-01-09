@@ -227,6 +227,7 @@ namespace LawHouse.GUI
         {
             try
             {
+                SetObjectListView_Overview();
                 Client selectedClient = (Client)comboBox_Client_CreateCase.SelectedItem;
                 Employee selectedEmployee = (Employee)comboBox_Employee_CreateCase.SelectedItem;
                 ServiceType selectedService = (ServiceType)comboBox_ServiceType_CreateCase.SelectedItem;
@@ -271,6 +272,7 @@ namespace LawHouse.GUI
 
             //}
             SetObjectListView_Overview();
+            comboBox_Client_CreateCase.DataSource= Controller.GetAllClients();
             Side.TabPages.Remove(tabPage_CreateClient);
         }
    
@@ -293,6 +295,9 @@ namespace LawHouse.GUI
                 selectedCase.ID, selectedEmployee.ID);
             SetObjectListView_Overview();
             Side.TabPages.Remove(tabPage_CreateService);
+       //     comboBox_Case_Create_Service.DataSource = Controller.GetAllSag();
+         //   comboBox_Employee_Create_Service.DataSource = Controller.GetAllAdvokat();
+             
         }
         #endregion
 
